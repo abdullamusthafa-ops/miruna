@@ -10,29 +10,21 @@ import InstagramGallery from "@/components/InstagramGallery";
 import LimitedEditionBanner from "@/components/LimitedEditionBanner";
 import CollectionBanners from "@/components/CollectionBanners";
 import { featuredProducts } from "@/data/products";
-
 const Home = () => {
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      rating: 5,
-      comment: "Absolutely stunning jewelry! The quality exceeded my expectations. Fast shipping and beautiful packaging.",
-    },
-    {
-      name: "Emily Davis",
-      rating: 5,
-      comment: "I'm in love with my purchase! The craftsmanship is exceptional and it arrived even faster than expected.",
-    },
-    {
-      name: "Michael Chen",
-      rating: 5,
-      comment: "Perfect gift for my wife. She was thrilled! Excellent customer service and premium quality products.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const testimonials = [{
+    name: "Sarah Johnson",
+    rating: 5,
+    comment: "Absolutely stunning jewelry! The quality exceeded my expectations. Fast shipping and beautiful packaging."
+  }, {
+    name: "Emily Davis",
+    rating: 5,
+    comment: "I'm in love with my purchase! The craftsmanship is exceptional and it arrived even faster than expected."
+  }, {
+    name: "Michael Chen",
+    rating: 5,
+    comment: "Perfect gift for my wife. She was thrilled! Excellent customer service and premium quality products."
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
@@ -51,10 +43,10 @@ const Home = () => {
             </p>
             <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
               <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-                <Link to="/products">Shop Now</Link>
+                <Link to="/products" className="text-slate-950 bg-slate-50">Shop Now</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto">
-                <Link to="/products">View Collection</Link>
+                <Link to="/products" className="text-slate-950 shadow-none opacity-100 bg-slate-50">View Collection</Link>
               </Button>
             </div>
           </div>
@@ -77,9 +69,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
+            {featuredProducts.map(product => <ProductCard key={product.id} {...product} />)}
           </div>
           <div className="mt-12 text-center">
             <Button asChild size="lg">
@@ -113,11 +103,7 @@ const Home = () => {
               </Button>
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-lg">
-              <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80"
-                alt="Fashion craftsmanship"
-                className="h-full w-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Fashion craftsmanship" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -133,19 +119,15 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index}>
+            {testimonials.map((testimonial, index) => <Card key={index}>
                 <CardContent className="p-6">
                   <div className="mb-4 flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-warning text-warning" />
-                    ))}
+                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-5 w-5 fill-warning text-warning" />)}
                   </div>
                   <p className="mb-4 text-muted-foreground">{testimonial.comment}</p>
                   <p className="font-semibold">{testimonial.name}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -161,11 +143,7 @@ const Home = () => {
             Subscribe to our newsletter and get 10% off your first order plus exclusive access to new collections
           </p>
           <div className="mx-auto flex max-w-md space-x-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 rounded-md border-0 px-4 py-3 text-foreground"
-            />
+            <input type="email" placeholder="Enter your email" className="flex-1 rounded-md border-0 px-4 py-3 text-foreground" />
             <Button variant="secondary" size="lg">
               Subscribe
             </Button>
@@ -174,8 +152,6 @@ const Home = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
