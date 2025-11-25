@@ -7,72 +7,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
+import { allProducts } from "@/data/products";
 
 const Products = () => {
-  const [priceRange, setPriceRange] = useState([0, 1000]);
+  const [priceRange, setPriceRange] = useState([0, 700]);
+  const products = allProducts;
 
-  const products = [
-    {
-      id: "1",
-      name: "Elegant Pearl Necklace",
-      price: 129.99,
-      originalPrice: 199.99,
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
-      badge: "SALE",
-    },
-    {
-      id: "2",
-      name: "Diamond Stud Earrings",
-      price: 299.99,
-      originalPrice: 499.99,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
-      badge: "SALE",
-    },
-    {
-      id: "3",
-      name: "Gold Chain Bracelet",
-      price: 179.99,
-      image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
-    },
-    {
-      id: "4",
-      name: "Silver Ring Set",
-      price: 89.99,
-      originalPrice: 149.99,
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
-      badge: "NEW",
-    },
-    {
-      id: "5",
-      name: "Rose Gold Pendant",
-      price: 149.99,
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
-    },
-    {
-      id: "6",
-      name: "Crystal Drop Earrings",
-      price: 119.99,
-      originalPrice: 189.99,
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80",
-      badge: "SALE",
-    },
-    {
-      id: "7",
-      name: "Statement Ring Collection",
-      price: 199.99,
-      image: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&q=80",
-    },
-    {
-      id: "8",
-      name: "Layered Chain Necklace",
-      price: 159.99,
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&q=80",
-      badge: "NEW",
-    },
-  ];
-
-  const categories = ["Necklaces", "Earrings", "Bracelets", "Rings", "Pendants"];
-  const materials = ["Gold", "Silver", "Rose Gold", "Platinum", "Diamond"];
+  const categories = ["Dresses", "Tops", "Limited Collection", "Can't Miss Looks", "Best Sellers"];
+  const colors = ["Pink", "Black", "White", "Blue", "Brown", "Silver", "Gold"];
 
   return (
     <div className="min-h-screen bg-background">
@@ -82,7 +24,7 @@ const Products = () => {
       <section className="border-b border-border bg-muted py-12">
         <div className="container mx-auto px-4">
           <h1 className="mb-2 text-4xl font-bold tracking-tight">Shop All Products</h1>
-          <p className="text-muted-foreground">Discover our complete collection of luxury jewelry and accessories</p>
+          <p className="text-muted-foreground">Discover our complete collection of luxury fashion and statement dresses</p>
         </div>
       </section>
 
@@ -105,13 +47,13 @@ const Products = () => {
             </div>
 
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Materials</h3>
+              <h3 className="mb-4 text-lg font-semibold">Colors</h3>
               <div className="space-y-2">
-                {materials.map((material) => (
-                  <div key={material} className="flex items-center space-x-2">
-                    <Checkbox id={material} />
-                    <Label htmlFor={material} className="cursor-pointer text-sm">
-                      {material}
+                {colors.map((color) => (
+                  <div key={color} className="flex items-center space-x-2">
+                    <Checkbox id={color} />
+                    <Label htmlFor={color} className="cursor-pointer text-sm">
+                      {color}
                     </Label>
                   </div>
                 ))}
@@ -119,10 +61,10 @@ const Products = () => {
             </div>
 
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Price Range</h3>
+              <h3 className="mb-4 text-lg font-semibold">Price Range (USD)</h3>
               <Slider
                 min={0}
-                max={1000}
+                max={700}
                 step={10}
                 value={priceRange}
                 onValueChange={setPriceRange}

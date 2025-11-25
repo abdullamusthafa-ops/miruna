@@ -9,8 +9,8 @@ const Header = () => {
 
   const navigation = [
     { name: "Shop", href: "/products" },
-    { name: "Drops", href: "/products" },
-    { name: "Lookbook", href: "/products" },
+    { name: "Best Sellers", href: "/products" },
+    { name: "New Arrivals", href: "/products" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];

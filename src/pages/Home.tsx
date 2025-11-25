@@ -1,44 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, ShieldCheck, Truck, RefreshCw } from "lucide-react";
+import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductCard from "@/components/ProductCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import TrustBadges from "@/components/TrustBadges";
+import InstagramGallery from "@/components/InstagramGallery";
+import LimitedEditionBanner from "@/components/LimitedEditionBanner";
+import CollectionBanners from "@/components/CollectionBanners";
+import { featuredProducts } from "@/data/products";
 
 const Home = () => {
-  const featuredProducts = [
-    {
-      id: "1",
-      name: "Elegant Pearl Necklace",
-      price: 129.99,
-      originalPrice: 199.99,
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
-      badge: "SALE",
-    },
-    {
-      id: "2",
-      name: "Diamond Stud Earrings",
-      price: 299.99,
-      originalPrice: 499.99,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80",
-      badge: "SALE",
-    },
-    {
-      id: "3",
-      name: "Gold Chain Bracelet",
-      price: 179.99,
-      image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
-    },
-    {
-      id: "4",
-      name: "Silver Ring Set",
-      price: 89.99,
-      originalPrice: 149.99,
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80",
-      badge: "NEW",
-    },
-  ];
 
   const testimonials = [
     {
@@ -64,7 +37,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative h-[80vh] bg-primary">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1920&q=80')] bg-cover bg-center opacity-60" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&q=80')] bg-cover bg-center opacity-70" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block border border-primary-foreground px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-foreground">
@@ -88,49 +61,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="border-b border-border py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="flex items-center space-x-4">
-              <Truck className="h-10 w-10 text-accent" />
-              <div>
-                <h3 className="font-semibold">Fast Shipping</h3>
-                <p className="text-sm text-muted-foreground">Worldwide delivery</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <ShieldCheck className="h-10 w-10 text-accent" />
-              <div>
-                <h3 className="font-semibold">Secure Payment</h3>
-                <p className="text-sm text-muted-foreground">100% protected</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <RefreshCw className="h-10 w-10 text-accent" />
-              <div>
-                <h3 className="font-semibold">Easy Returns</h3>
-                <p className="text-sm text-muted-foreground">30-day guarantee</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Star className="h-10 w-10 text-accent" />
-              <div>
-                <h3 className="font-semibold">Premium Quality</h3>
-                <p className="text-sm text-muted-foreground">Handcrafted excellence</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Trust Badges */}
+      <TrustBadges />
+
+      {/* Limited Edition Banner */}
+      <LimitedEditionBanner />
 
       {/* Featured Products */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Featured Collection</h2>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Limited Collection</h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
-              Discover our carefully curated selection of exquisite jewelry pieces, each designed to make you shine
+              This outfit will do the talking. Made in the UAE, every piece is lovingly stitched with the finest quality.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -146,6 +89,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Collection Banners */}
+      <CollectionBanners />
+
       {/* Brand Story */}
       <section className="bg-muted py-16">
         <div className="container mx-auto px-4">
@@ -153,13 +99,14 @@ const Home = () => {
             <div>
               <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Our Story</h2>
               <p className="mb-4 text-muted-foreground">
-                At Miruna, we believe jewelry is more than just an accessory—it's an expression of your unique style and personality. 
-                Founded with a passion for exceptional craftsmanship, we've dedicated ourselves to creating pieces that combine timeless 
-                elegance with contemporary design.
+                At Miruna, we believe fashion is more than just clothing—it's an expression of your unique personality and confidence. 
+                Founded in the UAE with a passion for bold designs, we've dedicated ourselves to creating statement pieces that empower 
+                women to express themselves fearlessly.
               </p>
               <p className="mb-6 text-muted-foreground">
-                Every piece in our collection is carefully selected and crafted with precision, ensuring that you receive only the highest 
-                quality jewelry. From classic designs to modern statement pieces, we offer something special for every occasion.
+                Every piece in our collection is carefully designed and crafted with premium materials, ensuring that you receive only the 
+                highest quality. From daring dresses to elegant evening wear, we offer something special for every occasion and every woman 
+                who isn't afraid to stand out.
               </p>
               <Button asChild variant="default">
                 <Link to="/about">Learn More About Us</Link>
@@ -167,8 +114,8 @@ const Home = () => {
             </div>
             <div className="relative h-[400px] overflow-hidden rounded-lg">
               <img
-                src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80"
-                alt="Jewelry craftsmanship"
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80"
+                alt="Fashion craftsmanship"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -203,12 +150,15 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Instagram Gallery */}
+      <InstagramGallery />
+
       {/* Newsletter CTA */}
       <section className="bg-primary py-16 text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Stay in Style</h2>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Your cart just got 10% sweeter</h2>
           <p className="mx-auto mb-8 max-w-2xl">
-            Subscribe to our newsletter and get exclusive access to new collections, special offers, and style tips
+            Subscribe to our newsletter and get 10% off your first order plus exclusive access to new collections
           </p>
           <div className="mx-auto flex max-w-md space-x-2">
             <input

@@ -12,8 +12,8 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 text-2xl font-bold tracking-wider">mi·ru·na</h3>
             <p className="text-sm text-muted-foreground">
-              Discover exquisite jewelry and accessories crafted with precision and passion.
-              Elevate your style with timeless elegance.
+              Discover bold fashion and statement pieces crafted with passion and precision.
+              Elevate your style with unapologetic elegance.
             </p>
           </div>
 
