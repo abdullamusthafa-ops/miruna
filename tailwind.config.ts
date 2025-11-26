@@ -58,6 +58,9 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         luxury: {
+          DEFAULT: "hsl(var(--luxury))",
+          light: "hsl(var(--luxury-light))",
+          foreground: "hsl(var(--luxury-foreground))",
           gold: "hsl(var(--luxury-gold))",
           silver: "hsl(var(--luxury-silver))",
         },
