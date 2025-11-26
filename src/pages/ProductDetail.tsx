@@ -8,15 +8,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Star, ShoppingCart, Heart, Truck, ShieldCheck, RefreshCw } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
+import ColorSelector from "@/components/ColorSelector";
+import { Label } from "@/components/ui/label";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { toast } = useToast();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedColor, setSelectedColor] = useState("Black");
+  const [selectedSize, setSelectedSize] = useState("M");
 
   const product = {
-    name: "THE BEST YOU EVER HAD - BLACK",
+    name: "THE BEST YOU EVER HAD",
     price: 435.45,
     originalPrice: 544.32,
     priceDhs: 1599.20,
@@ -26,9 +30,28 @@ const ProductDetail = () => {
     description: "Elevate your wardrobe with this stunning statement piece. Crafted with premium materials and featuring bold design elements, this piece combines luxury with comfort. Perfect for making an unforgettable impression at any event.",
     images: [
       "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80",
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80",
+      "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
+      "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
     ],
+    colors: [
+      {
+        name: "Black",
+        hex: "#000000",
+        images: [
+          "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
+          "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
+        ]
+      },
+      {
+        name: "Pink",
+        hex: "#FFC0CB",
+        images: [
+          "https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800",
+          "https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800",
+        ]
+      }
+    ],
+    sizes: ["XS", "S", "M", "L", "XL"],
     features: [
       "Premium quality materials",
       "Made in UAE with precision",
@@ -63,10 +86,23 @@ const ProductDetail = () => {
     },
   ];
 
+  const handleColorChange = (colorName: string) => {
+    setSelectedColor(colorName);
+    const selectedColorData = product.colors.find(c => c.name === colorName);
+    if (selectedColorData) {
+      setSelectedImage(0);
+    }
+  };
+
+  const getCurrentImages = () => {
+    const colorData = product.colors.find(c => c.name === selectedColor);
+    return colorData?.images || product.images;
+  };
+
   const handleAddToCart = () => {
     toast({
       title: "Added to cart",
-      description: `${quantity} ${product.name} added to your cart`,
+      description: `${quantity} ${product.name} (${selectedColor}, ${selectedSize}) added to your cart`,
     });
   };
 
@@ -91,20 +127,20 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Product Images */}
           <div>
-            <div className="mb-4 aspect-square overflow-hidden rounded-lg bg-muted">
+            <div className="mb-4 aspect-square overflow-hidden rounded-lg bg-muted group">
               <img
-                src={product.images[selectedImage]}
-                alt={product.name}
-                className="h-full w-full object-cover"
+                src={getCurrentImages()[selectedImage]}
+                alt={`${product.name} - ${selectedColor}`}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <div className="grid grid-cols-3 gap-4">
-              {product.images.map((image, index) => (
+              {getCurrentImages().map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-square overflow-hidden rounded-lg border-2 ${
-                    selectedImage === index ? "border-primary" : "border-border"
+                  className={`aspect-square overflow-hidden rounded-lg border-2 transition-all hover:border-primary ${
+                    selectedImage === index ? "border-primary ring-2 ring-primary ring-offset-2" : "border-border"
                   }`}
                 >
                   <img src={image} alt={`${product.name} ${index + 1}`} className="h-full w-full object-cover" />
@@ -145,6 +181,36 @@ const ProductDetail = () => {
             </div>
 
             <p className="mb-6 text-muted-foreground">{product.description}</p>
+
+            {/* Color Selection */}
+            <div className="mb-6">
+              <Label className="mb-3 block font-semibold">Color: {selectedColor}</Label>
+              <ColorSelector 
+                colors={product.colors} 
+                selectedColor={selectedColor} 
+                onColorChange={handleColorChange}
+              />
+            </div>
+
+            {/* Size Selection */}
+            <div className="mb-6">
+              <Label className="mb-3 block font-semibold">Size: {selectedSize}</Label>
+              <div className="flex gap-2">
+                {product.sizes.map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => setSelectedSize(size)}
+                    className={`px-4 py-2 rounded-md border-2 transition-all hover:border-primary ${
+                      selectedSize === size 
+                        ? "border-primary bg-primary text-primary-foreground" 
+                        : "border-border"
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             <div className="mb-6">
               <h3 className="mb-3 font-semibold">Key Features:</h3>

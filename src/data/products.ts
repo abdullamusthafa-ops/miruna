@@ -1,4 +1,25 @@
-export const featuredProducts = [
+export interface ColorVariant {
+  name: string;
+  hex: string;
+  images: string[];
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+  originalPrice?: number;
+  priceDhs: number;
+  originalPriceDhs?: number;
+  image: string;
+  badge?: string;
+  category: string;
+  colors?: ColorVariant[];
+  sizes?: string[];
+  description?: string;
+}
+
+export const featuredProducts: Product[] = [
   {
     id: "morning-after-ex",
     name: "MORNING AFTER EX",
@@ -9,10 +30,19 @@ export const featuredProducts = [
     image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=600",
     badge: "SALE",
     category: "Limited Collection",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#000000",
+        images: ["https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=600"]
+      }
+    ],
+    description: "Make a statement with this bold outfit that speaks for itself. Crafted in the UAE with meticulous attention to detail.",
   },
   {
-    id: "the-best-you-ever-had-black",
-    name: "THE BEST YOU EVER HAD - BLACK",
+    id: "the-best-you-ever-had",
+    name: "THE BEST YOU EVER HAD",
     price: 435.45,
     originalPrice: 544.32,
     priceDhs: 1599.20,
@@ -20,21 +50,24 @@ export const featuredProducts = [
     image: "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=600",
     badge: "SALE",
     category: "Limited Collection",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#000000",
+        images: ["https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=600"]
+      },
+      {
+        name: "Pink",
+        hex: "#FFC0CB",
+        images: ["https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=600"]
+      }
+    ],
+    description: "An unforgettable piece that lives up to its name. Premium fabric with a flattering fit.",
   },
   {
-    id: "the-best-you-ever-had-pink",
-    name: "THE BEST YOU EVER HAD - PINK",
-    price: 435.45,
-    originalPrice: 544.32,
-    priceDhs: 1599.20,
-    originalPriceDhs: 1999,
-    image: "https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=600",
-    badge: "SALE",
-    category: "Limited Collection",
-  },
-  {
-    id: "out-of-his-budget-pink",
-    name: "OUT OF HIS BUDGET - PINK",
+    id: "out-of-his-budget",
+    name: "OUT OF HIS BUDGET",
     price: 272.29,
     originalPrice: 340.37,
     priceDhs: 1000,
@@ -42,6 +75,15 @@ export const featuredProducts = [
     image: "https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=600",
     badge: "SALE",
     category: "Limited Collection",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    colors: [
+      {
+        name: "Pink",
+        hex: "#FFC0CB",
+        images: ["https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=600"]
+      }
+    ],
+    description: "Luxury fashion that makes a bold statement. Worth every penny.",
   },
 ];
 

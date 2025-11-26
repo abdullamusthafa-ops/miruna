@@ -10,6 +10,7 @@ import InstagramGallery from "@/components/InstagramGallery";
 import LimitedEditionBanner from "@/components/LimitedEditionBanner";
 import CollectionBanners from "@/components/CollectionBanners";
 import { featuredProducts } from "@/data/products";
+import QualityBadge from "@/components/QualityBadge";
 const Home = () => {
   const testimonials = [{
     name: "Sarah Johnson",
@@ -62,13 +63,13 @@ const Home = () => {
       {/* Featured Products */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Limited Collection</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              This outfit will do the talking. Made in the UAE, every piece is lovingly stitched with the finest quality.
-            </p>
+          <div className="mb-8">
+            <h2 className="mb-6 text-center text-3xl font-bold tracking-tight md:text-4xl">Limited Collection</h2>
+            <div className="mx-auto max-w-2xl">
+              <QualityBadge />
+            </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {featuredProducts.map(product => <ProductCard key={product.id} {...product} />)}
           </div>
           <div className="mt-12 text-center">

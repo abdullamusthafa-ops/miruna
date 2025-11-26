@@ -30,6 +30,9 @@ All colors MUST be HSL.
     --radius: 0.5rem;
     --luxury-gold: 45 100% 51%;
     --luxury-silver: 0 0% 75%;
+    --luxury: 24 100% 50%;
+    --luxury-light: 38 100% 60%;
+    --luxury-foreground: 0 0% 100%;
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
     --sidebar-background: 0 0% 98%;
