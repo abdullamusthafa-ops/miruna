@@ -7,8 +7,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TrustBadges from "@/components/TrustBadges";
 import InstagramGallery from "@/components/InstagramGallery";
-import LimitedEditionBanner from "@/components/LimitedEditionBanner";
-import CollectionBanners from "@/components/CollectionBanners";
+import CollectionNavigationSection from "@/components/CollectionNavigationSection";
+import BestSellersSection from "@/components/BestSellersSection";
+import OfferSection from "@/components/OfferSection";
+import StorytellingSection from "@/components/StorytellingSection";
 import { featuredProducts } from "@/data/products";
 import QualityBadge from "@/components/QualityBadge";
 const Home = () => {
@@ -29,25 +31,26 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[80vh] bg-primary">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1920&q=80')] bg-cover bg-center opacity-70" />
+      <section className="relative h-[90vh] bg-primary">
+        <div className="absolute inset-0 bg-[url('https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=1920')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
-          <div className="max-w-3xl">
-            <div className="mb-4 inline-block border border-primary-foreground px-4 py-2 text-sm font-semibold uppercase tracking-wider text-primary-foreground">
-              Special Offer
+          <div className="max-w-4xl">
+            <div className="mb-6 inline-block animate-fade-in rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+              New Season Collection
             </div>
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-primary-foreground md:text-7xl">
-              BLACK FRIDAY
+            <h1 className="mb-6 animate-fade-in text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl">
+              This Outfit Will Do<br />The Talking
             </h1>
-            <p className="mb-8 text-2xl font-medium text-primary-foreground md:text-4xl">
-              UP TO 40% OFF
+            <p className="mb-10 animate-fade-in text-xl text-white/90 md:text-2xl">
+              Statement pieces designed to make you unforgettable
             </p>
-            <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-                <Link to="/products" className="text-slate-950 bg-slate-50">Shop Now</Link>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild size="lg" className="min-w-[200px] text-base">
+                <Link to="/products">Explore Collections</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary sm:w-auto">
-                <Link to="/products" className="text-slate-950 shadow-none opacity-100 bg-slate-50">View Collection</Link>
+              <Button asChild size="lg" variant="outline" className="min-w-[200px] border-2 border-white bg-transparent text-base text-white hover:bg-white hover:text-primary">
+                <Link to="/products?filter=sale">Shop Sale</Link>
               </Button>
             </div>
           </div>
@@ -57,10 +60,16 @@ const Home = () => {
       {/* Trust Badges */}
       <TrustBadges />
 
-      {/* Limited Edition Banner */}
-      <LimitedEditionBanner />
+      {/* Collection Navigation */}
+      <CollectionNavigationSection />
 
-      {/* Featured Products */}
+      {/* Best Sellers Section */}
+      <BestSellersSection products={featuredProducts} />
+
+      {/* Offer Section */}
+      <OfferSection />
+
+      {/* Featured Products with Quality Badge */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mb-8">
@@ -80,35 +89,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Collection Banners */}
-      <CollectionBanners />
+      {/* Storytelling Section */}
+      <StorytellingSection />
 
-      {/* Brand Story */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">Our Story</h2>
-              <p className="mb-4 text-muted-foreground">
-                At Miruna, we believe fashion is more than just clothing—it's an expression of your unique personality and confidence. 
-                Founded in the UAE with a passion for bold designs, we've dedicated ourselves to creating statement pieces that empower 
-                women to express themselves fearlessly.
-              </p>
-              <p className="mb-6 text-muted-foreground">
-                Every piece in our collection is carefully designed and crafted with premium materials, ensuring that you receive only the 
-                highest quality. From daring dresses to elegant evening wear, we offer something special for every occasion and every woman 
-                who isn't afraid to stand out.
-              </p>
-              <Button asChild variant="default">
-                <Link to="/about">Learn More About Us</Link>
-              </Button>
-            </div>
-            <div className="relative h-[400px] overflow-hidden rounded-lg">
-              <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80" alt="Fashion craftsmanship" className="h-full w-full object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section className="py-16">
