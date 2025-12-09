@@ -144,22 +144,22 @@ const Header = () => {
                 Dresses
               </NavigationMenuTrigger>
               <NavigationMenuContent className="absolute left-0 top-full w-screen">
-                <div className="w-screen bg-background border-t border-border shadow-2xl">
-                  <div className="container mx-auto py-12 px-8">
-                    <div className="grid grid-cols-4 gap-12">
-                      {/* Menu Sections */}
+                <div className="w-screen bg-background border-t border-border shadow-lg animate-fade-in">
+                  <div className="flex">
+                    {/* Menu Sections - Left Side */}
+                    <div className="flex-1 grid grid-cols-3 gap-8 py-8 px-12">
                       {megaMenuData.dresses.sections.map((section) => (
                         <div key={section.title}>
-                          <h3 className="text-xs font-bold tracking-[0.2em] text-primary mb-6 pb-2 border-b border-border">
+                          <h3 className="text-sm font-bold tracking-wide text-foreground mb-4 italic">
                             {section.title}
                           </h3>
-                          <ul className="space-y-3">
+                          <ul className="space-y-2">
                             {section.items.map((item) => (
                               <li key={item.name}>
                                 <NavigationMenuLink asChild>
                                   <Link
                                     to={item.href}
-                                    className="block text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200 py-1"
+                                    className="block text-sm text-foreground underline decoration-primary decoration-2 underline-offset-2 hover:text-primary transition-colors py-0.5"
                                   >
                                     {item.name}
                                   </Link>
@@ -169,39 +169,36 @@ const Header = () => {
                           </ul>
                         </div>
                       ))}
-                      
-                      {/* Featured Image */}
-                      <div className="relative overflow-hidden rounded-lg group">
-                        <img 
-                          src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop" 
-                          alt="Featured Collection"
-                          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <p className="text-xs tracking-widest mb-1">NEW COLLECTION</p>
-                          <p className="text-lg font-semibold">Spring Essentials</p>
-                          <Link 
-                            to="/products?collection=spring" 
-                            className="inline-block mt-2 text-xs underline underline-offset-4 hover:text-primary transition-colors"
-                          >
-                            Shop Now
-                          </Link>
-                        </div>
-                      </div>
                     </div>
                     
-                    {/* Bottom Bar */}
-                    <div className="mt-10 pt-6 border-t border-border flex items-center justify-between">
-                      <Link 
-                        to="/products?category=dresses" 
-                        className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-2 group"
-                      >
-                        View All Dresses 
-                        <span className="group-hover:translate-x-1 transition-transform">→</span>
-                      </Link>
-                      <p className="text-xs text-muted-foreground">Free shipping on orders over AED 500</p>
+                    {/* Featured Image - Right Side */}
+                    <div className="w-[320px] relative overflow-hidden group">
+                      <img 
+                        src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop" 
+                        alt="Dresses Collection"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+                        <h4 className="text-2xl font-bold tracking-widest mb-2">DRESSES</h4>
+                        <Link 
+                          to="/products?category=dresses" 
+                          className="text-sm font-medium tracking-wider underline underline-offset-4 hover:text-primary transition-colors"
+                        >
+                          SHOP NOW
+                        </Link>
+                      </div>
                     </div>
+                  </div>
+                  
+                  {/* Bottom CTA */}
+                  <div className="border-t border-border">
+                    <Link 
+                      to="/products?category=dresses" 
+                      className="block w-full py-4 text-center text-sm font-medium tracking-wider bg-primary/10 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                    >
+                      SHOP DRESSES
+                    </Link>
                   </div>
                 </div>
               </NavigationMenuContent>
