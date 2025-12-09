@@ -136,46 +136,72 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation with Mega Menu */}
-        <NavigationMenu className="hidden lg:flex">
+        <NavigationMenu className="hidden lg:flex static">
           <NavigationMenuList>
             {/* Dresses Mega Menu */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium">
+            <NavigationMenuItem className="static">
+              <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase">
                 Dresses
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="w-[600px] p-6 bg-background">
-                  <div className="grid grid-cols-3 gap-8">
-                    {megaMenuData.dresses.sections.map((section) => (
-                      <div key={section.title}>
-                        <h3 className="text-xs font-bold tracking-wider text-muted-foreground mb-4">
-                          {section.title}
-                        </h3>
-                        <ul className="space-y-2">
-                          {section.items.map((item) => (
-                            <li key={item.name}>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  to={item.href}
-                                  className="block text-sm hover:text-primary transition-colors py-1"
-                                >
-                                  {item.name}
-                                </Link>
-                              </NavigationMenuLink>
-                            </li>
-                          ))}
-                        </ul>
+              <NavigationMenuContent className="absolute left-0 top-full w-screen">
+                <div className="w-screen bg-background border-t border-border shadow-2xl">
+                  <div className="container mx-auto py-12 px-8">
+                    <div className="grid grid-cols-4 gap-12">
+                      {/* Menu Sections */}
+                      {megaMenuData.dresses.sections.map((section) => (
+                        <div key={section.title}>
+                          <h3 className="text-xs font-bold tracking-[0.2em] text-primary mb-6 pb-2 border-b border-border">
+                            {section.title}
+                          </h3>
+                          <ul className="space-y-3">
+                            {section.items.map((item) => (
+                              <li key={item.name}>
+                                <NavigationMenuLink asChild>
+                                  <Link
+                                    to={item.href}
+                                    className="block text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all duration-200 py-1"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                      
+                      {/* Featured Image */}
+                      <div className="relative overflow-hidden rounded-lg group">
+                        <img 
+                          src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop" 
+                          alt="Featured Collection"
+                          className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute bottom-4 left-4 right-4 text-white">
+                          <p className="text-xs tracking-widest mb-1">NEW COLLECTION</p>
+                          <p className="text-lg font-semibold">Spring Essentials</p>
+                          <Link 
+                            to="/products?collection=spring" 
+                            className="inline-block mt-2 text-xs underline underline-offset-4 hover:text-primary transition-colors"
+                          >
+                            Shop Now
+                          </Link>
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                  {/* View All Link */}
-                  <div className="mt-6 pt-4 border-t border-border">
-                    <Link 
-                      to="/products?category=dresses" 
-                      className="text-sm font-medium text-primary hover:underline"
-                    >
-                      View All Dresses →
-                    </Link>
+                    </div>
+                    
+                    {/* Bottom Bar */}
+                    <div className="mt-10 pt-6 border-t border-border flex items-center justify-between">
+                      <Link 
+                        to="/products?category=dresses" 
+                        className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-2 group"
+                      >
+                        View All Dresses 
+                        <span className="group-hover:translate-x-1 transition-transform">→</span>
+                      </Link>
+                      <p className="text-xs text-muted-foreground">Free shipping on orders over AED 500</p>
+                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
@@ -187,7 +213,7 @@ const Header = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     to={item.href}
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium tracking-wide uppercase transition-colors hover:text-primary"
                   >
                     {item.name}
                   </Link>
