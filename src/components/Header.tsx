@@ -136,16 +136,16 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation with Mega Menu */}
-        <NavigationMenu className="hidden lg:flex static">
+        <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             {/* Dresses Mega Menu */}
-            <NavigationMenuItem className="static">
+            <NavigationMenuItem>
               <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase">
                 Dresses
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="absolute left-0 top-full w-screen">
-                <div className="w-screen bg-background border-t border-border shadow-lg animate-fade-in">
-                  <div className="flex">
+              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(var(--header-height,64px)+41px)] w-screen">
+                <div className="w-full bg-background border-t border-border shadow-lg">
+                  <div className="flex max-w-screen-2xl mx-auto">
                     {/* Menu Sections - Left Side */}
                     <div className="flex-1 grid grid-cols-3 gap-8 py-8 px-12">
                       {megaMenuData.dresses.sections.map((section) => (
@@ -172,7 +172,7 @@ const Header = () => {
                     </div>
                     
                     {/* Featured Image - Right Side */}
-                    <div className="w-[320px] relative overflow-hidden group">
+                    <div className="w-[320px] relative overflow-hidden group flex-shrink-0">
                       <img 
                         src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop" 
                         alt="Dresses Collection"
