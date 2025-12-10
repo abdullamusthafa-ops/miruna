@@ -11,6 +11,8 @@ import CollectionNavigationSection from "@/components/CollectionNavigationSectio
 import BestSellersSection from "@/components/BestSellersSection";
 import OfferSection from "@/components/OfferSection";
 import StorytellingSection from "@/components/StorytellingSection";
+import DropsSection from "@/components/DropsSection";
+import DressesShowcase from "@/components/DressesShowcase";
 import { featuredProducts } from "@/data/products";
 import QualityBadge from "@/components/QualityBadge";
 const Home = () => {
@@ -89,9 +91,14 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Dresses Showcase */}
+      <DressesShowcase />
+
+      {/* Drops Section */}
+      <DropsSection />
+
       {/* Storytelling Section */}
       <StorytellingSection />
-
 
       {/* Testimonials */}
       <section className="py-16">
