@@ -1,32 +1,47 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const collections = [
+const mainCollections = [
   {
-    name: "Limited Collection",
-    description: "Exclusive pieces that won't last long",
+    name: "New In",
+    description: "Fresh arrivals just for you",
     image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=800",
-    link: "/products?category=limited",
+    link: "/products?category=new-in",
     badge: "New Arrivals",
   },
   {
-    name: "Can't Miss Looks",
-    description: "Statement pieces for every occasion",
+    name: "Bestsellers",
+    description: "Our most loved pieces",
     image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
-    link: "/products?category=cant-miss",
+    link: "/products?category=bestsellers",
     badge: "Trending",
   },
+];
+
+const categoryCollections = [
   {
     name: "Dresses",
-    description: "From casual to glamorous",
+    description: "Party, Evening, Bridal & More",
     image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=600",
     link: "/products?category=dresses",
   },
   {
-    name: "Tops & Sets",
-    description: "Versatile pieces for any wardrobe",
+    name: "Clothing",
+    description: "Co-ords, Blazers, Tops & More",
     image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
-    link: "/products?category=tops",
+    link: "/products?category=clothing",
+  },
+  {
+    name: "Drops",
+    description: "Limited edition collections",
+    image: "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
+    link: "/products?category=drops",
+  },
+  {
+    name: "Lookbook",
+    description: "Get inspired by our latest looks",
+    image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
+    link: "/lookbook",
   },
 ];
 
@@ -41,9 +56,9 @@ const CollectionNavigationSection = () => {
           </p>
         </div>
         
-        {/* Main Collections Grid */}
+        {/* Featured Collections - New In & Bestsellers */}
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {collections.slice(0, 2).map((collection) => (
+          {mainCollections.map((collection) => (
             <Link
               key={collection.name}
               to={collection.link}
@@ -74,9 +89,9 @@ const CollectionNavigationSection = () => {
           ))}
         </div>
 
-        {/* Secondary Collections */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {collections.slice(2).map((collection) => (
+        {/* Category Collections - Dresses, Clothing, Drops, Lookbook */}
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+          {categoryCollections.map((collection) => (
             <Link
               key={collection.name}
               to={collection.link}
@@ -90,12 +105,12 @@ const CollectionNavigationSection = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <h3 className="mb-2 text-xl font-bold">{collection.name}</h3>
-                <p className="mb-3 text-sm opacity-90">{collection.description}</p>
-                <div className="flex items-center gap-2 text-sm font-semibold">
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white md:p-6">
+                <h3 className="mb-1 text-lg font-bold md:text-xl">{collection.name}</h3>
+                <p className="mb-2 hidden text-xs opacity-90 sm:block md:text-sm">{collection.description}</p>
+                <div className="flex items-center gap-2 text-xs font-semibold md:text-sm">
                   <span>Explore</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-4 md:w-4" />
                 </div>
               </div>
             </Link>
