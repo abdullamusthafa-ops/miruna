@@ -14,45 +14,56 @@ import StorytellingSection from "@/components/StorytellingSection";
 import DropsSection from "@/components/DropsSection";
 import DressesShowcase from "@/components/DressesShowcase";
 import { featuredProducts } from "@/data/products";
-import QualityBadge from "@/components/QualityBadge";
+
 const Home = () => {
-  const testimonials = [{
-    name: "Sarah Johnson",
-    rating: 5,
-    comment: "Absolutely stunning jewelry! The quality exceeded my expectations. Fast shipping and beautiful packaging."
-  }, {
-    name: "Emily Davis",
-    rating: 5,
-    comment: "I'm in love with my purchase! The craftsmanship is exceptional and it arrived even faster than expected."
-  }, {
-    name: "Michael Chen",
-    rating: 5,
-    comment: "Perfect gift for my wife. She was thrilled! Excellent customer service and premium quality products."
-  }];
-  return <div className="min-h-screen bg-background">
+  const testimonials = [
+    {
+      name: "Sarah J.",
+      rating: 5,
+      comment: "Absolutely stunning! The quality exceeded my expectations.",
+    },
+    {
+      name: "Emily D.",
+      rating: 5,
+      comment: "In love with my purchase! Arrived faster than expected.",
+    },
+    {
+      name: "Mira K.",
+      rating: 5,
+      comment: "Perfect gift. She was thrilled! Premium quality.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[90vh] bg-primary">
+      <section className="relative h-[85vh] md:h-[90vh]">
         <div className="absolute inset-0 bg-[url('https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=1920')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
-          <div className="max-w-4xl">
-            <div className="mb-6 inline-block animate-fade-in rounded-full border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-              New Season Collection
-            </div>
-            <h1 className="mb-6 animate-fade-in text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl">
-              This Outfit Will Do<br />The Talking
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-white/80">
+              New Season
+            </p>
+            <h1 className="mb-6 text-4xl font-light tracking-tight text-white md:text-6xl lg:text-7xl">
+              This Outfit Will<br />Do The Talking
             </h1>
-            <p className="mb-10 animate-fade-in text-xl text-white/90 md:text-2xl">
+            <p className="mb-8 text-base text-white/80 md:text-lg">
               Statement pieces designed to make you unforgettable
             </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="min-w-[200px] text-base">
-                <Link to="/products">Explore Collections</Link>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild size="lg" className="min-w-[160px]">
+                <Link to="/products">Shop Now</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="min-w-[200px] border-2 border-white bg-transparent text-base text-white hover:bg-white hover:text-primary">
-                <Link to="/products?filter=sale">Shop Sale</Link>
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline" 
+                className="min-w-[160px] border-white/50 bg-transparent text-white hover:bg-white hover:text-foreground"
+              >
+                <Link to="/products?filter=sale">View Sale</Link>
               </Button>
             </div>
           </div>
@@ -68,57 +79,58 @@ const Home = () => {
       {/* Best Sellers Section */}
       <BestSellersSection products={featuredProducts} />
 
-      {/* Offer Section */}
-      <OfferSection />
-
-      {/* Featured Products with Quality Badge */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8">
-            <h2 className="mb-6 text-center text-3xl font-bold tracking-tight md:text-4xl">Limited Collection</h2>
-            <div className="mx-auto max-w-2xl">
-              <QualityBadge />
-            </div>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featuredProducts.map(product => <ProductCard key={product.id} {...product} />)}
-          </div>
-          <div className="mt-12 text-center">
-            <Button asChild size="lg">
-              <Link to="/products">View All Products</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Dresses Showcase */}
       <DressesShowcase />
 
       {/* Drops Section */}
       <DropsSection />
 
+      {/* Offer Section */}
+      <OfferSection />
+
+      {/* Featured Products */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Limited Collection</h2>
+            <Link 
+              to="/products" 
+              className="text-sm font-medium underline-offset-4 hover:underline"
+            >
+              View All
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} {...product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Storytelling Section */}
       <StorytellingSection />
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">What Our Customers Say</h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              Join thousands of satisfied customers who trust Miruna for their jewelry needs
-            </p>
+          <div className="mb-8 text-center">
+            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">What Our Customers Say</h2>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial, index) => <Card key={index}>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="border-0 bg-secondary">
                 <CardContent className="p-6">
-                  <div className="mb-4 flex">
-                    {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="h-5 w-5 fill-warning text-warning" />)}
+                  <div className="mb-3 flex">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-foreground text-foreground" />
+                    ))}
                   </div>
-                  <p className="mb-4 text-muted-foreground">{testimonial.comment}</p>
-                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="mb-3 text-sm text-muted-foreground">{testimonial.comment}</p>
+                  <p className="text-sm font-medium">{testimonial.name}</p>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -127,15 +139,19 @@ const Home = () => {
       <InstagramGallery />
 
       {/* Newsletter CTA */}
-      <section className="bg-primary py-16 text-primary-foreground">
+      <section className="bg-foreground py-12 text-background md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">Your cart just got 10% sweeter</h2>
-          <p className="mx-auto mb-8 max-w-2xl">
-            Subscribe to our newsletter and get 10% off your first order plus exclusive access to new collections
+          <h2 className="mb-3 text-2xl font-semibold tracking-tight md:text-3xl">Get 10% Off</h2>
+          <p className="mx-auto mb-6 max-w-md text-sm text-background/70">
+            Subscribe for exclusive access to new collections and special offers
           </p>
-          <div className="mx-auto flex max-w-md space-x-2">
-            <input type="email" placeholder="Enter your email" className="flex-1 rounded-md border-0 px-4 py-3 text-foreground" />
-            <Button variant="secondary" size="lg">
+          <div className="mx-auto flex max-w-sm gap-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 rounded-none border-0 bg-background/10 px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none focus:ring-1 focus:ring-background/30"
+            />
+            <Button variant="secondary" className="rounded-none">
               Subscribe
             </Button>
           </div>
@@ -143,6 +159,8 @@ const Home = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Home;
