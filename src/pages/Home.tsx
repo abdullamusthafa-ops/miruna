@@ -13,6 +13,7 @@ import OfferSection from "@/components/OfferSection";
 import StorytellingSection from "@/components/StorytellingSection";
 import DropsSection from "@/components/DropsSection";
 import DressesShowcase from "@/components/DressesShowcase";
+import VideoSection from "@/components/VideoSection";
 import { featuredProducts } from "@/data/products";
 
 const Home = () => {
@@ -157,6 +158,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Brand Video */}
+      <VideoSection />
 
       <Footer />
     </div>
