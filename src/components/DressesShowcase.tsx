@@ -45,15 +45,7 @@ const DressesShowcase = () => {
             {/* Right - Navigation Links */}
             <div className="space-y-5 p-6 lg:p-8">
               {/* Header */}
-              <div className="flex items-center justify-between">
-                <h2 className="font-serif text-xl tracking-wide">Dresses</h2>
-                <Button asChild variant="outline" size="sm" className="group">
-                  <Link to="/products?category=dresses">
-                    Shop All Dresses
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                </Button>
-              </div>
+              <h2 className="font-serif text-xl tracking-wide">Dresses</h2>
 
               {/* By Occasion */}
               <div>
@@ -112,6 +104,14 @@ const DressesShowcase = () => {
                   ))}
                 </div>
               </div>
+
+              {/* CTA */}
+              <Button asChild variant="outline" size="sm" className="group mt-2">
+                <Link to="/products?category=dresses">
+                  Shop All Dresses
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
