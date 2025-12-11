@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingCart, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
-import ColorSelector from "./ColorSelector";
 import type { ColorVariant } from "@/data/products";
 
 interface ProductCardProps {
@@ -17,24 +15,14 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, name, price, image, originalPrice, badge, colors }: ProductCardProps) => {
-  const [selectedColor, setSelectedColor] = useState(colors?.[0]?.name || "");
-  const [currentImage, setCurrentImage] = useState(image);
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
-
-  const handleColorChange = (colorName: string) => {
-    setSelectedColor(colorName);
-    const selectedColorData = colors?.find(c => c.name === colorName);
-    if (selectedColorData?.images[0]) {
-      setCurrentImage(selectedColorData.images[0]);
-    }
-  };
 
   return (
     <Card className="group overflow-hidden border-border transition-all hover:shadow-lg hover:-translate-y-1">
       <div className="relative aspect-square overflow-hidden bg-muted">
         <Link to={`/product/${id}`}>
           <img
-            src={currentImage}
+            src={image}
             alt={name}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
@@ -77,13 +65,15 @@ const ProductCard = ({ id, name, price, image, originalPrice, badge, colors }: P
         </Link>
         
         {colors && colors.length > 0 && (
-          <div className="mb-3">
-            <ColorSelector 
-              colors={colors} 
-              selectedColor={selectedColor} 
-              onColorChange={handleColorChange}
-              size="sm"
-            />
+          <div className="mb-3 flex items-center gap-1.5">
+            {colors.map((color) => (
+              <div
+                key={color.name}
+                className="h-4 w-4 rounded-full border border-border"
+                style={{ backgroundColor: color.hex }}
+                title={color.name}
+              />
+            ))}
           </div>
         )}
         
