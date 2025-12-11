@@ -112,6 +112,9 @@ const Home = () => {
       {/* Storytelling Section */}
       <StorytellingSection />
 
+      {/* Brand Video */}
+      <VideoSection />
+
       {/* Testimonials */}
       <section className="border-t border-border py-12 md:py-16">
         <div className="container mx-auto px-4">
@@ -158,9 +161,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Brand Video */}
-      <VideoSection />
 
       <Footer />
     </div>
