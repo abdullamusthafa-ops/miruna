@@ -13,7 +13,6 @@ import OfferSection from "@/components/OfferSection";
 import StorytellingSection from "@/components/StorytellingSection";
 import DropsSection from "@/components/DropsSection";
 import DressesShowcase from "@/components/DressesShowcase";
-import ClothingShowcase from "@/components/ClothingShowcase";
 import VideoSection from "@/components/VideoSection";
 import { featuredProducts } from "@/data/products";
 
@@ -82,9 +81,6 @@ const Home = () => {
       <BestSellersSection products={featuredProducts} />
 
       <DressesShowcase />
-
-      {/* Clothing Showcase */}
-      <ClothingShowcase />
 
       {/* Drops Section */}
       <DropsSection />
