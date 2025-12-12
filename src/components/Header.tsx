@@ -60,6 +60,7 @@ const megaMenuData = {
       { name: "Co-ords", href: "/products?category=coords" },
       { name: "Blazers", href: "/products?category=blazers" },
       { name: "Tops / Bodysuits", href: "/products?category=tops" },
+      { name: "Corsets", href: "/products?category=corsets" },
       { name: "Bottoms / Skirts", href: "/products?category=bottoms" },
       { name: "Jumpsuits", href: "/products?category=jumpsuits" },
     ],
