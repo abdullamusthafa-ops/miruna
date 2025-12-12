@@ -85,21 +85,23 @@ const DressesShowcase = () => {
 
               {/* By Colour */}
               <div>
-                <h3 className="mb-2 text-[10px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
+                <h3 className="mb-3 text-[10px] font-medium uppercase tracking-[0.15em] text-muted-foreground">
                   By Colour
                 </h3>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="grid grid-cols-3 gap-2 sm:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5">
                   {colors.map((item) => (
                     <Link
                       key={item.name}
                       to={`/products?color=${item.name.toLowerCase()}`}
-                      className="group flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] transition-colors hover:border-foreground"
+                      className="group flex flex-col items-center gap-1.5 rounded-lg border border-transparent p-2 transition-all hover:border-border hover:bg-background/80"
                     >
                       <span
-                        className="h-2.5 w-2.5 rounded-full border border-border/40"
+                        className="h-8 w-8 rounded-full shadow-sm ring-1 ring-border/30 transition-transform group-hover:scale-110"
                         style={{ backgroundColor: item.hex }}
                       />
-                      <span>{item.name}</span>
+                      <span className="text-[10px] font-medium text-muted-foreground transition-colors group-hover:text-foreground">
+                        {item.name}
+                      </span>
                     </Link>
                   ))}
                 </div>
