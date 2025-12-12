@@ -57,12 +57,12 @@ const megaMenuData = {
   },
   clothing: {
     items: [
-      { name: "Co-ords", href: "/products?category=coords" },
-      { name: "Blazers", href: "/products?category=blazers" },
-      { name: "Tops / Bodysuits", href: "/products?category=tops" },
-      { name: "Corsets", href: "/products?category=corsets" },
-      { name: "Bottoms / Skirts", href: "/products?category=bottoms" },
-      { name: "Jumpsuits", href: "/products?category=jumpsuits" },
+      { name: "Co-ords", href: "/collection/co-ords" },
+      { name: "Blazers", href: "/collection/blazers" },
+      { name: "Tops / Bodysuits", href: "/collection/tops-bodysuits" },
+      { name: "Corsets", href: "/collection/corsets" },
+      { name: "Bottoms / Skirts", href: "/collection/bottoms-skirts" },
+      { name: "Jumpsuits", href: "/collection/jumpsuits" },
     ],
   },
 
