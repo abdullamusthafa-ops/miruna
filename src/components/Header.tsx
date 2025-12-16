@@ -209,69 +209,28 @@ const Header = () => {
 
         {/* Desktop Navigation with Mega Menu */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="gap-0">
-            {/* SHOP Menu */}
+          <NavigationMenuList className="gap-1">
+            {/* DRESSES Menu - First since it's the main category */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase px-3">
-                Shop
-              </NavigationMenuTrigger>
-              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50">
-                <div className="w-full bg-background border-t border-border shadow-xl">
-                  <div className="max-w-screen-xl mx-auto py-10 px-12">
-                    <div className="flex gap-20">
-                      {/* Links */}
-                      <div className="space-y-4">
-                        {megaMenuData.shop.items.map((item) => (
-                          <NavigationMenuLink asChild key={item.name}>
-                            <Link
-                              to={item.href}
-                              className="block text-sm tracking-wide hover:text-primary transition-colors hover:underline underline-offset-4"
-                            >
-                              {item.name}
-                            </Link>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                      {/* Featured Image */}
-                      <div className="flex-1 flex justify-end">
-                        <div className="w-[280px] h-[180px] relative overflow-hidden group">
-                          <img
-                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=300&fit=crop"
-                            alt="New Collection"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                            <span className="text-white text-sm font-medium tracking-widest">NEW ARRIVALS</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* DRESSES Menu */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase px-3">
+              <NavigationMenuTrigger className="bg-transparent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 hover:text-primary transition-colors">
                 Dresses
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50">
-                <div className="w-full bg-background border-t border-border shadow-xl">
-                  <div className="max-w-screen-xl mx-auto py-10 px-12">
-                    <div className="flex gap-16">
+              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                  <div className="max-w-screen-xl mx-auto py-8 px-8">
+                    <div className="grid grid-cols-5 gap-8">
                       {/* Sections */}
                       {megaMenuData.dresses.sections.map((section) => (
                         <div key={section.title} className="space-y-4">
-                          <h3 className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+                          <h3 className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary border-b border-primary/20 pb-2">
                             {section.title}
                           </h3>
-                          <div className="space-y-3">
+                          <div className="space-y-2.5">
                             {section.items.map((item) => (
                               <NavigationMenuLink asChild key={item.name}>
                                 <Link
                                   to={item.href}
-                                  className="block text-sm tracking-wide hover:text-primary transition-colors hover:underline underline-offset-4"
+                                  className="block text-sm font-light tracking-wide text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200"
                                 >
                                   {item.name}
                                 </Link>
@@ -281,17 +240,18 @@ const Header = () => {
                         </div>
                       ))}
                       {/* Featured Image */}
-                      <div className="flex-1 flex justify-end">
-                        <div className="w-[280px] h-[280px] relative overflow-hidden group">
+                      <div className="flex justify-end">
+                        <Link to="/collection/party" className="block w-[220px] h-[280px] relative overflow-hidden group">
                           <img
-                            src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop"
+                            src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop"
                             alt="Dresses Collection"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           />
-                          <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                            <span className="text-white text-sm font-medium tracking-widest">SHOP DRESSES</span>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <span className="text-white text-[10px] font-semibold tracking-[0.3em] uppercase">Shop Dresses</span>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -301,38 +261,50 @@ const Header = () => {
 
             {/* CLOTHING Menu */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase px-3">
+              <NavigationMenuTrigger className="bg-transparent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 hover:text-primary transition-colors">
                 Clothing
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50">
-                <div className="w-full bg-background border-t border-border shadow-xl">
-                  <div className="max-w-screen-xl mx-auto py-10 px-12">
-                    <div className="flex gap-20">
-                      {/* Links */}
-                      <div className="space-y-4">
+              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                  <div className="max-w-screen-xl mx-auto py-8 px-8">
+                    <div className="flex gap-16">
+                      {/* Links in 2 columns */}
+                      <div className="grid grid-cols-2 gap-x-12 gap-y-3">
                         {megaMenuData.clothing.items.map((item) => (
                           <NavigationMenuLink asChild key={item.name}>
                             <Link
                               to={item.href}
-                              className="block text-sm tracking-wide hover:text-primary transition-colors hover:underline underline-offset-4"
+                              className="text-sm font-light tracking-wide text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200 whitespace-nowrap"
                             >
                               {item.name}
                             </Link>
                           </NavigationMenuLink>
                         ))}
                       </div>
-                      {/* Featured Image */}
-                      <div className="flex-1 flex justify-end">
-                        <div className="w-[280px] h-[180px] relative overflow-hidden group">
+                      {/* Featured Images */}
+                      <div className="flex-1 flex justify-end gap-4">
+                        <Link to="/collection/co-ords" className="block w-[180px] h-[220px] relative overflow-hidden group">
                           <img
-                            src="https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=300&fit=crop"
-                            alt="Clothing Collection"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=400"
+                            alt="Co-ords"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           />
-                          <div className="absolute inset-0 bg-black/30 flex items-end p-4">
-                            <span className="text-white text-sm font-medium tracking-widest">SHOP CLOTHING</span>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-3">
+                            <span className="text-white text-[9px] font-semibold tracking-[0.25em] uppercase">Co-ords</span>
                           </div>
-                        </div>
+                        </Link>
+                        <Link to="/collection/blazers" className="block w-[180px] h-[220px] relative overflow-hidden group">
+                          <img
+                            src="https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=400"
+                            alt="Blazers"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-3">
+                            <span className="text-white text-[9px] font-semibold tracking-[0.25em] uppercase">Blazers</span>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -342,42 +314,94 @@ const Header = () => {
 
             {/* DROPS Menu */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-sm font-medium tracking-wide uppercase px-3">
+              <NavigationMenuTrigger className="bg-transparent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 hover:text-primary transition-colors">
                 Drops
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50">
-                <div className="w-full bg-background border-t border-border shadow-xl">
-                  <div className="max-w-screen-xl mx-auto py-10 px-12">
-                    <div className="flex gap-20">
+              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                  <div className="max-w-screen-xl mx-auto py-8 px-8">
+                    <div className="flex gap-16">
                       {/* Links */}
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         {megaMenuData.drops.items.map((item) => (
                           <NavigationMenuLink asChild key={item.name}>
                             <Link
                               to={item.href}
-                              className="block text-sm tracking-wide hover:text-primary transition-colors hover:underline underline-offset-4"
+                              className="block text-sm font-light tracking-wide text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200"
                             >
                               {item.name}
                             </Link>
                           </NavigationMenuLink>
                         ))}
                       </div>
-                      {/* Featured Images */}
-                      <div className="flex-1 flex justify-end gap-4">
-                        <div className="w-[180px] h-[180px] relative overflow-hidden group">
+                      {/* Featured Images Grid */}
+                      <div className="flex-1 flex justify-end gap-3">
+                        {megaMenuData.drops.items.slice(0, 4).map((item, index) => (
+                          <Link 
+                            key={item.name}
+                            to={item.href} 
+                            className="block w-[140px] h-[180px] relative overflow-hidden group"
+                          >
+                            <img
+                              src={[
+                                "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=300&h=400&fit=crop",
+                                "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=400&fit=crop",
+                                "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=300&h=400&fit=crop",
+                                "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=400&fit=crop",
+                              ][index]}
+                              alt={item.name}
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                            <div className="absolute bottom-0 left-0 right-0 p-2.5">
+                              <span className="text-white text-[8px] font-semibold tracking-[0.2em] uppercase leading-tight block">
+                                {item.name}
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            {/* SHOP Menu */}
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="bg-transparent text-xs font-semibold tracking-[0.2em] uppercase px-4 py-2 hover:text-primary transition-colors">
+                Shop
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
+                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                  <div className="max-w-screen-xl mx-auto py-8 px-8">
+                    <div className="flex gap-16">
+                      {/* Links */}
+                      <div className="space-y-3">
+                        {megaMenuData.shop.items.map((item) => (
+                          <NavigationMenuLink asChild key={item.name}>
+                            <Link
+                              to={item.href}
+                              className="block text-sm font-light tracking-wide text-foreground/80 hover:text-primary hover:translate-x-1 transition-all duration-200"
+                            >
+                              {item.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        ))}
+                      </div>
+                      {/* Featured Image */}
+                      <div className="flex-1 flex justify-end">
+                        <Link to="/collection/new-in" className="block w-[320px] h-[200px] relative overflow-hidden group">
                           <img
-                            src="https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=300&h=300&fit=crop"
-                            alt="Drops Collection"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&h=400&fit=crop"
+                            alt="New Collection"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                           />
-                        </div>
-                        <div className="w-[180px] h-[180px] relative overflow-hidden group">
-                          <img
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop"
-                            alt="Featured Drop"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        </div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <span className="text-white text-[10px] font-semibold tracking-[0.3em] uppercase">New Arrivals</span>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -390,7 +414,7 @@ const Header = () => {
               <NavigationMenuLink asChild>
                 <Link
                   to="/lookbook"
-                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium tracking-wide uppercase transition-colors hover:text-primary"
+                  className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-xs font-semibold tracking-[0.2em] uppercase transition-colors hover:text-primary"
                 >
                   Lookbook
                 </Link>
