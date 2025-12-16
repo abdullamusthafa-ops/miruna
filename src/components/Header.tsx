@@ -216,7 +216,7 @@ const Header = () => {
                 Dresses
               </NavigationMenuTrigger>
               <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                <div className="w-full bg-background border-t border-border shadow-2xl">
                   <div className="max-w-screen-xl mx-auto py-8 px-8">
                     <div className="grid grid-cols-5 gap-8">
                       {/* Sections */}
@@ -265,7 +265,7 @@ const Header = () => {
                 Clothing
               </NavigationMenuTrigger>
               <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                <div className="w-full bg-background border-t border-border shadow-2xl">
                   <div className="max-w-screen-xl mx-auto py-8 px-8">
                     <div className="flex gap-16">
                       {/* Links in 2 columns */}
@@ -318,7 +318,7 @@ const Header = () => {
                 Drops
               </NavigationMenuTrigger>
               <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                <div className="w-full bg-background border-t border-border shadow-2xl">
                   <div className="max-w-screen-xl mx-auto py-8 px-8">
                     <div className="flex gap-16">
                       {/* Links */}
@@ -373,7 +373,7 @@ const Header = () => {
                 Shop
               </NavigationMenuTrigger>
               <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                <div className="w-full bg-background/98 backdrop-blur-sm border-t border-border/50 shadow-2xl">
+                <div className="w-full bg-background border-t border-border shadow-2xl">
                   <div className="max-w-screen-xl mx-auto py-8 px-8">
                     <div className="flex gap-16">
                       {/* Links */}
