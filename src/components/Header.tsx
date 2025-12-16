@@ -266,10 +266,10 @@ const Header = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent className="fixed left-0 right-0 top-[calc(64px+41px)] w-screen z-50 animate-in fade-in-0 slide-in-from-top-2 duration-200">
                 <div className="w-full bg-background border-t border-border shadow-2xl">
-                  <div className="max-w-screen-xl mx-auto py-8 px-8">
-                    <div className="flex gap-16">
+                  <div className="max-w-screen-xl mx-auto py-6 px-8">
+                    <div className="flex items-start gap-12">
                       {/* Links in 2 columns */}
-                      <div className="grid grid-cols-2 gap-x-12 gap-y-3">
+                      <div className="grid grid-cols-2 gap-x-10 gap-y-2.5">
                         {megaMenuData.clothing.items.map((item) => (
                           <NavigationMenuLink asChild key={item.name}>
                             <Link
@@ -282,8 +282,8 @@ const Header = () => {
                         ))}
                       </div>
                       {/* Featured Images */}
-                      <div className="flex-1 flex justify-end gap-4">
-                        <Link to="/collection/co-ords" className="block w-[180px] h-[220px] relative overflow-hidden group">
+                      <div className="flex gap-3">
+                        <Link to="/collection/co-ords" className="block w-[150px] h-[180px] relative overflow-hidden group">
                           <img
                             src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=400"
                             alt="Co-ords"
@@ -294,7 +294,7 @@ const Header = () => {
                             <span className="text-white text-[9px] font-semibold tracking-[0.25em] uppercase">Co-ords</span>
                           </div>
                         </Link>
-                        <Link to="/collection/blazers" className="block w-[180px] h-[220px] relative overflow-hidden group">
+                        <Link to="/collection/blazers" className="block w-[150px] h-[180px] relative overflow-hidden group">
                           <img
                             src="https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=400"
                             alt="Blazers"
