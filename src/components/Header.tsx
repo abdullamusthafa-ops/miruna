@@ -13,44 +13,46 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const megaMenuData = {
-  shop: {
-    items: [
-      { name: "New In", href: "/products?filter=new" },
-      { name: "Bestsellers", href: "/products?filter=bestseller" },
-      { name: "Shop All", href: "/products" },
-    ],
-  },
   dresses: {
     sections: [
       {
-        title: "By Occasion",
+        title: "By Length",
         items: [
-          { name: "Party", href: "/products?occasion=party" },
-          { name: "Evening", href: "/products?occasion=evening" },
-          { name: "Day / Brunch", href: "/products?occasion=day" },
-          { name: "Bridal", href: "/products?occasion=bridal" },
+          { name: "Mini", href: "/collection/mini" },
+          { name: "Midi", href: "/collection/midi" },
+          { name: "Maxi", href: "/collection/maxi" },
         ],
       },
       {
-        title: "By Length",
+        title: "By Occasion",
         items: [
-          { name: "Mini", href: "/products?length=mini" },
-          { name: "Midi", href: "/products?length=midi" },
-          { name: "Maxi", href: "/products?length=maxi" },
+          { name: "Party", href: "/collection/party" },
+          { name: "Brunch", href: "/collection/brunch" },
+          { name: "Bridal", href: "/collection/bridal" },
+          { name: "Birthday", href: "/collection/birthday" },
+          { name: "Prom", href: "/collection/prom" },
+        ],
+      },
+      {
+        title: "By Style",
+        items: [
+          { name: "Evening", href: "/collection/evening" },
+          { name: "Formal", href: "/collection/formal" },
+          { name: "Night Out", href: "/collection/night-out" },
         ],
       },
       {
         title: "By Colour",
         items: [
-          { name: "Red", href: "/products?color=red" },
-          { name: "Brown", href: "/products?color=brown" },
-          { name: "Pink", href: "/products?color=pink" },
-          { name: "Yellow", href: "/products?color=yellow" },
-          { name: "Blue", href: "/products?color=blue" },
-          { name: "White", href: "/products?color=white" },
-          { name: "Black", href: "/products?color=black" },
-          { name: "Gold", href: "/products?color=gold" },
-          { name: "Silver", href: "/products?color=silver" },
+          { name: "Red", href: "/collection/red" },
+          { name: "Brown", href: "/collection/brown" },
+          { name: "Pink", href: "/collection/pink" },
+          { name: "Yellow", href: "/collection/yellow" },
+          { name: "Blue", href: "/collection/blue" },
+          { name: "White", href: "/collection/white" },
+          { name: "Black", href: "/collection/black" },
+          { name: "Gold", href: "/collection/gold" },
+          { name: "Silver", href: "/collection/silver" },
         ],
       },
     ],
@@ -65,13 +67,19 @@ const megaMenuData = {
       { name: "Jumpsuits", href: "/collection/jumpsuits" },
     ],
   },
-
   drops: {
     items: [
-      { name: "Too Good To Lose", href: "/products?collection=too-good-to-lose" },
-      { name: "My Mom Said No", href: "/products?collection=my-mom-said-no" },
-      { name: "I Woke Up Like This", href: "/products?collection=i-woke-up-like-this" },
-      { name: "Fluff Stuff", href: "/products?collection=fluff-stuff" },
+      { name: "Too Good To Lose", href: "/collection/too-good-to-lose" },
+      { name: "My Mom Said No", href: "/collection/my-mom-said-no" },
+      { name: "I Woke Up Like This", href: "/collection/i-woke-up-like-this" },
+      { name: "Fluff Stuff", href: "/collection/fluff-stuff" },
+    ],
+  },
+  shop: {
+    items: [
+      { name: "New In", href: "/collection/new-in" },
+      { name: "Bestsellers", href: "/collection/bestsellers" },
+      { name: "Shop All", href: "/products" },
     ],
   },
 };
