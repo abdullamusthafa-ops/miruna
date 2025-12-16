@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import { allProducts } from "@/data/products";
 
 const collectionInfo: Record<string, { title: string; description: string; image: string }> = {
+  // Clothing
   "co-ords": {
     title: "Co-ords",
     description: "Perfectly matched sets for effortless style",
@@ -34,6 +35,142 @@ const collectionInfo: Record<string, { title: string; description: string; image
     title: "Corsets",
     description: "Sculpted silhouettes with timeless appeal",
     image: "https://miruna.io/cdn/shop/files/D0006652_1.webp?v=1761809640&width=1200",
+  },
+  // Dresses by Length
+  "mini": {
+    title: "Mini Dresses",
+    description: "Short and sweet for making a statement",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&h=800&fit=crop",
+  },
+  "midi": {
+    title: "Midi Dresses",
+    description: "Timeless elegance in the perfect length",
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=1200&h=800&fit=crop",
+  },
+  "maxi": {
+    title: "Maxi Dresses",
+    description: "Floor-sweeping glamour for every occasion",
+    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=1200&h=800&fit=crop",
+  },
+  // Dresses by Occasion
+  "party": {
+    title: "Party Dresses",
+    description: "Turn heads at every celebration",
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=1200&h=800&fit=crop",
+  },
+  "brunch": {
+    title: "Brunch Dresses",
+    description: "Effortlessly chic for daytime occasions",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&h=800&fit=crop",
+  },
+  "bridal": {
+    title: "Bridal Dresses",
+    description: "Romantic pieces for your special day",
+    image: "https://images.unsplash.com/photo-1594552072238-b8a33785b261?w=1200&h=800&fit=crop",
+  },
+  "birthday": {
+    title: "Birthday Dresses",
+    description: "Make your day extra special",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&h=800&fit=crop",
+  },
+  "prom": {
+    title: "Prom Dresses",
+    description: "Unforgettable looks for your big night",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=800&fit=crop",
+  },
+  // Dresses by Style
+  "evening": {
+    title: "Evening Dresses",
+    description: "Sophisticated glamour for after dark",
+    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=1200&h=800&fit=crop",
+  },
+  "formal": {
+    title: "Formal Dresses",
+    description: "Elegant pieces for refined occasions",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&h=800&fit=crop",
+  },
+  "night-out": {
+    title: "Night Out Dresses",
+    description: "Bold looks for unforgettable evenings",
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=1200&h=800&fit=crop",
+  },
+  // Dresses by Colour
+  "red": {
+    title: "Red Dresses",
+    description: "Bold and passionate in every shade",
+    image: "https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?w=1200&h=800&fit=crop",
+  },
+  "brown": {
+    title: "Brown Dresses",
+    description: "Earthy tones for natural elegance",
+    image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=1200&h=800&fit=crop",
+  },
+  "pink": {
+    title: "Pink Dresses",
+    description: "Romantic hues for feminine charm",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&h=800&fit=crop",
+  },
+  "yellow": {
+    title: "Yellow Dresses",
+    description: "Sunny shades to brighten any moment",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&h=800&fit=crop",
+  },
+  "blue": {
+    title: "Blue Dresses",
+    description: "From sky to navy, timeless blues",
+    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=1200&h=800&fit=crop",
+  },
+  "white": {
+    title: "White Dresses",
+    description: "Pure and pristine elegance",
+    image: "https://images.unsplash.com/photo-1594552072238-b8a33785b261?w=1200&h=800&fit=crop",
+  },
+  "black": {
+    title: "Black Dresses",
+    description: "Classic sophistication never fades",
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=1200&h=800&fit=crop",
+  },
+  "gold": {
+    title: "Gold Dresses",
+    description: "Luxurious shimmer for special nights",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=800&fit=crop",
+  },
+  "silver": {
+    title: "Silver Dresses",
+    description: "Metallic magic for standout style",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&h=800&fit=crop",
+  },
+  // Drops
+  "too-good-to-lose": {
+    title: "Too Good To Lose",
+    description: "Must-have pieces you can't miss",
+    image: "https://images.unsplash.com/photo-1518577915332-c2a19f149a75?w=1200&h=800&fit=crop",
+  },
+  "my-mom-said-no": {
+    title: "My Mom Said No",
+    description: "Daring pieces that push boundaries",
+    image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=1200&h=800&fit=crop",
+  },
+  "i-woke-up-like-this": {
+    title: "I Woke Up Like This",
+    description: "Effortless beauty, naturally stunning",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&h=800&fit=crop",
+  },
+  "fluff-stuff": {
+    title: "Fluff Stuff",
+    description: "Playful textures and fun details",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200&h=800&fit=crop",
+  },
+  // Shop
+  "new-in": {
+    title: "New In",
+    description: "Fresh arrivals just landed",
+    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=800&fit=crop",
+  },
+  "bestsellers": {
+    title: "Bestsellers",
+    description: "Our most loved pieces",
+    image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1200&h=800&fit=crop",
   },
 };
 
