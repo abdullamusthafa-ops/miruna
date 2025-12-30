@@ -11,13 +11,17 @@ const megaMenuData = {
       { name: "Best Sellers", href: "/collection/bestsellers" },
       { name: "Shop All", href: "/products" },
     ],
+    featured: [
+      { name: "New Arrivals", href: "/collection/new-in", image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=500&fit=crop" },
+      { name: "Best Sellers", href: "/collection/bestsellers", image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&h=500&fit=crop" },
+    ],
   },
   drops: {
     items: [
-      { name: "Too Good To Lose", href: "/collection/too-good-to-lose" },
-      { name: "My Mom Said No", href: "/collection/my-mom-said-no" },
-      { name: "I Woke Up Like This", href: "/collection/i-woke-up-like-this" },
-      { name: "Fluff Stuff", href: "/collection/fluff-stuff" },
+      { name: "Too Good To Lose", href: "/collection/too-good-to-lose", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&h=500&fit=crop" },
+      { name: "My Mom Said No", href: "/collection/my-mom-said-no", image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&h=500&fit=crop" },
+      { name: "I Woke Up Like This", href: "/collection/i-woke-up-like-this", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop" },
+      { name: "Fluff Stuff", href: "/collection/fluff-stuff", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=500&fit=crop" },
     ],
   },
   dresses: {
@@ -67,6 +71,7 @@ const megaMenuData = {
         ],
       },
     ],
+    featured: { name: "Shop All Dresses", href: "/collection/dresses", image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop" },
   },
   clothing: {
     items: [
@@ -75,6 +80,10 @@ const megaMenuData = {
       { name: "Tops / Bodysuits", href: "/collection/tops-bodysuits" },
       { name: "Bottoms / Skirts", href: "/collection/bottoms-skirts" },
       { name: "Jumpsuits", href: "/collection/jumpsuits" },
+    ],
+    featured: [
+      { name: "Co-ords", href: "/collection/co-ords", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=500&fit=crop" },
+      { name: "New Blazers", href: "/collection/blazers", image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=400&h=500&fit=crop" },
     ],
   },
 };
@@ -91,11 +100,30 @@ const Header = () => {
     setActiveMenu(null);
   };
 
+  const CollectionCard = ({ item, className = "" }: { item: { name: string; href: string; image: string }; className?: string }) => (
+    <Link 
+      to={item.href} 
+      className={`collection-card block aspect-[3/4] ${className}`}
+    >
+      <img
+        src={item.image}
+        alt={item.name}
+        className="collection-card-image"
+      />
+      <div className="collection-card-overlay" />
+      <div className="absolute bottom-0 left-0 right-0 p-4">
+        <span className="text-white text-[11px] font-medium tracking-[0.15em] uppercase">
+          {item.name}
+        </span>
+      </div>
+    </Link>
+  );
+
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Announcement Bar */}
       <div className="bg-background border-b border-border">
-        <div className="container mx-auto py-2 text-center">
+        <div className="container mx-auto py-2.5 text-center">
           <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-foreground">
             MADE IN UAE
           </span>
@@ -305,79 +333,120 @@ const Header = () => {
       {/* Mega Menu Dropdowns */}
       {activeMenu && (
         <div 
-          className="fixed inset-x-0 top-[97px] z-40 bg-background border-b border-border shadow-sm animate-slide-down"
+          className="fixed inset-x-0 top-[97px] z-40 bg-background border-b border-border shadow-lg animate-slide-down"
           onMouseEnter={() => handleMouseEnter(activeMenu)}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="container mx-auto py-6 px-8">
+          <div className="container mx-auto py-8 px-8">
             {/* Shop Menu */}
             {activeMenu === 'shop' && (
-              <div className="space-y-2.5">
-                {megaMenuData.shop.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block text-sm text-foreground/80 hover:text-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              <div className="grid grid-cols-12 gap-8">
+                <div className="col-span-3 space-y-3">
+                  <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">QUICK LINKS</h4>
+                  {megaMenuData.shop.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="mega-menu-link block py-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+                <div className="col-span-6">
+                  <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">FEATURED</h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    {megaMenuData.shop.featured.map((item) => (
+                      <CollectionCard key={item.name} item={item} />
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
 
             {/* Drops Menu */}
             {activeMenu === 'drops' && (
-              <div className="space-y-2.5">
-                {megaMenuData.drops.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block text-sm text-foreground/80 hover:text-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+              <div>
+                <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">LATEST COLLECTIONS</h4>
+                <div className="grid grid-cols-4 gap-4">
+                  {megaMenuData.drops.items.map((item) => (
+                    <CollectionCard key={item.name} item={item} />
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Dresses Menu */}
             {activeMenu === 'dresses' && (
-              <div className="grid grid-cols-4 gap-12">
-                {megaMenuData.dresses.sections.map((section) => (
-                  <div key={section.title}>
-                    <h4 className="text-xs font-bold tracking-[0.15em] text-foreground mb-4">{section.title}</h4>
-                    <div className="space-y-2.5">
-                      {section.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className="block text-sm text-foreground/80 hover:text-foreground transition-colors"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+              <div className="grid grid-cols-12 gap-8">
+                {/* Categories - 4 columns */}
+                <div className="col-span-9 grid grid-cols-4 gap-8">
+                  {megaMenuData.dresses.sections.map((section) => (
+                    <div key={section.title}>
+                      <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">{section.title}</h4>
+                      <div className="space-y-2">
+                        {section.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            className="mega-menu-link block py-0.5"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+                {/* Featured Image */}
+                <div className="col-span-3">
+                  <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">FEATURED</h4>
+                  <CollectionCard item={megaMenuData.dresses.featured} />
+                </div>
               </div>
             )}
 
             {/* Clothing Menu */}
             {activeMenu === 'clothing' && (
-              <div className="space-y-2.5">
-                {megaMenuData.clothing.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block text-sm text-foreground/80 hover:text-foreground transition-colors"
+              <div className="grid grid-cols-12 gap-8">
+                <div className="col-span-3 space-y-2">
+                  <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">CATEGORIES</h4>
+                  {megaMenuData.clothing.items.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="mega-menu-link block py-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <Link 
+                    to="/collection/clothing" 
+                    className="inline-block text-[11px] font-semibold tracking-[0.15em] uppercase border-b border-foreground pb-0.5 mt-4 hover:text-muted-foreground transition-colors"
                   >
-                    {item.name}
+                    Shop All Clothing
                   </Link>
-                ))}
+                </div>
+                <div className="col-span-6">
+                  <h4 className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground mb-4">FEATURED</h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    {megaMenuData.clothing.featured.map((item) => (
+                      <CollectionCard key={item.name} item={item} />
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
           </div>
         </div>
+      )}
+
+      {/* Overlay backdrop */}
+      {activeMenu && (
+        <div 
+          className="fixed inset-0 bg-black/20 z-30 top-[97px]"
+          onClick={handleMouseLeave}
+        />
       )}
     </header>
   );
