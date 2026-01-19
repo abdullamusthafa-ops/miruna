@@ -11,6 +11,7 @@ import CollectionNavigationSection from "@/components/CollectionNavigationSectio
 import DressCategoriesSection from "@/components/DressCategoriesSection";
 import BestSellersSection from "@/components/BestSellersSection";
 import OfferSection from "@/components/OfferSection";
+import ValentinesEditSection from "@/components/ValentinesEditSection";
 import StorytellingSection from "@/components/StorytellingSection";
 import DropsSection from "@/components/DropsSection";
 import DressesShowcase from "@/components/DressesShowcase";
@@ -86,9 +87,8 @@ const Home = () => {
       {/* Drops Section */}
       <DropsSection />
 
-      {/* Offer Section */}
-      <OfferSection />
-
+      {/* Valentines Edit Section */}
+      <ValentinesEditSection />
       {/* Featured Products */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
