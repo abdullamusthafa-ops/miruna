@@ -16,18 +16,13 @@ const dressCategories = [
     image: "/images/maxi-dress.webp",
     link: "/collection/maxi",
   },
-  {
-    name: "Fluff Stuff (Limited Edition)",
-    image: "/images/fluff-stuff.webp",
-    link: "/collection/fluff-stuff",
-  },
 ];
 
 const DressCategoriesSection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-3 gap-3 md:gap-4">
           {dressCategories.map((category) => (
             <Link
               key={category.name}
