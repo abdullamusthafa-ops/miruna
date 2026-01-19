@@ -87,8 +87,6 @@ const Home = () => {
       {/* Drops Section - New arrivals */}
       <DropsSection />
 
-      {/* Dresses Showcase */}
-      <DressesShowcase />
 
       {/* Storytelling Section - Brand story */}
       <StorytellingSection />
