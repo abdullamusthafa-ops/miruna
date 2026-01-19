@@ -70,8 +70,6 @@ const Home = () => {
       {/* Trust Badges */}
       <TrustBadges />
 
-      {/* Collection Navigation */}
-      <CollectionNavigationSection />
 
       {/* Shop by Dress Categories */}
       <DressCategoriesSection />
