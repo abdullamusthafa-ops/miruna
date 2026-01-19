@@ -72,44 +72,25 @@ const Home = () => {
       {/* Trust Badges */}
       <TrustBadges />
 
+      {/* Valentines Edit - High visibility promotional banner */}
+      <ValentinesEditSection />
 
-      {/* Shop by Dress Categories */}
+      {/* Shop by Dress Categories - Main navigation */}
       <DressCategoriesSection />
 
       {/* Clothing Navigation */}
       <ClothingNavigationSection />
 
-      {/* Best Sellers Section */}
+      {/* Best Sellers Section - Social proof */}
       <BestSellersSection products={featuredProducts} />
 
-      <DressesShowcase />
-
-      {/* Drops Section */}
+      {/* Drops Section - New arrivals */}
       <DropsSection />
 
-      {/* Valentines Edit Section */}
-      <ValentinesEditSection />
-      {/* Featured Products */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Limited Collection</h2>
-            <Link 
-              to="/products" 
-              className="text-sm font-medium underline-offset-4 hover:underline"
-            >
-              View All
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {featuredProducts.map((product) => (
-              <ProductCard key={product.id} {...product} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Dresses Showcase */}
+      <DressesShowcase />
 
-      {/* Storytelling Section */}
+      {/* Storytelling Section - Brand story */}
       <StorytellingSection />
 
       {/* Brand Video */}
