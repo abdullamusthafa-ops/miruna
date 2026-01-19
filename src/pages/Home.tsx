@@ -15,6 +15,7 @@ import StorytellingSection from "@/components/StorytellingSection";
 import DropsSection from "@/components/DropsSection";
 import DressesShowcase from "@/components/DressesShowcase";
 import VideoSection from "@/components/VideoSection";
+import ClothingNavigationSection from "@/components/ClothingNavigationSection";
 import { featuredProducts } from "@/data/products";
 
 const Home = () => {
@@ -73,6 +74,9 @@ const Home = () => {
 
       {/* Shop by Dress Categories */}
       <DressCategoriesSection />
+
+      {/* Clothing Navigation */}
+      <ClothingNavigationSection />
 
       {/* Best Sellers Section */}
       <BestSellersSection products={featuredProducts} />
