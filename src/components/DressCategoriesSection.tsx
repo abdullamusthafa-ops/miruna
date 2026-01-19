@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 const dressCategories = [
   {
     name: "Mini Dresses",
-    image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
+    image: "/images/mini-dress.webp",
     link: "/collection/mini",
   },
   {
     name: "Midi Dresses",
-    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=600",
+    image: "/images/midi-dress.webp",
     link: "/collection/midi",
   },
   {
     name: "Maxi Dresses",
-    image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
+    image: "/images/maxi-dress.webp",
     link: "/collection/maxi",
   },
   {
     name: "Fluff Stuff (Limited Edition)",
-    image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=800",
+    image: "/images/fluff-stuff.webp",
     link: "/collection/fluff-stuff",
   },
 ];
