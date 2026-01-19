@@ -40,33 +40,28 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[85vh] md:h-[90vh]">
-        <div className="absolute inset-0 bg-[url('https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=1920')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black/40" />
+      <section className="relative h-[100vh] overflow-hidden">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/hero-banner.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-white/80">
-              New Season
-            </p>
-            <h1 className="mb-6 text-4xl font-light tracking-tight text-white md:text-6xl lg:text-7xl">
-              This Outfit Will<br />Do The Talking
+          <div className="max-w-4xl">
+            <h1 className="mb-6 text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl">
+              These Outfits Will Do The Talking
             </h1>
-            <p className="mb-8 text-base text-white/80 md:text-lg">
-              Statement pieces designed to make you unforgettable
+            <p className="mb-10 text-xs font-medium uppercase tracking-[0.3em] text-white/90 md:text-sm">
+              Designed for every mood, every moment, made in UAE.
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button asChild size="lg" className="min-w-[160px]">
-                <Link to="/products">Shop Now</Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline" 
-                className="min-w-[160px] border-white/50 bg-transparent text-white hover:bg-white hover:text-foreground"
-              >
-                <Link to="/products?filter=sale">View Sale</Link>
-              </Button>
-            </div>
+            <Button asChild size="lg" className="min-w-[180px] bg-white text-foreground hover:bg-white/90">
+              <Link to="/products">Shop Now</Link>
+            </Button>
           </div>
         </div>
       </section>
