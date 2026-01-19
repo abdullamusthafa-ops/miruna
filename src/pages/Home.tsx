@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import TrustBadges from "@/components/TrustBadges";
 import InstagramGallery from "@/components/InstagramGallery";
 import CollectionNavigationSection from "@/components/CollectionNavigationSection";
+import DressCategoriesSection from "@/components/DressCategoriesSection";
 import BestSellersSection from "@/components/BestSellersSection";
 import OfferSection from "@/components/OfferSection";
 import StorytellingSection from "@/components/StorytellingSection";
@@ -71,6 +72,9 @@ const Home = () => {
 
       {/* Collection Navigation */}
       <CollectionNavigationSection />
+
+      {/* Shop by Dress Categories */}
+      <DressCategoriesSection />
 
       {/* Best Sellers Section */}
       <BestSellersSection products={featuredProducts} />
