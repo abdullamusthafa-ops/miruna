@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import CollectionSeoDescription from "@/components/CollectionSeoDescription";
 import { allProducts } from "@/data/products";
-
 const collectionInfo: Record<string, { title: string; description: string; image: string }> = {
   // Clothing
   "co-ords": {
@@ -217,6 +217,9 @@ const Collection = () => {
           </div>
         </div>
       </section>
+
+      {/* SEO Description */}
+      <CollectionSeoDescription slug={slug || ""} />
 
       <Footer />
     </div>
