@@ -160,19 +160,18 @@ const CollectionSeoDescription = ({ slug }: CollectionSeoDescriptionProps) => {
   const content = seoDescriptions[slug] || defaultSeo;
 
   return (
-    <section className="border-t border-border py-10 md:py-14">
+    <section className="py-6 md:py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm leading-relaxed text-muted-foreground">
-            {content.intro}{" "}
-            <span className="text-foreground font-medium">{content.highlighted}</span>
+            {content.intro} {content.highlighted}
             {isExpanded && (
-              <span className="block mt-4">{content.expanded}</span>
+              <span> {content.expanded}</span>
             )}
           </p>
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="mt-4 text-xs font-medium tracking-wide uppercase text-foreground hover:text-muted-foreground transition-colors underline underline-offset-4"
+            className="mt-3 text-xs font-medium tracking-wide uppercase text-foreground hover:text-muted-foreground transition-colors underline underline-offset-4"
           >
             {isExpanded ? "Show Less" : "Read More"}
           </button>
