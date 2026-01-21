@@ -46,7 +46,7 @@ const Home = () => {
       <section className="relative h-[100vh] overflow-hidden">
         {/* Fallback image shown while video loads */}
         <img
-          src="/images/valentines-edit.webp"
+          src="/images/hero-poster.png"
           alt="Hero background"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -56,7 +56,7 @@ const Home = () => {
           loop
           muted
           playsInline
-          poster="/images/valentines-edit.webp"
+          poster="/images/hero-poster.png"
         >
           <source src="/videos/miruna-banner.mp4" type="video/mp4" />
         </video>
