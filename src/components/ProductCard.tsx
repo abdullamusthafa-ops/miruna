@@ -55,20 +55,23 @@ const ProductCard = ({ id, name, subtitle, price, priceDhs, image, originalPrice
       </div>
 
       {/* Product Info */}
-      <div className="space-y-1">
+      <div className="space-y-1.5">
+        {/* Title */}
         <Link to={`/product/${id}`}>
           <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground hover:text-primary transition-colors line-clamp-1">
             {name}
           </h3>
         </Link>
         
+        {/* Subtitle - 1 line with ellipsis */}
         {subtitle && (
-          <p className="text-xs text-muted-foreground line-clamp-1">
+          <p className="text-xs text-muted-foreground line-clamp-1 truncate">
             {subtitle}
           </p>
         )}
 
-        <div className="flex items-center gap-2 pt-1">
+        {/* Price */}
+        <div className="flex items-center gap-2">
           <span className="text-sm font-medium text-foreground">
             {priceDhs ? `${priceDhs.toFixed(2)} د.إ AED` : `${price.toFixed(2)} د.إ AED`}
           </span>
