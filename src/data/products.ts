@@ -7,6 +7,7 @@ export interface ColorVariant {
 export interface Product {
   id: string;
   name: string;
+  subtitle?: string;
   price: number;
   originalPrice?: number;
   priceDhs: number;
@@ -23,6 +24,7 @@ export const featuredProducts: Product[] = [
   {
     id: "morning-after-ex",
     name: "MORNING AFTER EX",
+    subtitle: "Bold statement piece for unforgettable nights",
     price: 490.13,
     originalPrice: 612.66,
     priceDhs: 1800,
@@ -43,6 +45,7 @@ export const featuredProducts: Product[] = [
   {
     id: "the-best-you-ever-had",
     name: "THE BEST YOU EVER HAD",
+    subtitle: "Premium elegance with a flattering silhouette",
     price: 435.45,
     originalPrice: 544.32,
     priceDhs: 1599.20,
@@ -68,6 +71,7 @@ export const featuredProducts: Product[] = [
   {
     id: "out-of-his-budget",
     name: "OUT OF HIS BUDGET",
+    subtitle: "Luxury statement piece worth every moment",
     price: 272.29,
     originalPrice: 340.37,
     priceDhs: 1000,
@@ -92,6 +96,7 @@ export const allProducts = [
   {
     id: "better-luck-next-time-pink",
     name: "BETTER LUCK NEXT TIME - PINK",
+    subtitle: "Flirty and feminine with a playful edge",
     price: 145.24,
     originalPrice: 242.07,
     priceDhs: 533.40,
@@ -103,6 +108,7 @@ export const allProducts = [
   {
     id: "split-decision-pink-white",
     name: "SPLIT DECISION - PINK & WHITE",
+    subtitle: "Two-tone elegance for the bold fashionista",
     price: 155.04,
     originalPrice: 258.41,
     priceDhs: 569.40,
@@ -114,6 +120,7 @@ export const allProducts = [
   {
     id: "who-invited-her-black",
     name: "WHO INVITED HER - BLACK",
+    subtitle: "Show-stopping entrance in sleek black",
     price: 163.21,
     originalPrice: 272.02,
     priceDhs: 599.40,
@@ -125,6 +132,7 @@ export const allProducts = [
   {
     id: "bare-minimum-pink",
     name: "BARE MINIMUM - PINK",
+    subtitle: "Minimal design, maximum impact",
     price: 180.88,
     originalPrice: 258.41,
     priceDhs: 664.30,
@@ -136,6 +144,7 @@ export const allProducts = [
   {
     id: "soft-but-spicy-white",
     name: "SOFT BUT SPICY - WHITE",
+    subtitle: "Delicate charm with a daring twist",
     price: 163.21,
     originalPrice: 272.02,
     priceDhs: 599.40,
@@ -147,6 +156,7 @@ export const allProducts = [
   {
     id: "still-went-out-silver",
     name: "STILL WENT OUT - SILVER",
+    subtitle: "Metallic glamour for late-night adventures",
     price: 138.71,
     originalPrice: 231.18,
     priceDhs: 509.40,
@@ -158,6 +168,7 @@ export const allProducts = [
   {
     id: "waist-not-pink",
     name: "WAIST NOT - PINK",
+    subtitle: "Figure-flattering silhouette in blush pink",
     price: 180.88,
     originalPrice: 258.41,
     priceDhs: 664.30,
@@ -169,6 +180,7 @@ export const allProducts = [
   {
     id: "youll-regret-this-white",
     name: "YOU'LL REGRET THIS - WHITE",
+    subtitle: "Unforgettable elegance in pristine white",
     price: 337.43,
     originalPrice: 421.78,
     priceDhs: 1239.20,
