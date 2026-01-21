@@ -44,14 +44,21 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="relative h-[100vh] overflow-hidden">
+        {/* Fallback image shown while video loads */}
+        <img
+          src="/images/valentines-edit.webp"
+          alt="Hero background"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           loop
           muted
           playsInline
+          poster="/images/valentines-edit.webp"
         >
-          <source src="/videos/hero-banner.mp4" type="video/mp4" />
+          <source src="/videos/miruna-banner.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
