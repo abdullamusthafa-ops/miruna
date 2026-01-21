@@ -63,9 +63,9 @@ const ProductCard = ({ id, name, subtitle, price, priceDhs, image, originalPrice
           </h3>
         </Link>
         
-        {/* Subtitle - 1 line with ellipsis */}
+        {/* Tagline - 1 line with ellipsis, hidden on very small screens */}
         {subtitle && (
-          <p className="text-xs text-muted-foreground line-clamp-1 truncate">
+          <p className="hidden xs:block text-xs text-muted-foreground line-clamp-1 truncate">
             {subtitle}
           </p>
         )}
