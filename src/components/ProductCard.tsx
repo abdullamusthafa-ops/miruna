@@ -7,6 +7,7 @@ import type { ColorVariant } from "@/data/products";
 interface ProductCardProps {
   id: string;
   name: string;
+  subtitle?: string;
   price: number;
   image: string;
   originalPrice?: number;
@@ -14,7 +15,7 @@ interface ProductCardProps {
   colors?: ColorVariant[];
 }
 
-const ProductCard = ({ id, name, price, image, originalPrice, badge, colors }: ProductCardProps) => {
+const ProductCard = ({ id, name, subtitle, price, image, originalPrice, badge, colors }: ProductCardProps) => {
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
 
   return (
@@ -59,10 +60,15 @@ const ProductCard = ({ id, name, price, image, originalPrice, badge, colors }: P
       </div>
       <CardContent className="p-4">
         <Link to={`/product/${id}`}>
-          <h3 className="mb-2 font-medium text-foreground hover:text-primary transition-colors line-clamp-2">
+          <h3 className="font-medium text-foreground hover:text-primary transition-colors line-clamp-1">
             {name}
           </h3>
         </Link>
+        {subtitle && (
+          <p className="mt-1 mb-2 text-xs text-muted-foreground line-clamp-1">
+            {subtitle}
+          </p>
+        )}
         
         {colors && colors.length > 0 && (
           <div className="mb-3 flex items-center gap-1.5">

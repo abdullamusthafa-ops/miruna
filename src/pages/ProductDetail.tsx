@@ -21,6 +21,7 @@ const ProductDetail = () => {
 
   const product = {
     name: "THE BEST YOU EVER HAD",
+    subtitle: "Premium elegance with a flattering silhouette",
     price: 435.45,
     originalPrice: 544.32,
     priceDhs: 1599.20,
@@ -151,7 +152,10 @@ const ProductDetail = () => {
 
           {/* Product Info */}
           <div>
-            <h1 className="mb-2 text-3xl font-bold tracking-tight">{product.name}</h1>
+            <h1 className="mb-1 text-3xl font-bold tracking-tight">{product.name}</h1>
+            {product.subtitle && (
+              <p className="mb-3 text-base text-muted-foreground">{product.subtitle}</p>
+            )}
             <div className="mb-4 flex items-center space-x-4">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
