@@ -3,31 +3,30 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Star, ShoppingCart, Heart, Truck, ShieldCheck, RefreshCw } from "lucide-react";
+import { Heart, Ruler } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { useToast } from "@/hooks/use-toast";
 import ColorSelector from "@/components/ColorSelector";
-import { Label } from "@/components/ui/label";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { toast } = useToast();
-  const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState("Black");
-  const [selectedSize, setSelectedSize] = useState("M");
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   const product = {
-    name: "THE BEST YOU EVER HAD",
+    brand: "MIRUNA",
+    name: "MEET ME THERE - RED",
     subtitle: "Premium elegance with a flattering silhouette",
-    price: 435.45,
-    originalPrice: 544.32,
-    priceDhs: 1599.20,
-    originalPriceDhs: 1999,
-    rating: 4.9,
-    reviews: 247,
+    price: 849.00,
+    priceCurrency: "AED",
     description: "Elevate your wardrobe with this stunning statement piece. Crafted with premium materials and featuring bold design elements, this piece combines luxury with comfort. Perfect for making an unforgettable impression at any event.",
     images: [
       "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=800",
@@ -44,21 +43,32 @@ const ProductDetail = () => {
         ]
       },
       {
-        name: "Pink",
-        hex: "#FFC0CB",
+        name: "Red",
+        hex: "#DC2626",
         images: [
           "https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800",
           "https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800",
         ]
       }
     ],
-    sizes: ["XS", "S", "M", "L", "XL"],
-    features: [
-      "Premium quality materials",
-      "Made in UAE with precision",
-      "Comfortable and breathable fabric",
-      "Statement design that turns heads",
-      "Easy care and maintenance",
+    sizes: ["S", "M", "L", "XL"],
+    sizeAndFit: [
+      "Model is 5'9\" and wears size S",
+      "Fits true to size",
+      "Regular fit through the body",
+      "Length: Mini"
+    ],
+    shippingInfo: [
+      "Free shipping on orders over 500 AED",
+      "4-hour delivery in Dubai",
+      "Same-day delivery across UAE",
+      "International shipping: 5-10 business days"
+    ],
+    returnsInfo: [
+      "30-day return policy",
+      "Items must be unworn with tags attached",
+      "Free returns within UAE",
+      "Refunds processed within 5-7 business days"
     ],
     inStock: true,
   };
@@ -101,47 +111,51 @@ const ProductDetail = () => {
   };
 
   const handleAddToCart = () => {
+    if (!selectedSize) {
+      toast({
+        title: "Please select a size",
+        description: "Choose a size before adding to cart",
+        variant: "destructive",
+      });
+      return;
+    }
     toast({
       title: "Added to cart",
-      description: `${quantity} ${product.name} (${selectedColor}, ${selectedSize}) added to your cart`,
+      description: `${product.name} (${selectedColor}, ${selectedSize}) added to your cart`,
     });
   };
+
+  const handleAddToWishlist = () => {
+    toast({
+      title: "Added to wishlist",
+      description: `${product.name} has been added to your wishlist`,
+    });
+  };
+
+  const tabbyMonthlyPrice = (product.price / 4).toFixed(2);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Breadcrumb */}
-      <div className="border-b border-border">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">Home</Link>
-            <span>/</span>
-            <Link to="/products" className="hover:text-foreground">Products</Link>
-            <span>/</span>
-            <span className="text-foreground">{product.name}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className="container mx-auto px-4 py-6 lg:py-10">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Product Images */}
           <div>
-            <div className="mb-4 aspect-square overflow-hidden rounded-lg bg-muted group">
+            <div className="mb-4 aspect-[3/4] overflow-hidden bg-muted">
               <img
                 src={getCurrentImages()[selectedImage]}
                 alt={`${product.name} - ${selectedColor}`}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-2">
               {getCurrentImages().map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-square overflow-hidden rounded-lg border-2 transition-all hover:border-primary ${
-                    selectedImage === index ? "border-primary ring-2 ring-primary ring-offset-2" : "border-border"
+                  className={`aspect-[3/4] overflow-hidden border transition-all ${
+                    selectedImage === index ? "border-foreground" : "border-transparent"
                   }`}
                 >
                   <img src={image} alt={`${product.name} ${index + 1}`} className="h-full w-full object-cover" />
@@ -151,44 +165,58 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Info */}
-          <div>
-            <h1 className="mb-1 text-3xl font-bold tracking-tight">{product.name}</h1>
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            {/* Brand */}
+            <p className="text-xs tracking-widest text-muted-foreground uppercase mb-1">
+              {product.brand}
+            </p>
+            
+            {/* Product Name */}
+            <h1 className="text-xl font-semibold tracking-tight mb-1">
+              {product.name}
+            </h1>
+            
+            {/* Subtitle */}
             {product.subtitle && (
-              <p className="mb-3 text-base text-muted-foreground">{product.subtitle}</p>
+              <p className="text-sm text-muted-foreground mb-4">
+                {product.subtitle}
+              </p>
             )}
-            <div className="mb-4 flex items-center space-x-4">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`h-5 w-5 ${
-                      i < Math.floor(product.rating) ? "fill-warning text-warning" : "text-muted"
-                    }`}
-                  />
-                ))}
+
+            {/* Price */}
+            <p className="text-base font-medium mb-1">
+              {product.price.toFixed(2)} {product.priceCurrency}
+            </p>
+
+            {/* Tax Notice */}
+            <p className="text-xs text-muted-foreground mb-4">
+              Taxes included.{" "}
+              <Link to="/shipping" className="underline hover:text-foreground">
+                Shipping
+              </Link>{" "}
+              calculated at checkout.
+            </p>
+
+            {/* Tabby Payment Option */}
+            <div className="flex items-center justify-between border border-border rounded-md p-3 mb-6">
+              <div className="text-sm">
+                <span>As low as </span>
+                <span className="font-semibold">৳ {tabbyMonthlyPrice}/month</span>
+                <span> or 4 interest-free payments. </span>
+                <button className="underline font-medium hover:text-muted-foreground">
+                  Learn more
+                </button>
               </div>
-              <span className="text-sm text-muted-foreground">({product.reviews} reviews)</span>
+              <div className="bg-[#3CFFD0] text-black font-bold text-sm px-3 py-1.5 rounded">
+                tabby
+              </div>
             </div>
-
-            <div className="mb-6 flex items-center space-x-4">
-              <span className="text-3xl font-bold">${product.price.toFixed(2)}</span>
-              {product.originalPrice && (
-                <>
-                  <span className="text-xl text-muted-foreground line-through">
-                    ${product.originalPrice.toFixed(2)}
-                  </span>
-                  <span className="rounded-full bg-destructive px-3 py-1 text-sm font-semibold text-destructive-foreground">
-                    Save {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-                  </span>
-                </>
-              )}
-            </div>
-
-            <p className="mb-6 text-muted-foreground">{product.description}</p>
 
             {/* Color Selection */}
             <div className="mb-6">
-              <Label className="mb-3 block font-semibold">Color: {selectedColor}</Label>
+              <p className="text-sm mb-3">
+                Color: <span className="font-medium">{selectedColor}</span>
+              </p>
               <ColorSelector 
                 colors={product.colors} 
                 selectedColor={selectedColor} 
@@ -197,17 +225,17 @@ const ProductDetail = () => {
             </div>
 
             {/* Size Selection */}
-            <div className="mb-6">
-              <Label className="mb-3 block font-semibold">Size: {selectedSize}</Label>
+            <div className="mb-4">
+              <p className="text-sm mb-3">Size</p>
               <div className="flex gap-2">
                 {product.sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 rounded-md border-2 transition-all hover:border-primary ${
+                    className={`min-w-[48px] h-10 px-4 rounded-full border text-sm font-medium transition-all ${
                       selectedSize === size 
-                        ? "border-primary bg-primary text-primary-foreground" 
-                        : "border-border"
+                        ? "bg-foreground text-background border-foreground" 
+                        : "bg-background text-foreground border-border hover:border-foreground"
                     }`}
                   >
                     {size}
@@ -216,138 +244,89 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <div className="mb-6">
-              <h3 className="mb-3 font-semibold">Key Features:</h3>
-              <ul className="space-y-2">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-2 text-success">✓</span>
-                    <span className="text-sm text-muted-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Size Chart Link */}
+            <button className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground mb-6">
+              <Ruler className="h-4 w-4" />
+              <span>Size chart</span>
+            </button>
 
-            {/* Quantity Selector */}
-            <div className="mb-6">
-              <label className="mb-2 block font-semibold">Quantity:</label>
-              <div className="flex items-center space-x-4">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  -
-                </Button>
-                <span className="w-12 text-center">{quantity}</span>
-                <Button variant="outline" size="sm" onClick={() => setQuantity(quantity + 1)}>
-                  +
-                </Button>
-              </div>
-            </div>
+            {/* Add to Cart Button */}
+            <Button 
+              size="lg" 
+              className="w-full h-12 rounded-md text-base font-medium mb-3"
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </Button>
 
-            {/* Action Buttons */}
-            <div className="mb-6 flex space-x-4">
-              <Button size="lg" className="flex-1" onClick={handleAddToCart}>
-                <ShoppingCart className="mr-2 h-5 w-5" />
-                Add to Cart
-              </Button>
-              <Button size="lg" variant="outline">
-                <Heart className="h-5 w-5" />
-              </Button>
-            </div>
+            {/* Add to Wishlist */}
+            <button 
+              onClick={handleAddToWishlist}
+              className="w-full flex items-center justify-center gap-2 text-sm py-3 hover:text-muted-foreground transition-colors"
+            >
+              <Heart className="h-4 w-4" />
+              <span>Add to wishlist</span>
+            </button>
 
-            {product.inStock && (
-              <div className="mb-6 rounded-lg bg-success/10 p-4 text-sm text-success">
-                ✓ In Stock - Ships within 24 hours
-              </div>
-            )}
+            {/* Accordion Sections */}
+            <div className="mt-8 border-t border-border">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="details" className="border-b border-border">
+                  <AccordionTrigger className="text-sm font-medium py-4 hover:no-underline">
+                    PRODUCT DETAILS
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground pb-4">
+                    {product.description}
+                  </AccordionContent>
+                </AccordionItem>
 
-            {/* Trust Badges */}
-            <div className="space-y-3 border-t border-border pt-6">
-              <div className="flex items-center space-x-3">
-                <Truck className="h-5 w-5 text-accent" />
-                <span className="text-sm">Fast worldwide shipping</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <ShieldCheck className="h-5 w-5 text-accent" />
-                <span className="text-sm">Secure payment & authenticity guaranteed</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <RefreshCw className="h-5 w-5 text-accent" />
-                <span className="text-sm">30-day easy returns</span>
-              </div>
+                <AccordionItem value="size-fit" className="border-b border-border">
+                  <AccordionTrigger className="text-sm font-medium py-4 hover:no-underline">
+                    SIZE & FIT
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground pb-4">
+                    <ul className="space-y-2">
+                      {product.sizeAndFit.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="shipping" className="border-b border-border">
+                  <AccordionTrigger className="text-sm font-medium py-4 hover:no-underline">
+                    SHIPPING INFORMATION
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground pb-4">
+                    <ul className="space-y-2">
+                      {product.shippingInfo.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="returns" className="border-b border-border">
+                  <AccordionTrigger className="text-sm font-medium py-4 hover:no-underline">
+                    RETURNS & EXCHANGES
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground pb-4">
+                    <ul className="space-y-2">
+                      {product.returnsInfo.map((item, index) => (
+                        <li key={index}>• {item}</li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </div>
 
-        {/* Product Details Tabs */}
-        <div className="mt-16">
-          <Tabs defaultValue="description" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="description">Description</TabsTrigger>
-              <TabsTrigger value="shipping">Shipping</TabsTrigger>
-              <TabsTrigger value="reviews">Reviews ({product.reviews})</TabsTrigger>
-            </TabsList>
-            <TabsContent value="description" className="mt-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="mb-4 text-lg font-semibold">Product Description</h3>
-                  <p className="mb-4 text-muted-foreground">{product.description}</p>
-                  <p className="text-muted-foreground">
-                    Each piece is meticulously crafted by skilled artisans, ensuring exceptional quality and attention to detail. 
-                    Our jewelry is designed to be cherished for generations, combining timeless elegance with contemporary style.
-                  </p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="shipping" className="mt-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="mb-4 text-lg font-semibold">Shipping Information</h3>
-                  <ul className="space-y-3 text-muted-foreground">
-                    <li>• Free worldwide shipping on orders over $100</li>
-                    <li>• 4-hour delivery in Dubai</li>
-                    <li>• Same-day delivery across UAE</li>
-                    <li>• International shipping: 5-10 business days</li>
-                    <li>• All items are carefully packaged in premium gift boxes</li>
-                    <li>• Full tracking information provided</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="reviews" className="mt-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="mb-4 text-lg font-semibold">Customer Reviews</h3>
-                  <div className="space-y-6">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="border-b border-border pb-6 last:border-0">
-                        <div className="mb-2 flex items-center justify-between">
-                          <div className="flex items-center">
-                            {[...Array(5)].map((_, index) => (
-                              <Star key={index} className="h-4 w-4 fill-warning text-warning" />
-                            ))}
-                          </div>
-                          <span className="text-sm text-muted-foreground">2 days ago</span>
-                        </div>
-                        <p className="mb-2 font-semibold">Absolutely Beautiful!</p>
-                        <p className="text-sm text-muted-foreground">
-                          The quality is outstanding and it arrived even more beautiful than in the photos. Highly recommend!
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </div>
-
         {/* Related Products */}
         <div className="mt-16">
-          <h2 className="mb-8 text-2xl font-bold">You May Also Like</h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mb-8 text-xl font-semibold">You May Also Like</h2>
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {relatedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
