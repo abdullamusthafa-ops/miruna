@@ -4,13 +4,13 @@ import { ArrowRight, Sparkles, Heart, Star } from "lucide-react";
 
 const StorytellingSection = () => {
   return (
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
           {/* Visual Grid */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
+              <div className="space-y-3 md:space-y-4">
                 <div className="group relative aspect-[3/4] overflow-hidden rounded-lg">
                   <img
                     src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=600"
@@ -27,7 +27,7 @@ const StorytellingSection = () => {
                   />
                 </div>
               </div>
-              <div className="space-y-4 pt-8">
+              <div className="space-y-3 pt-6 md:space-y-4 md:pt-8">
                 <div className="group relative aspect-square overflow-hidden rounded-lg">
                   <img
                     src="https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=600"
@@ -45,11 +45,11 @@ const StorytellingSection = () => {
               </div>
             </div>
             {/* Floating badge */}
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 rounded-lg bg-primary p-4 text-primary-foreground shadow-2xl">
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-primary p-3 text-primary-foreground shadow-2xl md:right-0 md:p-4 lg:-right-4">
               <div className="flex flex-col items-center">
-                <Star className="mb-1 h-8 w-8 fill-current" />
-                <p className="text-2xl font-bold">4.9</p>
-                <p className="text-xs opacity-90">Rating</p>
+                <Star className="mb-1 h-6 w-6 fill-current md:h-8 md:w-8" />
+                <p className="text-xl font-bold md:text-2xl">4.9</p>
+                <p className="text-[10px] opacity-90 md:text-xs">Rating</p>
               </div>
             </div>
           </div>
