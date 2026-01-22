@@ -27,14 +27,14 @@ const DropsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between md:mb-8">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Exclusive Drops</h2>
-            <p className="mt-1 text-sm text-muted-foreground">Limited edition collections</p>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">Exclusive Drops</h2>
+            <p className="mt-1 text-xs text-muted-foreground sm:text-sm">Limited edition collections</p>
           </div>
           <Link 
             to="/products?category=drops" 
-            className="text-sm font-medium underline-offset-4 hover:underline"
+            className="text-xs font-medium underline-offset-4 hover:underline sm:text-sm"
           >
             View All
           </Link>
@@ -55,8 +55,8 @@ const DropsSection = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-sm font-semibold text-white md:text-base">{drop.name}</h3>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                <h3 className="text-xs font-semibold text-white sm:text-sm md:text-base">{drop.name}</h3>
               </div>
             </Link>
           ))}

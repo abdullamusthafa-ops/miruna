@@ -22,7 +22,7 @@ const DressCategoriesSection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:gap-4">
+        <div className="grid grid-cols-1 gap-3 xs:grid-cols-3 md:gap-4">
           {dressCategories.map((category) => (
             <Link
               key={category.name}
@@ -37,7 +37,7 @@ const DressCategoriesSection = () => {
                 />
               </div>
               <div className="absolute bottom-0 left-0 right-0">
-                <div className="mx-4 mb-4 bg-white/80 backdrop-blur-sm py-2 px-3 text-center">
+                <div className="mx-3 mb-3 bg-white/80 backdrop-blur-sm py-2 px-3 text-center sm:mx-4 sm:mb-4">
                   <span className="text-sm font-medium text-foreground md:text-base">{category.name}</span>
                 </div>
               </div>

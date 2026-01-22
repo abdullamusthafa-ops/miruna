@@ -43,15 +43,15 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[100vh] overflow-hidden">
+      <section className="relative h-[85vh] sm:h-[90vh] md:h-[100vh] overflow-hidden">
         {/* Fallback image shown while video loads */}
         <img
           src="/images/hero-poster.png"
           alt="Hero background"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           autoPlay
           loop
           muted
@@ -63,13 +63,13 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
           <div className="max-w-4xl">
-            <h1 className="mb-6 text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="mb-4 text-3xl font-light tracking-tight text-white sm:text-4xl sm:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
               These Outfits Will Do The Talking
             </h1>
-            <p className="mb-10 text-xs font-medium uppercase tracking-[0.3em] text-white/90 md:text-sm">
+            <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-xs sm:tracking-[0.3em] sm:mb-10 md:text-sm">
               Designed for every mood, every moment, made in UAE.
             </p>
-            <Button asChild size="lg" className="min-w-[180px] bg-white text-foreground hover:bg-white/90">
+            <Button asChild size="default" className="min-w-[150px] bg-white text-foreground hover:bg-white/90 sm:min-w-[180px] md:size-lg">
               <Link to="/products">Shop Now</Link>
             </Button>
           </div>
