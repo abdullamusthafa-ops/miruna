@@ -29,12 +29,12 @@ const clothingCategories = [
 ];
 
 const ClothingNavigationSection = () => {
-  const CategoryCard = ({ category, className = "", aspectRatio = "aspect-[3/4]" }: { category: typeof clothingCategories[0], className?: string, aspectRatio?: string }) => (
+  const CategoryCard = ({ category, className = "" }: { category: typeof clothingCategories[0], className?: string }) => (
     <Link
       to={category.link}
       className={`group relative overflow-hidden ${className}`}
     >
-      <div className={`${aspectRatio} overflow-hidden bg-muted flex flex-col`}>
+      <div className="aspect-[3/4] overflow-hidden bg-muted flex flex-col">
         <div className="flex-1 overflow-hidden">
           <img
             src={category.image}
@@ -59,33 +59,22 @@ const ClothingNavigationSection = () => {
           <h2 className="text-xl font-semibold tracking-tight md:text-2xl">Shop Clothing</h2>
         </div>
         
-        <div className="max-w-5xl mx-auto grid grid-cols-4 gap-2 md:gap-3">
-          {/* Large card - spans 2 cols */}
-          <CategoryCard 
-            category={clothingCategories[0]} 
-            className="col-span-2 row-span-2"
-            aspectRatio="aspect-auto h-full"
-          />
+        <div className="max-w-4xl mx-auto space-y-2 md:space-y-3">
+          {/* Top row - 3 cards */}
+          <div className="grid grid-cols-3 gap-2 md:gap-3">
+            {clothingCategories.slice(0, 3).map((category) => (
+              <CategoryCard key={category.name} category={category} />
+            ))}
+          </div>
           
-          {/* Top right - 2 small cards */}
-          <CategoryCard 
-            category={clothingCategories[1]} 
-            aspectRatio="aspect-square"
-          />
-          <CategoryCard 
-            category={clothingCategories[2]} 
-            aspectRatio="aspect-square"
-          />
-          
-          {/* Bottom right - 2 small cards */}
-          <CategoryCard 
-            category={clothingCategories[3]} 
-            aspectRatio="aspect-square"
-          />
-          <CategoryCard 
-            category={clothingCategories[4]} 
-            aspectRatio="aspect-square"
-          />
+          {/* Bottom row - 2 centered cards */}
+          <div className="grid grid-cols-4 gap-2 md:gap-3">
+            <div className="col-start-2 col-span-2 grid grid-cols-2 gap-2 md:gap-3">
+              {clothingCategories.slice(3, 5).map((category) => (
+                <CategoryCard key={category.name} category={category} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
