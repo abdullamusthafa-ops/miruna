@@ -5,21 +5,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group",
   {
     variants: {
       variant: {
-        default: "bg-transparent text-foreground uppercase tracking-[0.2em] text-xs underline underline-offset-4 hover:no-underline rounded-none px-0",
+        default: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.2em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md",
-        outline: "border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background uppercase tracking-[0.2em] text-xs rounded-none",
+        outline: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.2em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
         secondary: "bg-foreground text-background hover:bg-foreground/90 uppercase tracking-[0.2em] text-xs rounded-none",
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
         link: "text-foreground underline underline-offset-4 hover:no-underline uppercase tracking-[0.15em] text-xs px-0",
       },
       size: {
-        default: "h-auto py-2",
-        sm: "h-auto py-1",
-        lg: "h-auto py-3",
+        default: "h-11 px-10 py-3",
+        sm: "h-9 px-5",
+        lg: "h-12 px-12",
         icon: "h-10 w-10",
       },
     },
