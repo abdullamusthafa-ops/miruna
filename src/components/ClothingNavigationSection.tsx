@@ -2,28 +2,28 @@ import { Link } from "react-router-dom";
 
 const clothingCategories = [
   {
-    name: "Co-ords",
-    image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
-    link: "/collection/co-ords",
-  },
-  {
     name: "Blazers",
-    image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
+    image: "https://miruna.io/cdn/shop/files/D0006832.webp?v=1761729490&width=800",
     link: "/collection/blazers",
   },
   {
-    name: "Tops / Bodysuits",
-    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=600",
+    name: "Co-ord Sets",
+    image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=800",
+    link: "/collection/co-ords",
+  },
+  {
+    name: "Tops & Bodysuits",
+    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=800",
     link: "/collection/tops-bodysuits",
   },
   {
-    name: "Bottoms / Skirts",
+    name: "Bottoms & Skirts",
     image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=800",
     link: "/collection/bottoms-skirts",
   },
   {
     name: "Jumpsuits",
-    image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
+    image: "https://miruna.io/cdn/shop/files/D0002583.webp?v=1761909200&width=800",
     link: "/collection/jumpsuits",
   },
 ];
