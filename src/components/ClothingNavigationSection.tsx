@@ -23,7 +23,7 @@ const clothingCategories = [
   },
   {
     name: "Jumpsuits",
-    image: "https://miruna.io/cdn/shop/files/D0002583.webp?v=1761909200&width=800",
+    image: "https://miruna.io/cdn/shop/files/D0007156.webp?v=1761737545&width=800",
     link: "/collection/jumpsuits",
   },
 ];
