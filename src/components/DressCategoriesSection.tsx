@@ -22,7 +22,60 @@ const DressCategoriesSection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 gap-3 xs:grid-cols-3 md:gap-4">
+        {/* Mobile/Tablet Layout: Featured + 2 smaller */}
+        <div className="flex flex-col gap-3 md:hidden">
+          {/* Featured large item */}
+          <Link
+            to={dressCategories[0].link}
+            className="group relative overflow-hidden"
+          >
+            <div className="aspect-[4/3] overflow-hidden bg-muted flex flex-col">
+              <div className="flex-1 overflow-hidden min-h-0">
+                <img
+                  src={dressCategories[0].image}
+                  alt={dressCategories[0].name}
+                  className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+              </div>
+              <div className="shrink-0 bg-background py-2.5 px-2 text-center border border-foreground relative overflow-hidden">
+                <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300">
+                  {dressCategories[0].name}
+                </span>
+              </div>
+            </div>
+          </Link>
+          
+          {/* Two smaller items in a row */}
+          <div className="grid grid-cols-2 gap-3">
+            {dressCategories.slice(1).map((category) => (
+              <Link
+                key={category.name}
+                to={category.link}
+                className="group relative overflow-hidden"
+              >
+                <div className="aspect-[3/4] overflow-hidden bg-muted flex flex-col">
+                  <div className="flex-1 overflow-hidden min-h-0">
+                    <img
+                      src={category.image}
+                      alt={category.name}
+                      className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="shrink-0 bg-background py-2.5 px-2 text-center border border-foreground relative overflow-hidden">
+                    <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                    <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300">
+                      {category.name}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout: 3 equal columns */}
+        <div className="hidden md:grid md:grid-cols-3 md:gap-4">
           {dressCategories.map((category) => (
             <Link
               key={category.name}
@@ -37,9 +90,9 @@ const DressCategoriesSection = () => {
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="shrink-0 bg-background py-2.5 px-2 text-center border border-foreground relative overflow-hidden md:py-3">
+                <div className="shrink-0 bg-background py-3 px-2 text-center border border-foreground relative overflow-hidden">
                   <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
-                  <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300 md:text-[11px]">
+                  <span className="relative z-10 text-[11px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300">
                     {category.name}
                   </span>
                 </div>
