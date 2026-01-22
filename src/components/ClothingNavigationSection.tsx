@@ -47,12 +47,14 @@ const ClothingNavigationSection = () => {
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
-              <div className="absolute bottom-0 left-0 right-0">
-                <div className="mx-3 mb-3 bg-white/80 backdrop-blur-sm py-2 px-2 text-center">
-                  <span className="text-xs font-medium text-foreground md:text-sm">{category.name}</span>
+              <div className="absolute bottom-0 left-0 right-0 p-2 md:p-3">
+                <div className="bg-background/90 backdrop-blur-md py-2.5 px-3 text-center border border-border/50 transition-all duration-300 group-hover:bg-background">
+                  <span className="text-[11px] font-medium tracking-wide uppercase text-foreground md:text-xs truncate block">
+                    {category.name}
+                  </span>
                 </div>
               </div>
             </Link>
