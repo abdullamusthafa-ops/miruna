@@ -27,7 +27,7 @@ const TrustBadges = () => {
   return (
     <section className="border-y border-border bg-muted/50 py-6">
       <div className="container mx-auto px-4">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {badges.map((badge, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               <div className="mb-2 rounded-full bg-background p-2 shadow-sm">
