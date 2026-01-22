@@ -29,16 +29,19 @@ const DressCategoriesSection = () => {
               to={category.link}
               className="group relative overflow-hidden"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0">
-                <div className="mx-3 mb-3 bg-white/80 backdrop-blur-sm py-2 px-3 text-center sm:mx-4 sm:mb-4">
-                  <span className="text-sm font-medium text-foreground md:text-base">{category.name}</span>
+              <div className="aspect-[2/3] overflow-hidden bg-muted flex flex-col">
+                <div className="flex-1 overflow-hidden min-h-0">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </div>
+                <div className="shrink-0 bg-background py-2.5 px-2 text-center border border-foreground relative overflow-hidden md:py-3">
+                  <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                  <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300 md:text-[11px]">
+                    {category.name}
+                  </span>
                 </div>
               </div>
             </Link>
