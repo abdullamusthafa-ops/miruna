@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
 
 const clothingCategories = [
   {
@@ -29,6 +31,18 @@ const clothingCategories = [
 ];
 
 const ClothingNavigationSection = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="py-8 md:py-10">
       <div className="container mx-auto px-4">
@@ -36,41 +50,34 @@ const ClothingNavigationSection = () => {
           <h2 className="text-xl font-semibold tracking-tight md:text-2xl">Shop Clothing</h2>
         </div>
         
-        <div className="max-w-5xl mx-auto space-y-2 md:space-y-3">
-          {/* Top row - 2 larger cards */}
-          <div className="grid grid-cols-2 gap-2 md:gap-3">
-            {clothingCategories.slice(0, 2).map((category) => (
-              <Link
-                key={category.name}
-                to={category.link}
-                className="group relative overflow-hidden"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted flex flex-col">
-                  <div className="flex-1 overflow-hidden">
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="bg-background py-2 px-2 text-center border border-foreground relative overflow-hidden">
-                    <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
-                    <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300 md:text-[11px] truncate block">
-                      {category.name}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 border border-foreground p-2 hover:bg-foreground hover:text-background transition-colors duration-300 -ml-3 md:-ml-4"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/90 border border-foreground p-2 hover:bg-foreground hover:text-background transition-colors duration-300 -mr-3 md:-mr-4"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
 
-          {/* Bottom row - 3 smaller cards */}
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
-            {clothingCategories.slice(2).map((category) => (
+          {/* Scrollable Container */}
+          <div
+            ref={scrollRef}
+            className="flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth px-1"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {clothingCategories.map((category) => (
               <Link
                 key={category.name}
                 to={category.link}
-                className="group relative overflow-hidden"
+                className="group relative overflow-hidden flex-shrink-0 w-[45%] md:w-[30%]"
               >
                 <div className="aspect-[3/4] overflow-hidden bg-muted flex flex-col">
                   <div className="flex-1 overflow-hidden">
@@ -82,7 +89,7 @@ const ClothingNavigationSection = () => {
                   </div>
                   <div className="bg-background py-2 px-2 text-center border border-foreground relative overflow-hidden">
                     <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
-                    <span className="relative z-10 text-[9px] font-medium tracking-[0.12em] uppercase text-foreground group-hover:text-background transition-colors duration-300 md:text-[10px] truncate block">
+                    <span className="relative z-10 text-[10px] font-medium tracking-[0.15em] uppercase text-foreground group-hover:text-background transition-colors duration-300 md:text-[11px] truncate block">
                       {category.name}
                     </span>
                   </div>
