@@ -1,6 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,6 +7,7 @@ import SaleProductsSection from "@/components/SaleProductsSection";
 import ValentinesEditSection from "@/components/ValentinesEditSection";
 import ClothingNavigationSection from "@/components/ClothingNavigationSection";
 import TrustBadges from "@/components/TrustBadges";
+import NewsletterSection from "@/components/NewsletterSection";
 
 const Home = () => {
   return (
@@ -70,6 +68,9 @@ const Home = () => {
 
       {/* Explore the Wardrobe - Secondary categories */}
       <ClothingNavigationSection />
+
+      {/* Newsletter CTA */}
+      <NewsletterSection />
 
       <Footer />
     </div>
