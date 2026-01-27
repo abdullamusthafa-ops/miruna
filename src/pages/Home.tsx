@@ -2,47 +2,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import ProductCard from "@/components/ProductCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TrustBadges from "@/components/TrustBadges";
-import InstagramGallery from "@/components/InstagramGallery";
-import CollectionNavigationSection from "@/components/CollectionNavigationSection";
 import DressCategoriesSection from "@/components/DressCategoriesSection";
-import BestSellersSection from "@/components/BestSellersSection";
-import OfferSection from "@/components/OfferSection";
+import BestSellersBanner from "@/components/BestSellersBanner";
+import SaleProductsSection from "@/components/SaleProductsSection";
 import ValentinesEditSection from "@/components/ValentinesEditSection";
-import StorytellingSection from "@/components/StorytellingSection";
-import DropsSection from "@/components/DropsSection";
-import DressesShowcase from "@/components/DressesShowcase";
-import VideoSection from "@/components/VideoSection";
 import ClothingNavigationSection from "@/components/ClothingNavigationSection";
-import { featuredProducts } from "@/data/products";
+import TrustBadges from "@/components/TrustBadges";
 
 const Home = () => {
-  const testimonials = [
-    {
-      name: "Sarah J.",
-      rating: 5,
-      comment: "Absolutely stunning! The quality exceeded my expectations.",
-    },
-    {
-      name: "Emily D.",
-      rating: 5,
-      comment: "In love with my purchase! Arrived faster than expected.",
-    },
-    {
-      name: "Mira K.",
-      rating: 5,
-      comment: "Perfect gift. She was thrilled! Premium quality.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className="relative h-[85vh] sm:h-[90vh] md:h-[100vh] overflow-hidden">
         {/* Fallback image shown while video loads */}
         <img
@@ -63,90 +37,39 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative container mx-auto flex h-full items-center justify-center px-4 text-center">
           <div className="max-w-4xl">
-            <h1 className="mb-4 text-3xl font-light tracking-tight text-white sm:text-4xl sm:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
+            <h1 className="mb-4 text-2xl font-light tracking-wide text-white uppercase sm:text-3xl sm:mb-6 md:text-4xl lg:text-5xl xl:text-6xl">
               These Outfits Will Do The Talking
             </h1>
-            <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-xs sm:tracking-[0.3em] sm:mb-10 md:text-sm">
+            <p className="mb-6 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-xs sm:tracking-[0.3em] sm:mb-8">
               Designed for every mood, every moment, made in UAE.
             </p>
-            <Button asChild size="default" className="min-w-[150px] bg-white text-foreground hover:bg-white/90 sm:min-w-[180px] md:size-lg">
-              <Link to="/products">Shop Now</Link>
-            </Button>
+            <Link 
+              to="/products"
+              className="inline-block border border-white bg-transparent px-6 py-2.5 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-colors hover:bg-white hover:text-foreground sm:px-8 sm:py-3 sm:text-xs"
+            >
+              SHOP NOW
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Dress Categories - 4 columns */}
+      <DressCategoriesSection />
+
+      {/* Best Sellers Banner */}
+      <BestSellersBanner />
+
+      {/* Sale Products Carousel */}
+      <SaleProductsSection />
+
+      {/* Valentines Edit Banner */}
+      <ValentinesEditSection />
+
+      {/* Explore the Wardrobe - Clothing Categories */}
+      <ClothingNavigationSection />
 
       {/* Trust Badges */}
       <TrustBadges />
-
-      {/* Valentines Edit - High visibility promotional banner */}
-      <ValentinesEditSection />
-
-      {/* Shop by Dress Categories - Main navigation */}
-      <DressCategoriesSection />
-
-      {/* Clothing Navigation */}
-      <ClothingNavigationSection />
-
-      {/* Best Sellers Section - Social proof */}
-      <BestSellersSection products={featuredProducts} />
-
-      {/* Drops Section - New arrivals */}
-      <DropsSection />
-
-
-      {/* Storytelling Section - Brand story */}
-      <StorytellingSection />
-
-      {/* Brand Video */}
-      <VideoSection />
-
-      {/* Testimonials */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">What Our Customers Say</h2>
-          </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-0 bg-secondary">
-                <CardContent className="p-6">
-                  <div className="mb-3 flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-foreground text-foreground" />
-                    ))}
-                  </div>
-                  <p className="mb-3 text-sm text-muted-foreground">{testimonial.comment}</p>
-                  <p className="text-sm font-medium">{testimonial.name}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Instagram Gallery */}
-      <InstagramGallery />
-
-      {/* Newsletter CTA */}
-      <section className="bg-foreground py-12 text-background md:py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-3 text-2xl font-semibold tracking-tight md:text-3xl">Get 10% Off</h2>
-          <p className="mx-auto mb-6 max-w-md text-sm text-background/70">
-            Subscribe for exclusive access to new collections and special offers
-          </p>
-          <div className="mx-auto flex max-w-sm gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 rounded-none border-0 bg-background/10 px-4 py-3 text-sm text-background placeholder:text-background/50 focus:outline-none focus:ring-1 focus:ring-background/30"
-            />
-            <Button variant="secondary" className="rounded-none">
-              Subscribe
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </div>
