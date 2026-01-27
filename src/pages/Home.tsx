@@ -53,23 +53,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Dress Categories - 4 columns */}
+      {/* Trust Badges - Build immediate credibility */}
+      <TrustBadges />
+
+      {/* Dress Categories - Primary navigation */}
       <DressCategoriesSection />
 
-      {/* Best Sellers Banner */}
+      {/* Best Sellers Banner - Social proof */}
       <BestSellersBanner />
 
-      {/* Sale Products Carousel */}
+      {/* Sale Products Carousel - Create urgency */}
       <SaleProductsSection />
 
-      {/* Valentines Edit Banner */}
+      {/* Valentines Edit Banner - Seasonal promotion */}
       <ValentinesEditSection />
 
-      {/* Explore the Wardrobe - Clothing Categories */}
+      {/* Explore the Wardrobe - Secondary categories */}
       <ClothingNavigationSection />
-
-      {/* Trust Badges */}
-      <TrustBadges />
 
       <Footer />
     </div>
