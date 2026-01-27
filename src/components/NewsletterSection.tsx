@@ -1,0 +1,54 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+const NewsletterSection = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubmitted(true);
+      setEmail("");
+    }
+  };
+
+  return (
+    <section className="bg-foreground py-12 text-background md:py-16">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="mb-2 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
+          Get 10% Off Your First Order
+        </h2>
+        <p className="mx-auto mb-6 max-w-md text-xs text-background/70 sm:text-sm">
+          Subscribe for exclusive access to new collections, promotions, and VIP offers
+        </p>
+        
+        {isSubmitted ? (
+          <p className="text-sm font-medium text-background">
+            Thank you! Check your email for your discount code.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="mx-auto flex max-w-md gap-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 border border-background/30 bg-transparent px-4 py-2.5 text-sm text-background placeholder:text-background/50 focus:outline-none focus:border-background"
+            />
+            <Button 
+              type="submit"
+              variant="secondary" 
+              className="px-6 text-xs uppercase tracking-wider"
+            >
+              Subscribe
+            </Button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default NewsletterSection;

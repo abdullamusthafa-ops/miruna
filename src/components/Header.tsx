@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const megaMenuData = {
   shop: {
@@ -122,13 +123,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Announcement Bar */}
-      <div className="bg-background border-b border-border">
-        <div className="container mx-auto py-2.5 text-center">
-          <span className="text-[11px] tracking-[0.2em] uppercase font-medium text-foreground">
-            MADE IN UAE
-          </span>
-        </div>
-      </div>
+      <AnnouncementBar />
 
       {/* Main Header */}
       <div className="bg-background border-b border-border">
