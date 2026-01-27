@@ -52,28 +52,28 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Trust Badges - Build immediate credibility */}
-      <TrustBadges />
-
-      {/* Dress Categories - Primary navigation */}
+      {/* 1. PRODUCT ACCESS - Dresses (Primary) */}
       <DressCategoriesSection />
 
-      {/* Best Sellers Banner - Social proof */}
-      <BestSellersBanner />
-
-      {/* Sale Products Carousel - Create urgency */}
+      {/* 2. OFFERS - Sale Products with urgency */}
       <SaleProductsSection />
 
-      {/* Valentines Edit Banner - Seasonal promotion */}
-      <ValentinesEditSection />
+      {/* 3. SOCIAL PROOF - Best Sellers */}
+      <BestSellersBanner />
 
-      {/* Explore the Wardrobe - Secondary categories */}
+      {/* 4. PRODUCT ACCESS - Clothing/Wardrobe (Secondary) */}
       <ClothingNavigationSection />
 
-      {/* Instagram Gallery - Social proof */}
+      {/* 5. SEASONAL PROMO - Valentines Edit */}
+      <ValentinesEditSection />
+
+      {/* 6. TRUST - Build credibility before leaving */}
+      <TrustBadges />
+
+      {/* 7. SOCIAL PROOF - Instagram UGC */}
       <InstagramGallery />
 
-      {/* Newsletter CTA */}
+      {/* 8. EMAIL CAPTURE - Newsletter */}
       <NewsletterSection />
 
       <Footer />
