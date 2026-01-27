@@ -1,40 +1,70 @@
 import { Instagram } from "lucide-react";
 
-const InstagramGallery = () => {
-  const images = [
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80",
-    "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&q=80",
-    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80",
-    "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80",
-    "https://images.unsplash.com/photo-1558769132-cb1aea1c8347?w=400&q=80",
-    "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80",
-  ];
+const instagramPosts = [
+  {
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80",
+    alt: "Fashion post 1",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&q=80",
+    alt: "Fashion post 2",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80",
+    alt: "Fashion post 3",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80",
+    alt: "Fashion post 4",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1558769132-cb1aea1c8347?w=400&q=80",
+    alt: "Fashion post 5",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=80",
+    alt: "Fashion post 6",
+  },
+];
 
+const InstagramGallery = () => {
   return (
-    <section className="bg-background py-16">
+    <section className="py-10 md:py-14">
       <div className="container mx-auto px-4">
-        <div className="mb-8 text-center">
-          <div className="mb-4 flex items-center justify-center space-x-2">
-            <Instagram className="h-6 w-6" />
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl">@miruna.official</h2>
-          </div>
-          <p className="text-muted-foreground">Follow us for style inspiration and exclusive updates</p>
+        {/* Header */}
+        <div className="mb-6 text-center md:mb-8">
+          <a
+            href="https://www.instagram.com/miruna.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:opacity-70 transition-opacity"
+          >
+            <Instagram className="h-5 w-5" />
+            <span className="text-sm font-medium tracking-wide">@miruna.studio</span>
+          </a>
+          <p className="mt-1 text-xs text-muted-foreground">
+            Follow us for style inspiration
+          </p>
         </div>
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-6">
-          {images.map((image, index) => (
+
+        {/* Grid */}
+        <div className="grid grid-cols-3 gap-1 sm:gap-2 md:grid-cols-6">
+          {instagramPosts.map((post, index) => (
             <a
               key={index}
-              href="https://instagram.com/miruna.official"
+              href="https://www.instagram.com/miruna.studio"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden bg-muted"
             >
               <img
-                src={image}
-                alt={`Instagram post ${index + 1}`}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                src={post.image}
+                alt={post.alt}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-primary/0 transition-all duration-300 group-hover:bg-primary/20" />
+              <div className="absolute inset-0 flex items-center justify-center bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/20">
+                <Instagram className="h-6 w-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
             </a>
           ))}
         </div>

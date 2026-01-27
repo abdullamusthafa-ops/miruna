@@ -8,6 +8,7 @@ import ValentinesEditSection from "@/components/ValentinesEditSection";
 import ClothingNavigationSection from "@/components/ClothingNavigationSection";
 import TrustBadges from "@/components/TrustBadges";
 import NewsletterSection from "@/components/NewsletterSection";
+import InstagramGallery from "@/components/InstagramGallery";
 
 const Home = () => {
   return (
@@ -68,6 +69,9 @@ const Home = () => {
 
       {/* Explore the Wardrobe - Secondary categories */}
       <ClothingNavigationSection />
+
+      {/* Instagram Gallery - Social proof */}
+      <InstagramGallery />
 
       {/* Newsletter CTA */}
       <NewsletterSection />
