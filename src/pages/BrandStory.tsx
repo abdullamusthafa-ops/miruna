@@ -146,9 +146,9 @@ const BrandStory = () => {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left: Text */}
             <div className="order-2 lg:order-1">
-              <AnimatedText delay={0}>
+            <AnimatedText delay={0}>
                 <h1 className="mb-4 text-6xl font-light tracking-tight md:text-7xl lg:text-8xl">
-                  Miruna
+                  Meet Miruna
                 </h1>
               </AnimatedText>
               <AnimatedText delay={200}>
