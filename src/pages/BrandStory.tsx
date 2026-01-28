@@ -141,64 +141,73 @@ const BrandStory = () => {
       <Header />
 
       {/* 1️⃣ HERO SECTION - Founder Showcase */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Full-width background image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1920&q=80"
-            alt="Miruna - Founder"
-            className="w-full h-full object-cover object-top"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent lg:via-background/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
-        </div>
-        
-        <div className="relative container mx-auto px-4 py-24 lg:py-0">
-          <div className="max-w-xl lg:max-w-2xl">
-            <AnimatedText delay={0}>
-              <p className="mb-4 text-[10px] md:text-xs uppercase tracking-[0.4em] text-muted-foreground font-medium">
-                The Woman. The Vision. The Brand.
-              </p>
-            </AnimatedText>
-            <AnimatedText delay={100}>
-              <h1 className="mb-6 text-5xl font-light tracking-tight md:text-6xl lg:text-7xl xl:text-8xl">
-                Meet
-                <span className="block mt-2 italic font-normal">Miruna</span>
-              </h1>
-            </AnimatedText>
-            <AnimatedText delay={300}>
-              <p className="mb-10 text-base md:text-lg leading-relaxed text-muted-foreground max-w-lg">
-                Behind every piece is a woman who believes fashion should make you feel something. 
-                Miruna creates for the woman who doesn't follow trends — she sets them. 
-                Quietly. Confidently. Unapologetically.
-              </p>
-            </AnimatedText>
-            <AnimatedText delay={500}>
-              <div className="flex flex-wrap gap-6 md:gap-8">
-                <div className="border-l-2 border-foreground pl-4">
-                  <p className="text-2xl md:text-3xl font-light tracking-tight">Dubai</p>
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Designed & Created</p>
-                </div>
-                <div className="border-l-2 border-foreground pl-4">
-                  <p className="text-2xl md:text-3xl font-light tracking-tight">2020</p>
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Founded</p>
-                </div>
-                <div className="border-l-2 border-foreground pl-4">
-                  <p className="text-2xl md:text-3xl font-light tracking-tight">10K+</p>
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Women Styled</p>
-                </div>
-              </div>
-            </AnimatedText>
-            
-            {/* Quote */}
-            <AnimatedText delay={700}>
-              <div className="mt-12 md:mt-16 border-l border-foreground/30 pl-6 max-w-md">
-                <p className="text-base md:text-lg italic leading-relaxed text-foreground/80">
-                  "I design for the woman I wish I had clothes for when I was younger."
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-muted/30">
+        <div className="container mx-auto px-4 py-20 lg:py-0">
+          <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
+            {/* Left: Text Content */}
+            <div className="order-2 lg:order-1">
+              <AnimatedText delay={0}>
+                <p className="mb-4 text-[10px] md:text-xs uppercase tracking-[0.4em] text-muted-foreground font-medium">
+                  The Woman. The Vision. The Brand.
                 </p>
-                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">— Miruna, Founder</p>
-              </div>
-            </AnimatedText>
+              </AnimatedText>
+              <AnimatedText delay={100}>
+                <h1 className="mb-6 text-4xl font-light tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                  Meet
+                  <span className="block mt-2 italic font-normal">Miruna</span>
+                </h1>
+              </AnimatedText>
+              <AnimatedText delay={300}>
+                <p className="mb-10 text-sm md:text-base lg:text-lg leading-relaxed text-muted-foreground max-w-lg">
+                  Behind every piece is a woman who believes fashion should make you feel something. 
+                  Miruna creates for the woman who doesn't follow trends — she sets them. 
+                  Quietly. Confidently. Unapologetically.
+                </p>
+              </AnimatedText>
+              <AnimatedText delay={500}>
+                <div className="flex flex-wrap gap-6 md:gap-8 mb-10">
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-xl md:text-2xl font-light tracking-tight">Dubai</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Designed & Created</p>
+                  </div>
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-xl md:text-2xl font-light tracking-tight">2020</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Founded</p>
+                  </div>
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-xl md:text-2xl font-light tracking-tight">10K+</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Women Styled</p>
+                  </div>
+                </div>
+              </AnimatedText>
+              
+              {/* Quote */}
+              <AnimatedText delay={700}>
+                <div className="border-l border-foreground/30 pl-6 max-w-md">
+                  <p className="text-sm md:text-base italic leading-relaxed text-foreground/80">
+                    "I design for the woman I wish I had clothes for when I was younger."
+                  </p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">— Miruna, Founder</p>
+                </div>
+              </AnimatedText>
+            </div>
+            
+            {/* Right: Founder Portrait */}
+            <div className="order-1 lg:order-2">
+              <AnimatedText delay={200}>
+                <div className="relative">
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
+                      alt="Miruna - Founder"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Decorative frame */}
+                  <div className="absolute -bottom-4 -right-4 w-full h-full border border-foreground/20 -z-10" />
+                </div>
+              </AnimatedText>
+            </div>
           </div>
         </div>
         
