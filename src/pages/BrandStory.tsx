@@ -140,89 +140,72 @@ const BrandStory = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* 1️⃣ HERO SECTION - Enhanced */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-muted/30">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl" />
+      {/* 1️⃣ HERO SECTION - Founder Showcase */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Full-width background image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1920&q=80"
+            alt="Miruna - Founder"
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent lg:via-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+        </div>
         
-        <div className="container mx-auto px-4 py-20 lg:py-0">
-          <div className="grid items-center gap-8 lg:gap-16 lg:grid-cols-12">
-            {/* Left: Text */}
-            <div className="order-2 lg:order-1 lg:col-span-5">
-              <AnimatedText delay={0}>
-                <p className="mb-6 text-xs uppercase tracking-[0.4em] text-muted-foreground">
-                  The Woman. The Vision. The Brand.
-                </p>
-              </AnimatedText>
-              <AnimatedText delay={100}>
-                <h1 className="mb-6 text-5xl font-light tracking-tight md:text-6xl lg:text-7xl">
-                  Meet
-                  <span className="block mt-2 italic">Miruna</span>
-                </h1>
-              </AnimatedText>
-              <AnimatedText delay={300}>
-                <p className="mb-8 text-lg leading-relaxed text-muted-foreground max-w-md">
-                  Behind every piece is a woman who believes fashion should make you feel something. 
-                  Miruna creates for the woman who doesn't follow trends — she sets them. 
-                  Quietly. Confidently. Unapologetically.
-                </p>
-              </AnimatedText>
-              <AnimatedText delay={500}>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-2xl font-light">Dubai</p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Designed & Created</p>
-                  </div>
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-2xl font-light">2020</p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Founded</p>
-                  </div>
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-2xl font-light">10K+</p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Women Styled</p>
-                  </div>
+        <div className="relative container mx-auto px-4 py-24 lg:py-0">
+          <div className="max-w-xl lg:max-w-2xl">
+            <AnimatedText delay={0}>
+              <p className="mb-4 text-[10px] md:text-xs uppercase tracking-[0.4em] text-muted-foreground font-medium">
+                The Woman. The Vision. The Brand.
+              </p>
+            </AnimatedText>
+            <AnimatedText delay={100}>
+              <h1 className="mb-6 text-5xl font-light tracking-tight md:text-6xl lg:text-7xl xl:text-8xl">
+                Meet
+                <span className="block mt-2 italic font-normal">Miruna</span>
+              </h1>
+            </AnimatedText>
+            <AnimatedText delay={300}>
+              <p className="mb-10 text-base md:text-lg leading-relaxed text-muted-foreground max-w-lg">
+                Behind every piece is a woman who believes fashion should make you feel something. 
+                Miruna creates for the woman who doesn't follow trends — she sets them. 
+                Quietly. Confidently. Unapologetically.
+              </p>
+            </AnimatedText>
+            <AnimatedText delay={500}>
+              <div className="flex flex-wrap gap-6 md:gap-8">
+                <div className="border-l-2 border-foreground pl-4">
+                  <p className="text-2xl md:text-3xl font-light tracking-tight">Dubai</p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Designed & Created</p>
                 </div>
-              </AnimatedText>
-            </div>
-            
-            {/* Right: Portrait with frame */}
-            <div className="relative order-1 lg:order-2 lg:col-span-7">
-              <div className="relative">
-                {/* Main image */}
-                <ParallaxImage
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
-                  alt="Miruna - Founder"
-                  className="aspect-[4/5] w-full"
-                />
-                {/* Floating accent image */}
-                <AnimatedText delay={600}>
-                  <div className="absolute -bottom-8 -left-8 w-32 h-40 md:w-48 md:h-60 shadow-2xl hidden md:block">
-                    <img
-                      src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80"
-                      alt="Miruna design"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </AnimatedText>
-                {/* Quote overlay */}
-                <AnimatedText delay={800}>
-                  <div className="absolute -right-4 md:right-8 bottom-8 md:bottom-16 bg-background p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
-                    <p className="text-sm md:text-base italic leading-relaxed">
-                      "I design for the woman I wish I had clothes for when I was younger."
-                    </p>
-                    <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">— Miruna</p>
-                  </div>
-                </AnimatedText>
+                <div className="border-l-2 border-foreground pl-4">
+                  <p className="text-2xl md:text-3xl font-light tracking-tight">2020</p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Founded</p>
+                </div>
+                <div className="border-l-2 border-foreground pl-4">
+                  <p className="text-2xl md:text-3xl font-light tracking-tight">10K+</p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Women Styled</p>
+                </div>
               </div>
-            </div>
+            </AnimatedText>
+            
+            {/* Quote */}
+            <AnimatedText delay={700}>
+              <div className="mt-12 md:mt-16 border-l border-foreground/30 pl-6 max-w-md">
+                <p className="text-base md:text-lg italic leading-relaxed text-foreground/80">
+                  "I design for the woman I wish I had clothes for when I was younger."
+                </p>
+                <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">— Miruna, Founder</p>
+              </div>
+            </AnimatedText>
           </div>
         </div>
         
         {/* Scroll indicator */}
         <AnimatedText delay={1000}>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <p className="text-xs uppercase tracking-widest text-muted-foreground">Scroll to discover</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Scroll to discover</p>
             <div className="w-px h-8 bg-foreground/30 animate-pulse" />
           </div>
         </AnimatedText>
