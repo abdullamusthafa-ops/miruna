@@ -119,19 +119,19 @@ const BrandStory = () => {
 
   const collectionImages = [
     {
-      src: "https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=600",
+      src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
       caption: "The Confidence Edit",
     },
     {
-      src: "https://miruna.io/cdn/shop/files/D0007578.webp?v=1761738523&width=600",
+      src: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80",
       caption: "Timeless Elegance",
     },
     {
-      src: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
+      src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
       caption: "Modern Femininity",
     },
     {
-      src: "https://miruna.io/cdn/shop/files/D0006652_1.webp?v=1761809640&width=600",
+      src: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80",
       caption: "Everyday Luxury",
     },
   ];
@@ -191,7 +191,7 @@ const BrandStory = () => {
               <div className="relative">
                 {/* Main image */}
                 <ParallaxImage
-                  src="https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800"
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
                   alt="Miruna - Founder"
                   className="aspect-[4/5] w-full"
                 />
@@ -199,7 +199,7 @@ const BrandStory = () => {
                 <AnimatedText delay={600}>
                   <div className="absolute -bottom-8 -left-8 w-32 h-40 md:w-48 md:h-60 shadow-2xl hidden md:block">
                     <img
-                      src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=400"
+                      src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80"
                       alt="Miruna design"
                       className="w-full h-full object-cover"
                     />
@@ -240,7 +240,7 @@ const BrandStory = () => {
                   <div className="col-span-8 row-span-2">
                     <div className="group aspect-[3/4] overflow-hidden">
                       <img
-                        src="https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=800"
+                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
                         alt="Miruna in her studio"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
@@ -253,7 +253,7 @@ const BrandStory = () => {
                   <AnimatedText delay={200}>
                     <div className="group aspect-square overflow-hidden">
                       <img
-                        src="https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=400"
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80"
                         alt="Design details"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
@@ -263,7 +263,7 @@ const BrandStory = () => {
                   <AnimatedText delay={300}>
                     <div className="group aspect-[3/4] overflow-hidden">
                       <img
-                        src="https://miruna.io/cdn/shop/files/D0007578.webp?v=1761738523&width=400"
+                        src="https://images.unsplash.com/photo-1558769132-cb1aea1c8347?w=400&q=80"
                         alt="Miruna collection"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
