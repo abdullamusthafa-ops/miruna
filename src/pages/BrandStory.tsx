@@ -228,30 +228,29 @@ const BrandStory = () => {
         </AnimatedText>
       </section>
 
-      {/* 2️⃣ WHO IS MIRUNA - Enhanced */}
+      {/* 2️⃣ WHO IS MIRUNA - Premium Fashion Layout */}
       <section className="py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* Image Collage - Left side */}
+          <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-2">
+            {/* Image Layout - Left side */}
             <div className="relative">
-              <div className="grid grid-cols-12 gap-4">
+              <div className="flex gap-4 md:gap-6">
                 {/* Main large image */}
-                <AnimatedText delay={0}>
-                  <div className="col-span-8 row-span-2">
-                    <div className="group aspect-[3/4] overflow-hidden">
-                      <img
-                        src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
-                        alt="Miruna in her studio"
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                    </div>
+                <AnimatedText delay={0} className="flex-1">
+                  <div className="group aspect-[3/4] overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80"
+                      alt="Miruna in her studio"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
                 </AnimatedText>
+                
                 {/* Stacked smaller images */}
-                <div className="col-span-4 space-y-4">
-                  <AnimatedText delay={200}>
-                    <div className="group aspect-square overflow-hidden">
+                <div className="flex flex-col gap-4 md:gap-6 w-2/5">
+                  <AnimatedText delay={200} className="flex-1">
+                    <div className="group h-full overflow-hidden">
                       <img
                         src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80"
                         alt="Design details"
@@ -260,8 +259,8 @@ const BrandStory = () => {
                       />
                     </div>
                   </AnimatedText>
-                  <AnimatedText delay={300}>
-                    <div className="group aspect-[3/4] overflow-hidden">
+                  <AnimatedText delay={300} className="flex-1">
+                    <div className="group h-full overflow-hidden">
                       <img
                         src="https://images.unsplash.com/photo-1558769132-cb1aea1c8347?w=400&q=80"
                         alt="Miruna collection"
@@ -272,32 +271,33 @@ const BrandStory = () => {
                   </AnimatedText>
                 </div>
               </div>
+              
               {/* Experience badge */}
               <AnimatedText delay={500}>
-                <div className="absolute -bottom-6 right-0 md:right-12 bg-foreground text-background p-6 md:p-8">
-                  <p className="text-3xl md:text-4xl font-light">5+</p>
-                  <p className="text-xs uppercase tracking-wider opacity-80">Years of Passion</p>
+                <div className="absolute -bottom-6 -right-2 md:right-8 bg-foreground text-background p-5 md:p-8 shadow-2xl">
+                  <p className="text-3xl md:text-4xl font-light tracking-tight">5+</p>
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-80">Years of Passion</p>
                 </div>
               </AnimatedText>
             </div>
 
             {/* Text - Right side */}
-            <div className="lg:pl-8">
+            <div className="lg:pl-4">
               <AnimatedText>
-                <p className="mb-4 text-xs uppercase tracking-[0.4em] text-muted-foreground">
+                <p className="mb-4 text-[10px] md:text-xs uppercase tracking-[0.4em] text-muted-foreground font-medium">
                   The Creative Force
                 </p>
               </AnimatedText>
               <AnimatedText delay={100}>
-                <h2 className="mb-8 text-4xl font-light tracking-tight md:text-5xl">
-                  A Vision Born from 
-                  <span className="block italic">Personal Experience</span>
+                <h2 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-light tracking-tight leading-tight">
+                  A Vision Born from{" "}
+                  <span className="italic">Personal Experience</span>
                 </h2>
               </AnimatedText>
               <AnimatedText delay={200}>
-                <div className="space-y-6 text-muted-foreground leading-relaxed">
-                  <p className="text-lg">
-                    Growing up, Miruna struggled to find clothes that felt like <em>her</em> — 
+                <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
+                  <p className="text-base md:text-lg">
+                    Growing up, Miruna struggled to find clothes that felt like <em className="not-italic font-medium text-foreground">her</em> — 
                     pieces that were elegant yet effortless, bold yet refined. So she decided 
                     to create them herself.
                   </p>
@@ -314,14 +314,15 @@ const BrandStory = () => {
                 </div>
               </AnimatedText>
               <AnimatedText delay={400}>
-                <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8">
-                  <div>
-                    <p className="text-2xl font-light mb-1">Handpicked</p>
-                    <p className="text-sm text-muted-foreground">Premium fabrics sourced globally</p>
+                <div className="mt-10 flex gap-8 border-t border-border pt-8">
+                  <div className="flex-1">
+                    <p className="text-xl md:text-2xl font-light mb-1 tracking-tight">Handpicked</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">Premium fabrics sourced globally</p>
                   </div>
-                  <div>
-                    <p className="text-2xl font-light mb-1">Made in UAE</p>
-                    <p className="text-sm text-muted-foreground">Crafted with local artisans</p>
+                  <div className="w-px bg-border" />
+                  <div className="flex-1">
+                    <p className="text-xl md:text-2xl font-light mb-1 tracking-tight">Made in UAE</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">Crafted with local artisans</p>
                   </div>
                 </div>
               </AnimatedText>
