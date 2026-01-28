@@ -262,7 +262,7 @@ const BrandStory = () => {
                   <AnimatedText delay={300} className="flex-1">
                     <div className="group h-full overflow-hidden">
                       <img
-                        src="https://images.unsplash.com/photo-1558769132-cb1aea1c8347?w=400&q=80"
+                        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&q=80"
                         alt="Miruna collection"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
