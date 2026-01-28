@@ -140,113 +140,191 @@ const BrandStory = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* 1️⃣ HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* 1️⃣ HERO SECTION - Enhanced */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-muted/30">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-foreground/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-foreground/5 rounded-full blur-3xl" />
+        
         <div className="container mx-auto px-4 py-20 lg:py-0">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-8 lg:gap-16 lg:grid-cols-12">
             {/* Left: Text */}
-            <div className="order-2 lg:order-1">
-            <AnimatedText delay={0}>
-                <h1 className="mb-4 text-6xl font-light tracking-tight md:text-7xl lg:text-8xl">
-                  Meet Miruna
-                </h1>
-              </AnimatedText>
-              <AnimatedText delay={200}>
-                <p className="mb-6 text-lg uppercase tracking-[0.2em] text-muted-foreground">
-                  The person. The philosophy. The story behind the brand.
-                </p>
-              </AnimatedText>
-              <AnimatedText delay={400}>
-                <p className="max-w-lg text-lg leading-relaxed text-muted-foreground">
-                  Miruna is more than a fashion label. It is a personal expression of confidence, 
-                  femininity, and quiet strength — created for women who want to feel effortless 
-                  and unforgettable.
-                </p>
-              </AnimatedText>
-            </div>
-            
-            {/* Right: Portrait */}
-            <div className="relative order-1 lg:order-2">
-              <ParallaxImage
-                src="https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800"
-                alt="Miruna - Founder"
-                className="aspect-[3/4] w-full rounded-sm"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2️⃣ WHO IS MIRUNA */}
-      <section className="py-24 md:py-32">
-        <div className="container mx-auto px-4">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Text */}
-            <div>
-              <AnimatedText>
-                <p className="mb-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
-                  The Woman Behind The Brand
+            <div className="order-2 lg:order-1 lg:col-span-5">
+              <AnimatedText delay={0}>
+                <p className="mb-6 text-xs uppercase tracking-[0.4em] text-muted-foreground">
+                  The Woman. The Vision. The Brand.
                 </p>
               </AnimatedText>
               <AnimatedText delay={100}>
-                <h2 className="mb-8 text-4xl font-light tracking-tight md:text-5xl">
-                  Meet Miruna
-                </h2>
+                <h1 className="mb-6 text-5xl font-light tracking-tight md:text-6xl lg:text-7xl">
+                  Meet
+                  <span className="block mt-2 italic">Miruna</span>
+                </h1>
               </AnimatedText>
-              <AnimatedText delay={200}>
-                <div className="space-y-6 text-muted-foreground leading-relaxed">
-                  <p>
-                    Miruna is the founder and creative force behind the brand. Inspired by modern 
-                    femininity and timeless elegance, she believes that fashion should feel personal, 
-                    expressive, and wearable in real life.
-                  </p>
-                  <p>
-                    Each design reflects her belief that style doesn't need to be loud to be powerful. 
-                    The Miruna woman is confident, independent, and unapologetically herself.
-                  </p>
-                  <p className="font-medium text-foreground">
-                    This brand is built on emotion, intention, and authenticity — not trends.
-                  </p>
+              <AnimatedText delay={300}>
+                <p className="mb-8 text-lg leading-relaxed text-muted-foreground max-w-md">
+                  Behind every piece is a woman who believes fashion should make you feel something. 
+                  Miruna creates for the woman who doesn't follow trends — she sets them. 
+                  Quietly. Confidently. Unapologetically.
+                </p>
+              </AnimatedText>
+              <AnimatedText delay={500}>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-2xl font-light">Dubai</p>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Designed & Created</p>
+                  </div>
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-2xl font-light">2020</p>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Founded</p>
+                  </div>
+                  <div className="border-l-2 border-foreground pl-4">
+                    <p className="text-2xl font-light">10K+</p>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">Women Styled</p>
+                  </div>
+                </div>
+              </AnimatedText>
+            </div>
+            
+            {/* Right: Portrait with frame */}
+            <div className="relative order-1 lg:order-2 lg:col-span-7">
+              <div className="relative">
+                {/* Main image */}
+                <ParallaxImage
+                  src="https://miruna.io/cdn/shop/files/D0001829.jpg?v=1761559119&width=800"
+                  alt="Miruna - Founder"
+                  className="aspect-[4/5] w-full"
+                />
+                {/* Floating accent image */}
+                <AnimatedText delay={600}>
+                  <div className="absolute -bottom-8 -left-8 w-32 h-40 md:w-48 md:h-60 shadow-2xl hidden md:block">
+                    <img
+                      src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=400"
+                      alt="Miruna design"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </AnimatedText>
+                {/* Quote overlay */}
+                <AnimatedText delay={800}>
+                  <div className="absolute -right-4 md:right-8 bottom-8 md:bottom-16 bg-background p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
+                    <p className="text-sm md:text-base italic leading-relaxed">
+                      "I design for the woman I wish I had clothes for when I was younger."
+                    </p>
+                    <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">— Miruna</p>
+                  </div>
+                </AnimatedText>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <AnimatedText delay={1000}>
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground">Scroll to discover</p>
+            <div className="w-px h-8 bg-foreground/30 animate-pulse" />
+          </div>
+        </AnimatedText>
+      </section>
+
+      {/* 2️⃣ WHO IS MIRUNA - Enhanced */}
+      <section className="py-24 md:py-32 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            {/* Image Collage - Left side */}
+            <div className="relative">
+              <div className="grid grid-cols-12 gap-4">
+                {/* Main large image */}
+                <AnimatedText delay={0}>
+                  <div className="col-span-8 row-span-2">
+                    <div className="group aspect-[3/4] overflow-hidden">
+                      <img
+                        src="https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=800"
+                        alt="Miruna in her studio"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </AnimatedText>
+                {/* Stacked smaller images */}
+                <div className="col-span-4 space-y-4">
+                  <AnimatedText delay={200}>
+                    <div className="group aspect-square overflow-hidden">
+                      <img
+                        src="https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=400"
+                        alt="Design details"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  </AnimatedText>
+                  <AnimatedText delay={300}>
+                    <div className="group aspect-[3/4] overflow-hidden">
+                      <img
+                        src="https://miruna.io/cdn/shop/files/D0007578.webp?v=1761738523&width=400"
+                        alt="Miruna collection"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  </AnimatedText>
+                </div>
+              </div>
+              {/* Experience badge */}
+              <AnimatedText delay={500}>
+                <div className="absolute -bottom-6 right-0 md:right-12 bg-foreground text-background p-6 md:p-8">
+                  <p className="text-3xl md:text-4xl font-light">5+</p>
+                  <p className="text-xs uppercase tracking-wider opacity-80">Years of Passion</p>
                 </div>
               </AnimatedText>
             </div>
 
-            {/* Image Collage */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <AnimatedText delay={100}>
-                  <div className="group aspect-[3/4] overflow-hidden rounded-sm">
-                    <img
-                      src="https://miruna.io/cdn/shop/files/D0001698_ff86f997-3e1c-4456-891e-748cd21f70ef.jpg?v=1761556951&width=600"
-                      alt="Miruna collection"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
+            {/* Text - Right side */}
+            <div className="lg:pl-8">
+              <AnimatedText>
+                <p className="mb-4 text-xs uppercase tracking-[0.4em] text-muted-foreground">
+                  The Creative Force
+                </p>
+              </AnimatedText>
+              <AnimatedText delay={100}>
+                <h2 className="mb-8 text-4xl font-light tracking-tight md:text-5xl">
+                  A Vision Born from 
+                  <span className="block italic">Personal Experience</span>
+                </h2>
+              </AnimatedText>
+              <AnimatedText delay={200}>
+                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                  <p className="text-lg">
+                    Growing up, Miruna struggled to find clothes that felt like <em>her</em> — 
+                    pieces that were elegant yet effortless, bold yet refined. So she decided 
+                    to create them herself.
+                  </p>
+                  <p>
+                    What started as sketches in a notebook became a mission: to design for women 
+                    who refuse to choose between comfort and style, between standing out and fitting in. 
+                    Every Miruna piece carries this philosophy — fashion that empowers without demanding attention.
+                  </p>
+                  <p>
+                    Today, Miruna personally oversees every collection, ensuring each design meets 
+                    her exacting standards. From fabric selection to final stitch, her hands guide 
+                    the process because she believes the details matter most.
+                  </p>
+                </div>
+              </AnimatedText>
+              <AnimatedText delay={400}>
+                <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8">
+                  <div>
+                    <p className="text-2xl font-light mb-1">Handpicked</p>
+                    <p className="text-sm text-muted-foreground">Premium fabrics sourced globally</p>
                   </div>
-                </AnimatedText>
-                <AnimatedText delay={300}>
-                  <div className="group aspect-square overflow-hidden rounded-sm">
-                    <img
-                      src="https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=400"
-                      alt="Miruna design"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
+                  <div>
+                    <p className="text-2xl font-light mb-1">Made in UAE</p>
+                    <p className="text-sm text-muted-foreground">Crafted with local artisans</p>
                   </div>
-                </AnimatedText>
-              </div>
-              <div className="pt-8">
-                <AnimatedText delay={200}>
-                  <div className="group aspect-[2/3] overflow-hidden rounded-sm">
-                    <img
-                      src="https://miruna.io/cdn/shop/files/D0001752.jpg?v=1761559408&width=600"
-                      alt="Miruna style"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                </AnimatedText>
-              </div>
+                </div>
+              </AnimatedText>
             </div>
           </div>
         </div>
