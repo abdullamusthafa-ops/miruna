@@ -235,7 +235,7 @@ const BrandStory = () => {
         {/* Scroll indicator */}
         <AnimatedText delay={1000}>
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Discover the story</p>
+            <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Scroll</p>
             <div className="w-px h-10 bg-gradient-to-b from-foreground/40 to-transparent animate-pulse" />
           </div>
         </AnimatedText>
