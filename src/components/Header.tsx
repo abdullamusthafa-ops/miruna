@@ -19,10 +19,10 @@ const megaMenuData = {
   },
   drops: {
     items: [
-      { name: "Too Good To Lose", href: "/collection/too-good-to-lose", image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&h=500&fit=crop" },
-      { name: "My Mom Said No", href: "/collection/my-mom-said-no", image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&h=500&fit=crop" },
-      { name: "I Woke Up Like This", href: "/collection/i-woke-up-like-this", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=500&fit=crop" },
-      { name: "Fluff Stuff", href: "/collection/fluff-stuff", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=500&fit=crop" },
+      { name: "Too Good To Lose", href: "/collection/too-good-to-lose", image: "https://miruna.io/cdn/shop/files/To_Good_To_Lose-Mega-Menu-Desktop.webp?v=1769001461&width=630" },
+      { name: "My Mom Said No", href: "/collection/my-mom-said-no", image: "https://miruna.io/cdn/shop/files/My_Mom_Said_No-Mega-Menu-Desktop.webp?v=1769001461&width=630" },
+      { name: "I Woke Up Like This", href: "/collection/i-woke-up-like-this", image: "https://miruna.io/cdn/shop/files/I_Woke_Up_Like_This-Mega-Menu-Desktop.webp?v=1769001461&width=630" },
+      { name: "Fluff Stuff", href: "/collection/fluff-stuff", image: "https://miruna.io/cdn/shop/files/Fluff_Stuff-Mega-Menu-Desktop.webp?v=1769001462&width=630" },
     ],
   },
   dresses: {
