@@ -120,20 +120,20 @@ const BrandStory = () => {
 
   const collectionImages = [
     {
-      src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
-      caption: "The Confidence Edit",
+      src: "https://miruna.io/cdn/shop/files/To_Good_To_Lose-Mega-Menu-Desktop.webp?v=1769001461&width=630",
+      caption: "Too Good To Lose",
     },
     {
-      src: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80",
-      caption: "Timeless Elegance",
+      src: "https://miruna.io/cdn/shop/files/My_Mom_Said_No-Mega-Menu-Desktop.webp?v=1769001461&width=630",
+      caption: "My Mom Said No",
     },
     {
-      src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
-      caption: "Modern Femininity",
+      src: "https://miruna.io/cdn/shop/files/I_Woke_Up_Like_This-Mega-Menu-Desktop.webp?v=1769001461&width=630",
+      caption: "I Woke Up Like This",
     },
     {
-      src: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=600&q=80",
-      caption: "Everyday Luxury",
+      src: "https://miruna.io/cdn/shop/files/Fluff_Stuff-Mega-Menu-Desktop.webp?v=1769001462&width=630",
+      caption: "Fluff Stuff",
     },
   ];
 
