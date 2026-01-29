@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Heart, Sparkles, Star, Clock, MapPin, Truck, RotateCcw, Instagram, ArrowRight } from "lucide-react";
+import mirunaFounder from "@/assets/miruna-founder.jpg";
 
 // Animated Text Component
 const AnimatedText = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {
@@ -140,54 +141,63 @@ const BrandStory = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* 1️⃣ HERO SECTION - Founder Showcase */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-muted/30">
-        <div className="container mx-auto px-4 py-20 lg:py-0">
-          <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
+      {/* 1️⃣ HERO SECTION - Premium Founder Showcase */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/20" />
+        
+        <div className="container relative mx-auto px-4 py-24 lg:py-32">
+          <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-[1fr_1.1fr]">
             {/* Left: Text Content */}
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 max-w-xl">
               <AnimatedText delay={0}>
-                <p className="mb-4 text-[10px] md:text-xs uppercase tracking-[0.4em] text-muted-foreground font-medium">
-                  The Woman. The Vision. The Brand.
+                <p className="mb-6 text-[11px] md:text-xs uppercase tracking-[0.5em] text-muted-foreground font-medium">
+                  The Woman Behind The Brand
                 </p>
               </AnimatedText>
+              
               <AnimatedText delay={100}>
-                <h1 className="mb-6 text-4xl font-light tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="mb-8 text-5xl font-light tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                   Meet
-                  <span className="block mt-2 italic font-normal">Miruna</span>
+                  <span className="block mt-1 italic font-normal text-foreground/90">Miruna</span>
                 </h1>
               </AnimatedText>
+              
               <AnimatedText delay={300}>
-                <p className="mb-10 text-sm md:text-base lg:text-lg leading-relaxed text-muted-foreground max-w-lg">
+                <p className="mb-10 text-base md:text-lg lg:text-xl leading-relaxed text-muted-foreground">
                   Behind every piece is a woman who believes fashion should make you feel something. 
                   Miruna creates for the woman who doesn't follow trends — she sets them. 
-                  Quietly. Confidently. Unapologetically.
+                  <span className="block mt-2 text-foreground/80 font-medium">Quietly. Confidently. Unapologetically.</span>
                 </p>
               </AnimatedText>
+              
+              {/* Stats Row */}
               <AnimatedText delay={500}>
-                <div className="flex flex-wrap gap-6 md:gap-8 mb-10">
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-xl md:text-2xl font-light tracking-tight">Dubai</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Designed & Created</p>
+                <div className="flex flex-wrap gap-8 md:gap-12 mb-12">
+                  <div className="group">
+                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">Dubai</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Designed & Created</p>
                   </div>
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-xl md:text-2xl font-light tracking-tight">2020</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Founded</p>
+                  <div className="w-px bg-border" />
+                  <div className="group">
+                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">2020</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Founded</p>
                   </div>
-                  <div className="border-l-2 border-foreground pl-4">
-                    <p className="text-xl md:text-2xl font-light tracking-tight">10K+</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.15em] text-muted-foreground mt-1">Women Styled</p>
+                  <div className="w-px bg-border hidden md:block" />
+                  <div className="group">
+                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">10K+</p>
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Women Styled</p>
                   </div>
                 </div>
               </AnimatedText>
               
-              {/* Quote */}
+              {/* Signature Quote */}
               <AnimatedText delay={700}>
-                <div className="border-l border-foreground/30 pl-6 max-w-md">
-                  <p className="text-sm md:text-base italic leading-relaxed text-foreground/80">
+                <div className="relative pl-6 border-l-2 border-foreground/20">
+                  <p className="text-base md:text-lg italic leading-relaxed text-foreground/80">
                     "I design for the woman I wish I had clothes for when I was younger."
                   </p>
-                  <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted-foreground">— Miruna, Founder</p>
+                  <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground font-medium">— Miruna, Founder & Creative Director</p>
                 </div>
               </AnimatedText>
             </div>
@@ -196,15 +206,26 @@ const BrandStory = () => {
             <div className="order-1 lg:order-2">
               <AnimatedText delay={200}>
                 <div className="relative">
-                  <div className="aspect-[3/4] overflow-hidden">
-                    <img
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80"
-                      alt="Miruna - Founder"
-                      className="w-full h-full object-cover"
-                    />
+                  {/* Main Image Container */}
+                  <div className="relative">
+                    <div className="aspect-[4/5] overflow-hidden shadow-2xl">
+                      <img
+                        src={mirunaFounder}
+                        alt="Miruna - Founder & Creative Director"
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute -bottom-4 -left-4 w-full h-full border border-foreground/10 -z-10" />
+                    <div className="absolute -bottom-8 -left-8 w-full h-full border border-foreground/5 -z-20" />
                   </div>
-                  {/* Decorative frame */}
-                  <div className="absolute -bottom-4 -right-4 w-full h-full border border-foreground/20 -z-10" />
+                  
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-6 -right-2 md:right-6 bg-foreground text-background px-6 py-4 md:px-8 md:py-6 shadow-xl">
+                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-80 mb-1">Founder</p>
+                    <p className="text-lg md:text-xl font-light tracking-wide">Miruna</p>
+                  </div>
                 </div>
               </AnimatedText>
             </div>
@@ -213,9 +234,9 @@ const BrandStory = () => {
         
         {/* Scroll indicator */}
         <AnimatedText delay={1000}>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Scroll to discover</p>
-            <div className="w-px h-8 bg-foreground/30 animate-pulse" />
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Discover the story</p>
+            <div className="w-px h-10 bg-gradient-to-b from-foreground/40 to-transparent animate-pulse" />
           </div>
         </AnimatedText>
       </section>
