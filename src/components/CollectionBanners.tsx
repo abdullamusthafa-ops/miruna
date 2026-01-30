@@ -18,7 +18,7 @@ const CollectionBanners = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 text-primary-foreground">
-              <h3 className="mb-2 text-3xl font-bold uppercase">Best Sellers</h3>
+              <h3 className="mb-2 text-3xl font-display uppercase">Best Sellers</h3>
               <Button variant="secondary" size="sm" className="mt-2">
                 Shop Now
               </Button>
@@ -37,7 +37,7 @@ const CollectionBanners = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 text-primary-foreground">
-              <h3 className="mb-2 text-3xl font-bold uppercase">Black Friday</h3>
+              <h3 className="mb-2 text-3xl font-display uppercase">Black Friday</h3>
               <p className="mb-3 text-lg">Up to 40% OFF</p>
               <Button variant="secondary" size="sm" className="mt-2">
                 Shop Now

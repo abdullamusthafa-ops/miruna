@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative overflow-hidden group font-sans",
   {
     variants: {
       variant: {
-        default: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.2em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
+        default: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.1em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md",
-        outline: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.2em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
-        secondary: "bg-foreground text-background hover:bg-foreground/90 uppercase tracking-[0.2em] text-xs rounded-none",
+        outline: "border border-foreground bg-transparent text-foreground uppercase tracking-[0.1em] text-xs rounded-none before:absolute before:inset-0 before:bg-foreground before:translate-y-full before:transition-transform before:duration-300 before:ease-out hover:before:translate-y-0 hover:text-background [&>*]:relative [&>*]:z-10",
+        secondary: "bg-foreground text-background hover:bg-foreground/90 uppercase tracking-[0.1em] text-xs rounded-none",
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
-        link: "text-foreground underline underline-offset-4 hover:no-underline uppercase tracking-[0.15em] text-xs px-0",
+        link: "text-foreground underline underline-offset-4 hover:no-underline uppercase tracking-[0.1em] text-xs px-0",
       },
       size: {
         default: "h-11 px-10 py-3",

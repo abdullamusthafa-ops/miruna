@@ -23,7 +23,7 @@ const Products = () => {
       {/* Page Header */}
       <section className="border-b border-border bg-muted py-12">
         <div className="container mx-auto px-4">
-          <h1 className="mb-2 text-4xl font-bold tracking-tight">Shop All Products</h1>
+          <h1 className="mb-2 text-4xl font-display tracking-tight">Shop All Products</h1>
           <p className="text-muted-foreground">Discover our complete collection of luxury fashion and statement dresses</p>
         </div>
       </section>

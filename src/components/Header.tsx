@@ -234,9 +234,9 @@ const Header = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold tracking-tight">
+            <span className="text-2xl font-display tracking-tight">
               mi<span className="text-muted-foreground">·</span>ru<span className="text-muted-foreground">·</span>na
-              <span className="text-[8px] align-super">®</span>
+              <span className="text-[8px] align-super font-sans">®</span>
             </span>
           </Link>
 

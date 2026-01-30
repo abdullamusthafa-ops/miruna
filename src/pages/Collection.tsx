@@ -198,7 +198,7 @@ const Collection = () => {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative flex h-full items-center justify-center text-center">
           <div>
-            <h1 className="mb-3 text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-3 text-4xl font-display tracking-tight text-white md:text-5xl lg:text-6xl">
               {info.title}
             </h1>
             <p className="text-sm text-white/80 md:text-base">{info.description}</p>

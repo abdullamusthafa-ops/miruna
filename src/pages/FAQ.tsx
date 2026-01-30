@@ -99,7 +99,7 @@ const FAQ = () => {
       {/* Hero Section */}
       <section className="border-b border-border bg-muted py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">Frequently Asked Questions</h1>
+          <h1 className="mb-4 text-4xl font-display tracking-tight md:text-5xl">Frequently Asked Questions</h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Find answers to common questions about our products, shipping, returns, and more
           </p>
@@ -111,7 +111,7 @@ const FAQ = () => {
           {faqs.map((category, index) => (
             <Card key={index}>
               <CardContent className="p-6">
-                <h2 className="mb-6 text-2xl font-bold">{category.category}</h2>
+                <h2 className="mb-6 text-2xl font-display">{category.category}</h2>
                 <Accordion type="single" collapsible className="w-full">
                   {category.questions.map((faq, faqIndex) => (
                     <AccordionItem key={faqIndex} value={`item-${index}-${faqIndex}`}>
@@ -133,7 +133,7 @@ const FAQ = () => {
         <div className="mx-auto mt-12 max-w-2xl text-center">
           <Card>
             <CardContent className="p-8">
-              <h2 className="mb-4 text-2xl font-bold">Still Have Questions?</h2>
+              <h2 className="mb-4 text-2xl font-display">Still Have Questions?</h2>
               <p className="mb-6 text-muted-foreground">
                 Can't find the answer you're looking for? Our customer support team is here to help.
               </p>

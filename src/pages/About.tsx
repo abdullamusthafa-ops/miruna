@@ -34,7 +34,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="border-b border-border bg-muted py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">About Miruna</h1>
+          <h1 className="mb-4 text-4xl font-display tracking-tight md:text-5xl">About Miruna</h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Crafting bold fashion statements through exceptional design since our inception
           </p>
@@ -46,7 +46,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-3xl font-bold tracking-tight">Our Story</h2>
+              <h2 className="mb-6 text-3xl font-display tracking-tight">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
                   Miruna was born from a simple yet powerful vision: to create fashion that transcends trends and 
@@ -80,7 +80,7 @@ const About = () => {
       <section className="bg-muted py-16">
         <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight">Our Values</h2>
+          <h2 className="mb-4 text-3xl font-display tracking-tight">Our Values</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             The principles that guide everything we create
           </p>
@@ -107,7 +107,7 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight">Our Commitment to You</h2>
+            <h2 className="mb-6 text-3xl font-display tracking-tight">Our Commitment to You</h2>
             <p className="mb-8 text-lg text-muted-foreground">
               When you choose Miruna, you're not just purchasing clothing—you're investing in pieces crafted with passion, 
               backed by our promise of quality, and delivered with exceptional service. Made in the UAE with the finest materials.

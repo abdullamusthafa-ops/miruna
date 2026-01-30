@@ -12,7 +12,7 @@ const ValentinesEditSection = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <h2 className="text-xl font-bold tracking-wider text-white sm:text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-xl font-display tracking-wider text-white sm:text-2xl md:text-3xl lg:text-4xl">
                 The Valentines Edit
               </h2>
               <span className="mt-2 inline-block border border-white bg-transparent px-4 py-1.5 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-colors hover:bg-white hover:text-foreground sm:mt-3 sm:px-6 sm:py-2 sm:text-xs">
