@@ -157,7 +157,7 @@ const BrandStory = () => {
               </AnimatedText>
               
               <AnimatedText delay={100}>
-                <h1 className="mb-8 text-5xl font-light tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                <h1 className="mb-8 text-5xl font-display tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                   Meet
                   <span className="block mt-1 italic font-normal text-foreground/90">Miruna</span>
                 </h1>
@@ -302,7 +302,7 @@ const BrandStory = () => {
                 </p>
               </AnimatedText>
               <AnimatedText delay={100}>
-                <h2 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-light tracking-tight leading-tight">
+                <h2 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-display tracking-tight leading-tight">
                   A Vision Born from{" "}
                   <span className="italic">Personal Experience</span>
                 </h2>
@@ -354,7 +354,7 @@ const BrandStory = () => {
               </p>
             </AnimatedText>
             <AnimatedText delay={100}>
-              <h2 className="mb-16 text-4xl font-light tracking-tight md:text-5xl">
+              <h2 className="mb-16 text-4xl font-display tracking-tight md:text-5xl">
                 The Philosophy
               </h2>
             </AnimatedText>
@@ -394,7 +394,7 @@ const BrandStory = () => {
               </p>
             </AnimatedText>
             <AnimatedText delay={100}>
-              <h2 className="mb-12 text-center text-4xl font-light tracking-tight md:text-5xl">
+              <h2 className="mb-12 text-center text-4xl font-display tracking-tight md:text-5xl">
                 The Journey
               </h2>
             </AnimatedText>

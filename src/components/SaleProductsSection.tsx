@@ -88,7 +88,7 @@ const SaleProductsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between md:mb-8">
-          <h2 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+          <h2 className="text-lg font-display tracking-tight sm:text-xl md:text-2xl">
             Up to 40% Off – Selected Dresses
           </h2>
           <div className="hidden items-center gap-2 md:flex">

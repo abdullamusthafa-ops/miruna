@@ -26,7 +26,7 @@ const BestSellersSection = ({ products }: BestSellersProps) => {
               <TrendingUp className="h-5 w-5 text-primary md:h-6 md:w-6" />
               <span className="text-xs font-semibold uppercase tracking-wider text-primary md:text-sm">Trending Now</span>
             </div>
-            <h2 className="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">Best Sellers</h2>
+            <h2 className="text-2xl font-display tracking-tight md:text-3xl lg:text-4xl">Best Sellers</h2>
             <p className="mt-1 text-sm text-muted-foreground md:mt-2 md:text-base">Our most loved pieces flying off the shelves</p>
           </div>
           <Button asChild variant="outline" size="lg" className="hidden md:flex">

@@ -25,7 +25,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="border-b border-border bg-muted py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">Get in Touch</h1>
+          <h1 className="mb-4 text-4xl font-display tracking-tight md:text-5xl">Get in Touch</h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
@@ -38,7 +38,7 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card>
               <CardContent className="p-8">
-                <h2 className="mb-6 text-2xl font-bold">Send Us a Message</h2>
+                <h2 className="mb-6 text-2xl font-display">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <div>

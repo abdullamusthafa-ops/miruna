@@ -59,7 +59,7 @@ const InstagramGallery = () => {
           >
             <div className="mb-3 flex items-center justify-center gap-3">
               <Instagram className="h-6 w-6 md:h-7 md:w-7" />
-              <span className="text-lg font-semibold tracking-wide md:text-xl">
+              <span className="text-lg font-display tracking-wide md:text-xl">
                 @miruna.studio
               </span>
             </div>

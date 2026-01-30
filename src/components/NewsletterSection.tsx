@@ -16,7 +16,7 @@ const NewsletterSection = () => {
   return (
     <section className="bg-foreground py-12 text-background md:py-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="mb-2 text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
+        <h2 className="mb-2 text-xl font-display tracking-tight sm:text-2xl md:text-3xl">
           Get 10% Off Your First Order
         </h2>
         <p className="mx-auto mb-6 max-w-md text-xs text-background/70 sm:text-sm">

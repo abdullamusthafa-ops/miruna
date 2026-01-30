@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Info */}
           <div>
-            <h3 className="mb-4 text-2xl font-bold tracking-wider">mi·ru·na</h3>
+            <h3 className="mb-4 text-2xl font-display tracking-wider">mi·ru·na</h3>
             <p className="text-sm text-muted-foreground">
               Discover bold fashion and statement pieces crafted with passion and precision.
               Elevate your style with unapologetic elegance.

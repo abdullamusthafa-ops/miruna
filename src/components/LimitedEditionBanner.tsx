@@ -12,7 +12,7 @@ const LimitedEditionBanner = () => {
             <Sparkles className="h-4 w-4" />
             <span className="text-sm font-semibold uppercase tracking-wider">Limited Edition</span>
           </div>
-          <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-6xl">FLUFF STUFF</h2>
+          <h2 className="mb-4 text-4xl font-display tracking-tight md:text-6xl">FLUFF STUFF</h2>
           <p className="mb-8 text-lg opacity-90">
             Exclusive collection dropping soon. Be the first to own these limited pieces.
           </p>

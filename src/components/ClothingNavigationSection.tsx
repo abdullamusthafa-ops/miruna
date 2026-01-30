@@ -33,7 +33,7 @@ const ClothingNavigationSection = () => {
     <section className="py-10 md:py-14">
       <div className="container mx-auto px-4">
         <div className="mb-6 text-center md:mb-8">
-          <h2 className="text-lg font-semibold tracking-tight sm:text-xl md:text-2xl">
+          <h2 className="text-lg font-display tracking-tight sm:text-xl md:text-2xl">
             Explore the Wardrobe
           </h2>
         </div>

@@ -186,7 +186,7 @@ const ProductDetail = () => {
             </p>
             
             {/* Product Name */}
-            <h1 className="text-xl font-bold tracking-tight mb-1">
+            <h1 className="text-xl font-display tracking-tight mb-1">
               {product.name}
             </h1>
             
@@ -345,7 +345,7 @@ const ProductDetail = () => {
 
         {/* Related Products */}
         <div className="mt-20 border-t border-border pt-12">
-          <h2 className="mb-8 text-xl font-semibold">You May Also Like</h2>
+          <h2 className="mb-8 text-xl font-display">You May Also Like</h2>
           <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {relatedProducts.map((product) => (
               <ProductCard key={product.id} {...product} />
