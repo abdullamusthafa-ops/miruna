@@ -1,5 +1,5 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/canela');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -101,13 +101,18 @@ Black and White Theme - Clean, minimal, luxury aesthetic
     @apply bg-background text-foreground font-sans antialiased;
   }
   
-  h1, h2 {
-    font-family: 'Canela', Georgia, serif;
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+  }
+  
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 400;
   }
   
   h3, h4, h5, h6 {
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'General Sans', system-ui, sans-serif;
     font-weight: 600;
   }
 }
