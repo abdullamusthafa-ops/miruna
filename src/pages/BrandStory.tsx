@@ -310,24 +310,20 @@ const BrandStory = () => {
                <AnimatedText delay={200}>
                  <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
                    <p className="text-base md:text-lg">
-                     Growing up, Miruna searched for pieces that felt aligned — elegant yet impactful, 
-                     strong yet refined. Clothing that made a statement before she did.
+                     Growing up, Miruna sought pieces that felt perfectly aligned — elegant yet impactful, 
+                     strong yet refined, clothing that spoke before she did. When she couldn't find them, 
+                     she decided to create them herself.
                    </p>
                    <p>
-                     When she couldn't find them, she began designing them.
+                     What began as simple sketches quickly became a mission: to design for women who never 
+                     compromise between comfort and sophistication, who understand that true confidence 
+                     doesn't need to announce itself.
                    </p>
                    <p>
-                     What started as sketches became a commitment: to create pieces for women who don't 
-                     compromise between comfort and sophistication — who understand that true confidence 
-                     doesn't rely on noise.
-                   </p>
-                   <p>
-                     Every Miruna piece reflects this mindset. Clean lines. Intentional cuts. Fabrics 
-                     chosen for how they feel, not just how they look.
-                   </p>
-                   <p>
-                     Miruna personally oversees each collection, from sourcing to final construction. 
-                     Because details are not decoration — they are identity.
+                     Every Miruna piece embodies this philosophy — clean lines, intentional cuts, and fabrics 
+                     chosen for how they feel as much as how they look. Miruna personally oversees each 
+                     collection, from sourcing to final construction, because details are not decoration; 
+                     they are identity.
                    </p>
                  </div>
                </AnimatedText>
