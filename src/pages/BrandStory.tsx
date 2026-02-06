@@ -463,18 +463,9 @@ const BrandStory = () => {
              <AnimatedText delay={200}>
                <p className="text-muted-foreground leading-relaxed">
                  Every Miruna collection carries intention — but never takes itself too seriously. 
-                 Each piece is thoughtfully named, not just to describe it, but to capture a moment. A mood. A knowing smile.
-               </p>
-             </AnimatedText>
-             <AnimatedText delay={300}>
-               <p className="mt-4 text-muted-foreground leading-relaxed">
-                 Because what you wear isn't random. It reflects how you feel, where you're going, 
-                 and sometimes… exactly what you're thinking.
-               </p>
-             </AnimatedText>
-             <AnimatedText delay={400}>
-               <p className="mt-4 text-muted-foreground leading-relaxed">
-                 Miruna turns clothing into conversation. Something personal. Something expressive. Something remembered.
+                 Each piece is thoughtfully named, not just to describe it, but to capture a moment, a mood, a knowing smile, 
+                 because what you wear isn't random; it reflects how you feel, where you're going, 
+                 and sometimes… exactly what you're thinking. Miruna turns clothing into conversation — something personal, expressive, and remembered.
                </p>
              </AnimatedText>
           </div>
