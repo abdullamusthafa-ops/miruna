@@ -85,31 +85,31 @@ const BrandStory = () => {
   const values = [
     {
       icon: Heart,
-      title: "Quiet Confidence",
-      description: "Clothes that speak without trying too hard",
+      title: "Statement",
+      description: "Made to speak before you do.",
     },
     {
       icon: Sparkles,
-      title: "Intentional Design",
-      description: "Every piece has meaning and purpose",
+      title: "Precision",
+      description: "Every cut, deliberate.",
     },
     {
       icon: Star,
-      title: "Emotional Connection",
-      description: "Fashion that feels personal",
+      title: "Identity",
+      description: "Fashion that reflects standards, not trends.",
     },
     {
       icon: Clock,
-      title: "Timeless Appeal",
-      description: "Designed beyond trends",
+      title: "Longevity",
+      description: "Designed to stay, not cycle out.",
     },
   ];
 
   const trustPoints = [
-    { icon: Heart, text: "Designed with intention and emotion" },
-    { icon: Sparkles, text: "Premium quality with effortless comfort" },
-    { icon: Star, text: "Made for real women and real moments" },
-    { icon: Heart, text: "Personal brand built on authenticity" },
+    { icon: Heart, text: "Made to be seen" },
+    { icon: Sparkles, text: "Crafted to be felt" },
+    { icon: Star, text: "Designed with standards" },
+    { icon: Heart, text: "Worn with certainty" },
   ];
 
   const trustBadges = [
@@ -165,28 +165,28 @@ const BrandStory = () => {
               
               <AnimatedText delay={300}>
                 <p className="mb-10 text-base md:text-lg lg:text-xl leading-relaxed text-muted-foreground">
-                  Behind every piece is a woman who believes fashion should make you feel something. 
-                  Miruna creates for the woman who doesn't follow trends — she sets them. 
-                  <span className="block mt-2 text-foreground/80 font-medium">Quietly. Confidently. Unapologetically.</span>
-                </p>
+                   Behind every piece is a woman who believes clothing should express who you are — before you say a word. 
+                   Miruna designs for women who don't chase trends. They move differently. They choose intentionally. 
+                   <span className="block mt-2 text-foreground/80 font-medium">They wear confidence without explanation.</span>
+                 </p>
               </AnimatedText>
               
               {/* Stats Row */}
               <AnimatedText delay={500}>
                 <div className="flex flex-wrap gap-8 md:gap-12 mb-12">
                   <div className="group">
-                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">Dubai</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Designed & Created</p>
-                  </div>
-                  <div className="w-px bg-border" />
-                  <div className="group">
-                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">2020</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Founded</p>
-                  </div>
-                  <div className="w-px bg-border hidden md:block" />
-                  <div className="group">
-                    <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">10K+</p>
-                    <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Women Styled</p>
+                     <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">Dubai</p>
+                     <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Designed & Crafted</p>
+                   </div>
+                   <div className="w-px bg-border" />
+                   <div className="group">
+                     <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">2025</p>
+                     <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Founded</p>
+                   </div>
+                   <div className="w-px bg-border hidden md:block" />
+                   <div className="group">
+                     <p className="text-3xl md:text-4xl font-light tracking-tight transition-colors group-hover:text-foreground/70">1,000+</p>
+                     <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Women Wearing Miruna</p>
                   </div>
                 </div>
               </AnimatedText>
@@ -194,10 +194,10 @@ const BrandStory = () => {
               {/* Signature Quote */}
               <AnimatedText delay={700}>
                 <div className="relative pl-6 border-l-2 border-foreground/20">
-                  <p className="text-base md:text-lg italic leading-relaxed text-foreground/80">
-                    "I design for the woman I wish I had clothes for when I was younger."
-                  </p>
-                  <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground font-medium">— Miruna, Founder & Creative Director</p>
+                   <p className="text-base md:text-lg italic leading-relaxed text-foreground/80">
+                     "I design what I couldn't find."
+                   </p>
+                   <p className="mt-4 text-xs uppercase tracking-[0.25em] text-muted-foreground font-medium">— Miruna, Founder & Creative Director</p>
                 </div>
               </AnimatedText>
             </div>
@@ -287,9 +287,9 @@ const BrandStory = () => {
               
               {/* Experience badge */}
               <AnimatedText delay={500}>
-                <div className="absolute -bottom-6 -right-2 md:right-8 bg-foreground text-background p-5 md:p-8 shadow-2xl">
-                  <p className="text-3xl md:text-4xl font-light tracking-tight">5+</p>
-                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-80">Years of Passion</p>
+               <div className="absolute -bottom-6 -right-2 md:right-8 bg-foreground text-background p-5 md:p-8 shadow-2xl">
+                   <p className="text-3xl md:text-4xl font-light tracking-tight">UAE</p>
+                   <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-80">Crafted Locally</p>
                 </div>
               </AnimatedText>
             </div>
@@ -301,31 +301,36 @@ const BrandStory = () => {
                   The Creative Force
                 </p>
               </AnimatedText>
-              <AnimatedText delay={100}>
-                <h2 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-display tracking-tight leading-tight">
-                  A Vision Born from{" "}
-                  <span className="italic">Personal Experience</span>
-                </h2>
-              </AnimatedText>
-              <AnimatedText delay={200}>
-                <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
-                  <p className="text-base md:text-lg">
-                    Growing up, Miruna struggled to find clothes that felt like <em className="not-italic font-medium text-foreground">her</em> — 
-                    pieces that were elegant yet effortless, bold yet refined. So she decided 
-                    to create them herself.
-                  </p>
-                  <p>
-                    What started as sketches in a notebook became a mission: to design for women 
-                    who refuse to choose between comfort and style, between standing out and fitting in. 
-                    Every Miruna piece carries this philosophy — fashion that empowers without demanding attention.
-                  </p>
-                  <p>
-                    Today, Miruna personally oversees every collection, ensuring each design meets 
-                    her exacting standards. From fabric selection to final stitch, her hands guide 
-                    the process because she believes the details matter most.
-                  </p>
-                </div>
-              </AnimatedText>
+               <AnimatedText delay={100}>
+                 <h2 className="mb-8 text-3xl md:text-4xl lg:text-5xl font-display tracking-tight leading-tight">
+                   A Vision Born from{" "}
+                   <span className="italic">Personal Experience</span>
+                 </h2>
+               </AnimatedText>
+               <AnimatedText delay={200}>
+                 <div className="space-y-5 text-muted-foreground leading-relaxed text-sm md:text-base">
+                   <p className="text-base md:text-lg">
+                     Growing up, Miruna searched for pieces that felt aligned — elegant yet impactful, 
+                     strong yet refined. Clothing that made a statement before she did.
+                   </p>
+                   <p>
+                     When she couldn't find them, she began designing them.
+                   </p>
+                   <p>
+                     What started as sketches became a commitment: to create pieces for women who don't 
+                     compromise between comfort and sophistication — who understand that true confidence 
+                     doesn't rely on noise.
+                   </p>
+                   <p>
+                     Every Miruna piece reflects this mindset. Clean lines. Intentional cuts. Fabrics 
+                     chosen for how they feel, not just how they look.
+                   </p>
+                   <p>
+                     Miruna personally oversees each collection, from sourcing to final construction. 
+                     Because details are not decoration — they are identity.
+                   </p>
+                 </div>
+               </AnimatedText>
               <AnimatedText delay={400}>
                 <div className="mt-10 flex gap-8 border-t border-border pt-8">
                   <div className="flex-1">
@@ -376,11 +381,11 @@ const BrandStory = () => {
             ))}
           </div>
 
-          <AnimatedText delay={600}>
-            <p className="mx-auto mt-16 max-w-2xl text-center text-lg italic text-muted-foreground">
-              Miruna creates pieces that move with you — from day to night, moment to moment.
-            </p>
-          </AnimatedText>
+           <AnimatedText delay={600}>
+             <p className="mx-auto mt-16 max-w-2xl text-center text-lg italic text-muted-foreground">
+               Miruna creates clothing that supports your presence — not replaces it.
+             </p>
+           </AnimatedText>
         </div>
       </section>
 
@@ -404,36 +409,36 @@ const BrandStory = () => {
               <AnimatedText delay={200}>
                 <div className="relative mb-12">
                   <div className="absolute -left-[41px] md:-left-[49px] h-2 w-2 rounded-full bg-foreground" />
-                  <h3 className="mb-4 text-xl font-medium">The Beginning</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    The idea behind Miruna was born from a desire to create clothing that feels 
-                    effortless yet refined. A vision to dress women who value quality over quantity, 
-                    intention over impulse.
-                  </p>
+                   <h3 className="mb-4 text-xl font-medium">The Beginning</h3>
+                   <p className="text-muted-foreground leading-relaxed">
+                     Miruna was created from a clear belief: what you wear should reflect your standards. 
+                     Not trends. Not expectations. It began with the desire to design for women who choose 
+                     intention over impulse — and quality that speaks for itself.
+                   </p>
                 </div>
               </AnimatedText>
 
               <AnimatedText delay={400}>
                 <div className="relative mb-12">
                   <div className="absolute -left-[41px] md:-left-[49px] h-2 w-2 rounded-full bg-foreground" />
-                  <h3 className="mb-4 text-xl font-medium">The Inspiration</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Inspired by European aesthetics and shaped by modern lifestyles, the brand brings 
-                    together comfort, elegance, and individuality. Every design tells a story of 
-                    confidence and self-expression.
-                  </p>
+                   <h3 className="mb-4 text-xl font-medium">The Inspiration</h3>
+                   <p className="text-muted-foreground leading-relaxed">
+                     Influenced by European refinement and shaped by modern ambition, Miruna brings 
+                     together precision and fluidity. Clean silhouettes. Confident lines. Pieces that 
+                     feel composed, not complicated.
+                   </p>
                 </div>
               </AnimatedText>
 
               <AnimatedText delay={600}>
                 <div className="relative">
                   <div className="absolute -left-[41px] md:-left-[49px] h-2 w-2 rounded-full bg-foreground" />
-                  <h3 className="mb-4 text-xl font-medium">Designed in Dubai</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Miruna blends global influences with a personal touch — creating collections that 
-                    feel both contemporary and timeless. Each piece is crafted with care, designed to 
-                    become part of your story.
-                  </p>
+                   <h3 className="mb-4 text-xl font-medium">Designed in Dubai</h3>
+                   <p className="text-muted-foreground leading-relaxed">
+                     Designed in Dubai and crafted with purpose, each collection blends global perspective 
+                     with personal vision. Every piece is created to be worn your way — defined by you, 
+                     not by the season.
+                   </p>
                 </div>
               </AnimatedText>
             </div>
@@ -455,13 +460,23 @@ const BrandStory = () => {
                 Stories You Wear
               </h2>
             </AnimatedText>
-            <AnimatedText delay={200}>
-              <p className="text-muted-foreground leading-relaxed">
-                Every Miruna collection tells a story. Each piece is named and designed to reflect 
-                moods, moments, and personalities — allowing women to express themselves through 
-                what they wear.
-              </p>
-            </AnimatedText>
+             <AnimatedText delay={200}>
+               <p className="text-muted-foreground leading-relaxed">
+                 Every Miruna collection carries intention — but never takes itself too seriously. 
+                 Each piece is thoughtfully named, not just to describe it, but to capture a moment. A mood. A knowing smile.
+               </p>
+             </AnimatedText>
+             <AnimatedText delay={300}>
+               <p className="mt-4 text-muted-foreground leading-relaxed">
+                 Because what you wear isn't random. It reflects how you feel, where you're going, 
+                 and sometimes… exactly what you're thinking.
+               </p>
+             </AnimatedText>
+             <AnimatedText delay={400}>
+               <p className="mt-4 text-muted-foreground leading-relaxed">
+                 Miruna turns clothing into conversation. Something personal. Something expressive. Something remembered.
+               </p>
+             </AnimatedText>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -485,11 +500,6 @@ const BrandStory = () => {
             ))}
           </div>
 
-          <AnimatedText delay={600}>
-            <p className="mx-auto mt-12 max-w-xl text-center italic text-muted-foreground">
-              Fashion becomes storytelling — personal, expressive, and real.
-            </p>
-          </AnimatedText>
         </div>
       </section>
 
@@ -538,15 +548,15 @@ const BrandStory = () => {
                 <span className="text-6xl text-muted-foreground/30">"</span>
               </div>
             </AnimatedText>
-            <WordReveal
-              text="Miruna was created to make women feel confident without trying — elegant without effort."
-              className="text-2xl font-light leading-relaxed md:text-3xl lg:text-4xl"
-            />
-            <AnimatedText delay={1500}>
-              <p className="mt-8 text-sm uppercase tracking-[0.3em] text-muted-foreground">
-                — Miruna, Founder
-              </p>
-            </AnimatedText>
+             <WordReveal
+               text="Designed to speak before you do."
+               className="text-2xl font-light leading-relaxed md:text-3xl lg:text-4xl"
+             />
+             <AnimatedText delay={1500}>
+               <p className="mt-8 text-sm uppercase tracking-[0.3em] text-muted-foreground">
+                 — Miruna, Founder
+               </p>
+             </AnimatedText>
           </div>
         </div>
       </section>
