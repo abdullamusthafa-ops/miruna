@@ -8,16 +8,14 @@ const SpringPromoSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-center">
           {/* Video / Image Side */}
           <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-            <img
-              src="https://miruna.io/cdn/shop/files/preview_images/b1b8f3393f3348c88238cac895e0ca05.thumbnail.0000000000.jpg?v=1773405695&width=1080"
-              alt="Spring Collection Preview"
+            <video
+              src="https://miruna.io/cdn/shop/videos/c/vp/0a179ebae7f8446f80a61f738aa903ae/0a179ebae7f8446f80a61f738aa903ae.HD-1080p-7.2Mbps-77810477.mp4?v=0"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg cursor-pointer transition-transform hover:scale-110">
-                <Play className="h-6 w-6 text-foreground ml-1" fill="currentColor" />
-              </div>
-            </div>
           </div>
 
           {/* Text Side */}
