@@ -180,19 +180,6 @@ const bestsellersProducts = [
   },
 ];
 
-const newInProducts = [
-  ...sheProducts.slice(0, 5),
-  {
-    id: "soft-but-spicy-white-new",
-    name: "SOFT BUT SPICY - WHITE",
-    subtitle: "Draped Lace Mini Dress with Gloves",
-    price: 949,
-    image: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE03.webp?v=1769555259&width=2965",
-    hoverImage: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE02.webp?v=1769555259&width=3136",
-    badge: "New",
-  },
-  ...sheProducts.slice(5),
-];
 
 type Tab = "she" | "bestsellers";
 
