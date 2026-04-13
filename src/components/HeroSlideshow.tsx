@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     image: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=3200",
+    mobileImage: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=1200",
     subtitle: "CURATED DAY TO NIGHT",
     title: "SPRING COLLECTION",
     cta: "SHOP NOW",
@@ -12,6 +13,7 @@ const slides = [
   },
   {
     image: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=3200",
+    mobileImage: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=1200",
     subtitle: "",
     title: "NEW IN",
     cta: "Shop Now",
@@ -43,33 +45,58 @@ const HeroSlideshow = () => {
     return () => clearInterval(interval);
   }, [goNext]);
 
+  // Touch swipe support
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const diff = touchStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? goNext() : goPrev();
+    }
+    setTouchStart(null);
+  };
+
   return (
-    <section className="relative h-[85vh] sm:h-[90vh] md:h-screen w-full overflow-hidden">
+    <section
+      className="relative h-[75vh] sm:h-[85vh] md:h-screen w-full overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {slides.map((slide, index) => (
         <div
           key={index}
           className="absolute inset-0 transition-opacity duration-700 ease-in-out"
           style={{ opacity: currentSlide === index ? 1 : 0, zIndex: currentSlide === index ? 1 : 0 }}
         >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 flex items-end justify-center pb-[12%] sm:pb-[10%]">
-            <div className="text-center">
+          <picture>
+            <source media="(max-width: 768px)" srcSet={slide.mobileImage} />
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="h-full w-full object-cover object-center"
+              loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "auto"}
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent sm:bg-black/20" />
+          <div className="absolute inset-0 flex items-end justify-center pb-[18%] sm:pb-[12%] md:pb-[10%]">
+            <div className="text-center px-6">
               {slide.subtitle && (
-                <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-xs sm:mb-3">
+                <p className="mb-2 text-[9px] font-medium uppercase tracking-[0.2em] text-white/90 sm:text-xs sm:mb-3">
                   {slide.subtitle}
                 </p>
               )}
-              <h1 className="mb-4 text-2xl font-display font-bold tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              <h1 className="mb-4 text-2xl font-display font-bold tracking-wide text-white sm:text-3xl md:text-4xl lg:text-5xl sm:mb-5">
                 {slide.title}
               </h1>
               <Link
                 to={slide.link}
-                className="inline-block border-b border-white bg-transparent px-1 pb-1 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-colors hover:text-white/70 sm:text-xs"
+                className="inline-block border border-white bg-white/10 backdrop-blur-sm px-6 py-2.5 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-all hover:bg-white hover:text-foreground sm:px-8 sm:py-3 sm:text-xs active:scale-95"
               >
                 {slide.cta}
               </Link>
@@ -94,14 +121,16 @@ const HeroSlideshow = () => {
         <ChevronRight className="h-8 w-8" />
       </button>
 
-      {/* Dots */}
-      <div className="absolute bottom-6 right-6 z-10 flex gap-2">
+      {/* Dots - centered on mobile */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2.5 sm:left-auto sm:right-6 sm:bottom-6 sm:translate-x-0">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
-              currentSlide === index ? "bg-white" : "bg-white/40"
+            className={`transition-all duration-300 ${
+              currentSlide === index 
+                ? "bg-white h-2 w-6 rounded-full" 
+                : "bg-white/40 h-2 w-2 rounded-full"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
