@@ -194,24 +194,22 @@ const newInProducts = [
   ...sheProducts.slice(5),
 ];
 
-type Tab = "new-in" | "bestsellers" | "trending";
+type Tab = "she" | "bestsellers";
 
 const tabs: { key: Tab; label: string }[] = [
-  { key: "new-in", label: "New In" },
+  { key: "she", label: "She" },
   { key: "bestsellers", label: "Bestsellers" },
-  { key: "trending", label: "Trending" },
 ];
 
 const productsByTab: Record<Tab, typeof sheProducts> = {
-  "new-in": newInProducts,
+  she: sheProducts,
   bestsellers: bestsellersProducts,
-  trending: sheProducts,
 };
 
 const SheCollectionCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<Tab>("new-in");
+  const [activeTab, setActiveTab] = useState<Tab>("she");
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
