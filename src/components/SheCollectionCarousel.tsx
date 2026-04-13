@@ -37,16 +37,17 @@ const SheCollectionCarousel = () => {
   const products = productsByTab[activeTab];
 
   return (
-    <section className="py-10 md:py-16">
+    <section className="py-8 md:py-16">
       <div className="container mx-auto px-4">
         {/* Header with Tabs */}
-        <div className="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-hide sm:gap-2 md:gap-3">
+        <div className="mb-5 flex flex-col gap-3 md:mb-8 md:flex-row md:items-center md:justify-between">
+          {/* Scrollable tabs with snap on mobile */}
+          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-3">
             {carouselTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
-                className={`whitespace-nowrap px-3 py-2 text-[10px] font-medium uppercase tracking-wider transition-all duration-200 sm:px-5 sm:py-2.5 sm:text-xs ${
+                className={`whitespace-nowrap snap-start px-4 py-2 text-[10px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-5 sm:py-2.5 sm:text-xs active:scale-95 ${
                   activeTab === tab.key
                     ? "bg-primary text-primary-foreground"
                     : "border border-border bg-background text-foreground hover:bg-muted"
@@ -56,7 +57,8 @@ const SheCollectionCarousel = () => {
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-2 self-end">
+          {/* Arrows - desktop only */}
+          <div className="hidden items-center gap-2 md:flex">
             <button
               onClick={() => scroll("left")}
               className="flex h-9 w-9 items-center justify-center border border-foreground/20 text-foreground/60 transition-colors hover:border-foreground hover:text-foreground"
@@ -74,16 +76,16 @@ const SheCollectionCarousel = () => {
           </div>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel - snap scroll on mobile */}
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide md:gap-4"
+          className="flex gap-2.5 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory sm:gap-3 md:gap-4 md:snap-none"
         >
           {products.map((product) => (
             <div
               key={product.id}
-              className="group flex-shrink-0"
-              style={{ width: "calc(50% - 6px)", minWidth: "170px", maxWidth: "300px" }}
+              className="group flex-shrink-0 snap-start"
+              style={{ width: "calc(50% - 5px)", minWidth: "160px", maxWidth: "300px" }}
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-muted">
                 <Link to={`/product/${product.id}`}>
@@ -101,10 +103,10 @@ const SheCollectionCarousel = () => {
                   />
                 </Link>
 
-                {/* Wishlist */}
+                {/* Wishlist - larger tap target on mobile */}
                 <button
                   onClick={() => toggleWishlist(product.id)}
-                  className="absolute right-3 top-3 p-1.5 transition-transform hover:scale-110"
+                  className="absolute right-2 top-2 p-2 transition-transform hover:scale-110 active:scale-95 sm:right-3 sm:top-3 sm:p-1.5"
                   aria-label="Add to wishlist"
                 >
                   <Heart
@@ -118,28 +120,28 @@ const SheCollectionCarousel = () => {
 
                 {/* Badge */}
                 {product.badge && (
-                  <div className="absolute left-3 top-3 bg-background/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-foreground">
+                  <div className="absolute left-2 top-2 bg-background/90 px-2 py-0.5 text-[8px] font-medium uppercase tracking-wider text-foreground sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
                     {product.badge}
                   </div>
                 )}
               </div>
 
               {/* Product Info */}
-              <div className="mt-3 space-y-1">
+              <div className="mt-2.5 space-y-0.5 sm:mt-3 sm:space-y-1">
                 <Link to={`/product/${product.id}`}>
-                  <h3 className="text-[11px] font-semibold uppercase tracking-wide text-foreground line-clamp-1 sm:text-xs hover:text-muted-foreground transition-colors">
+                  <h3 className="text-[10px] font-semibold uppercase tracking-wide text-foreground line-clamp-1 sm:text-xs hover:text-muted-foreground transition-colors">
                     {product.name}
                   </h3>
                 </Link>
-                <p className="text-[10px] text-muted-foreground line-clamp-1 sm:text-[11px]">
+                <p className="text-[9px] text-muted-foreground line-clamp-1 sm:text-[11px]">
                   {product.subtitle}
                 </p>
-                <div className="flex items-center gap-2">
-                  <p className="text-xs font-medium text-foreground sm:text-sm">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <p className="text-[11px] font-medium text-foreground sm:text-sm">
                     {product.price.toFixed(2)} AED
                   </p>
                   {product.originalPrice && (
-                    <p className="text-[10px] text-muted-foreground line-through sm:text-xs">
+                    <p className="text-[9px] text-muted-foreground line-through sm:text-xs">
                       {product.originalPrice.toFixed(2)} AED
                     </p>
                   )}

@@ -75,7 +75,7 @@ const SaleProductsSection = () => {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 300;
+      const scrollAmount = scrollRef.current.offsetWidth * 0.6;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -84,11 +84,11 @@ const SaleProductsSection = () => {
   };
 
   return (
-    <section className="py-10 md:py-14">
+    <section className="py-8 md:py-14">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-6 flex items-center justify-between md:mb-8">
-          <h2 className="text-lg font-display tracking-tight sm:text-xl md:text-2xl">
+        <div className="mb-5 flex items-center justify-between md:mb-8">
+          <h2 className="text-base font-display tracking-tight sm:text-xl md:text-2xl">
             Up to 40% Off – Selected Dresses
           </h2>
           <div className="hidden items-center gap-2 md:flex">
@@ -109,41 +109,49 @@ const SaleProductsSection = () => {
           </div>
         </div>
 
-        {/* Carousel */}
+        {/* Carousel with snap scroll on mobile */}
         <div
           ref={scrollRef}
-          className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide md:gap-4"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-2.5 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory sm:gap-3 md:gap-4 md:snap-none"
         >
           {saleProducts.map((product) => (
             <Link
               key={product.id}
               to={`/product/${product.id}`}
-              className="group flex-shrink-0"
-              style={{ width: "calc(50% - 6px)", minWidth: "160px", maxWidth: "280px" }}
+              className="group flex-shrink-0 snap-start"
+              style={{ width: "calc(50% - 5px)", minWidth: "155px", maxWidth: "280px" }}
             >
               <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                {/* Sale badge */}
+                <div className="absolute left-2 top-2 z-10 bg-destructive px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-destructive-foreground sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
+                  Sale
+                </div>
                 <img
                   src={product.image}
                   alt={product.name}
                   className="h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                  loading="lazy"
                 />
                 <img
                   src={product.hoverImage}
                   alt={product.name}
                   className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  loading="lazy"
                 />
               </div>
-              <div className="mt-3 space-y-1">
-                <h3 className="text-[11px] font-medium uppercase tracking-wide text-foreground line-clamp-1 sm:text-xs">
+              <div className="mt-2.5 space-y-0.5 sm:mt-3 sm:space-y-1">
+                <h3 className="text-[10px] font-medium uppercase tracking-wide text-foreground line-clamp-1 sm:text-xs">
                   {product.name}
                 </h3>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-foreground sm:text-sm">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className="text-[11px] font-semibold text-foreground sm:text-sm">
                     {product.price.toFixed(2)} AED
                   </span>
-                  <span className="text-[10px] text-muted-foreground line-through sm:text-xs">
+                  <span className="text-[9px] text-muted-foreground line-through sm:text-xs">
                     {product.originalPrice.toFixed(2)} AED
+                  </span>
+                  <span className="text-[8px] font-bold text-destructive sm:text-[10px]">
+                    -{Math.round((1 - product.price / product.originalPrice) * 100)}%
                   </span>
                 </div>
               </div>
@@ -152,8 +160,8 @@ const SaleProductsSection = () => {
         </div>
 
         {/* Shop Sale CTA */}
-        <div className="mt-6 text-center md:mt-8">
-          <Button asChild variant="outline" className="border-foreground px-8">
+        <div className="mt-5 text-center md:mt-8">
+          <Button asChild variant="outline" className="border-foreground px-8 w-full sm:w-auto active:scale-95 transition-transform">
             <Link to="/products?filter=sale">SHOP SALE</Link>
           </Button>
         </div>
