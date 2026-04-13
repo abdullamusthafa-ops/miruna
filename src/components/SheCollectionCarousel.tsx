@@ -93,9 +93,125 @@ const sheProducts = [
   },
 ];
 
+const bestsellersProducts = [
+  {
+    id: "soft-but-spicy-white",
+    name: "SOFT BUT SPICY - WHITE",
+    subtitle: "Draped Lace Mini Dress with Gloves",
+    price: 949,
+    image: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE03.webp?v=1769555259&width=2965",
+    hoverImage: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE02.webp?v=1769555259&width=3136",
+    badge: "Top Seller",
+  },
+  {
+    id: "bare-minimum-white",
+    name: "BARE MINIMUM - WHITE",
+    subtitle: "Plunge-Neck Ruched Mermaid Maxi Dress",
+    price: 949,
+    image: "https://miruna.io/cdn/shop/files/BAREMINIMUM-WHITE01.webp?v=1770384284&width=3186",
+    hoverImage: "https://miruna.io/cdn/shop/files/BAREMINIMUM-WHITE05.webp?v=1770384494&width=2935",
+  },
+  {
+    id: "split-decision-pink-white",
+    name: "SPLIT DECISION - PINK & WHITE",
+    subtitle: "Halterneck Cut-Out Maxi Dress With Flowing Chiffon Skirt",
+    price: 949,
+    image: "https://miruna.io/cdn/shop/files/SPLITDECISION-PINK_WHITE01.webp?v=1769080852&width=3547",
+    hoverImage: "https://miruna.io/cdn/shop/files/SPLITDECISION-PINK_WHITE02.webp?v=1769080853&width=3592",
+  },
+  {
+    id: "morning-after-ex-cover-up",
+    name: "MORNING AFTER EX COVER UP - WHITE",
+    subtitle: "Feather-Trim Statement Cover Up With Structured Tailoring",
+    price: 1749,
+    image: "https://miruna.io/cdn/shop/files/D0000326.jpg?v=1773870506&width=3917",
+    hoverImage: "https://miruna.io/cdn/shop/files/D0000328.jpg?v=1772606569&width=3598",
+  },
+  {
+    id: "better-luck-next-time-pink",
+    name: "BETTER LUCK NEXT TIME - PINK",
+    subtitle: "Strapless Draped Satin Mini Dress",
+    price: 649,
+    originalPrice: 889,
+    image: "https://miruna.io/cdn/shop/files/BETTERLUCKNEXTTIME-PINK.webp?v=1770067288&width=3236",
+    hoverImage: "https://miruna.io/cdn/shop/files/BETTERLUCKNEXTTIME-PINK02.webp?v=1769079719&width=3717",
+    badge: "Sale",
+  },
+  {
+    id: "pillow-talk-pink",
+    name: "PILLOW TALK - PINK",
+    subtitle: "Balloon-Sleeve Crop Top With Fitted Maxi Skirt",
+    price: 999,
+    image: "https://miruna.io/cdn/shop/files/PILLOWTALK-PINK01.webp?v=1769072116&width=3717",
+    hoverImage: "https://miruna.io/cdn/shop/files/PILLOWTALK-PINK02.webp?v=1769072116&width=3717",
+  },
+  {
+    id: "bare-minimum-pink",
+    name: "BARE MINIMUM - PINK",
+    subtitle: "Plunge-Neck Ruched Mermaid Maxi Dress",
+    price: 949,
+    image: "https://miruna.io/cdn/shop/files/BAREMINIMUM-PINK01.webp?v=1769353408&width=3484",
+    hoverImage: "https://miruna.io/cdn/shop/files/BAREMINIMUM-PINK02.webp?v=1769353408&width=3449",
+    badge: "Most Loved",
+  },
+  {
+    id: "take-me-out-red-lace",
+    name: "TAKE ME OUT - RED LACE",
+    subtitle: "Structured Corset Maxi Dress",
+    price: 999,
+    image: "https://miruna.io/cdn/shop/files/TAKE_ME_OUT_-_RED_LACE_01_1.webp?v=1770131867&width=3451",
+    hoverImage: "https://miruna.io/cdn/shop/files/TAKE_ME_OUT_-_RED_LACE_02_1.webp?v=1769673772&width=3646",
+  },
+  {
+    id: "meet-me-there-red",
+    name: "MEET ME THERE - RED",
+    subtitle: "Off-Shoulder Corset Mini Dress",
+    price: 849,
+    image: "https://miruna.io/cdn/shop/files/MEETMETHERE-RED01.webp?v=1769080404&width=3717",
+    hoverImage: "https://miruna.io/cdn/shop/files/MEETMETHERE-RED02.webp?v=1769080404&width=3243",
+  },
+  {
+    id: "call-me-ceo-black",
+    name: "CALL ME CEO - BLACK",
+    subtitle: "Structured Double-Breasted Blazer With Peak Lapels",
+    price: 849,
+    image: "https://miruna.io/cdn/shop/files/CALLMECEO-BLACK01.webp?v=1770061405&width=3362",
+    hoverImage: "https://miruna.io/cdn/shop/files/CALLMECEO-BLACK02.webp?v=1769079898&width=3373",
+  },
+];
+
+const newInProducts = [
+  ...sheProducts.slice(0, 5),
+  {
+    id: "soft-but-spicy-white-new",
+    name: "SOFT BUT SPICY - WHITE",
+    subtitle: "Draped Lace Mini Dress with Gloves",
+    price: 949,
+    image: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE03.webp?v=1769555259&width=2965",
+    hoverImage: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE02.webp?v=1769555259&width=3136",
+    badge: "New",
+  },
+  ...sheProducts.slice(5),
+];
+
+type Tab = "new-in" | "bestsellers" | "trending";
+
+const tabs: { key: Tab; label: string }[] = [
+  { key: "new-in", label: "New In" },
+  { key: "bestsellers", label: "Bestsellers" },
+  { key: "trending", label: "Trending" },
+];
+
+const productsByTab: Record<Tab, typeof sheProducts> = {
+  "new-in": newInProducts,
+  bestsellers: bestsellersProducts,
+  trending: sheProducts,
+};
+
 const SheCollectionCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
+  const [activeTab, setActiveTab] = useState<Tab>("new-in");
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -116,14 +232,35 @@ const SheCollectionCarousel = () => {
     });
   };
 
+  const handleTabChange = (tab: Tab) => {
+    setActiveTab(tab);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  };
+
+  const products = productsByTab[activeTab];
+
   return (
     <section className="py-10 md:py-16">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Header with Tabs */}
         <div className="mb-6 flex items-center justify-between md:mb-8">
-          <h2 className="text-xl font-display tracking-tight sm:text-2xl md:text-3xl">
-            She
-          </h2>
+          <div className="flex items-center gap-2 md:gap-3">
+            {tabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => handleTabChange(tab.key)}
+                className={`px-4 py-2 text-xs font-medium uppercase tracking-wider transition-all duration-200 sm:px-5 sm:py-2.5 sm:text-sm ${
+                  activeTab === tab.key
+                    ? "bg-primary text-primary-foreground"
+                    : "border border-border bg-background text-foreground hover:bg-muted"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => scroll("left")}
@@ -147,7 +284,7 @@ const SheCollectionCarousel = () => {
           ref={scrollRef}
           className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide md:gap-4"
         >
-          {sheProducts.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="group flex-shrink-0"
@@ -200,9 +337,16 @@ const SheCollectionCarousel = () => {
                 <p className="text-[10px] text-muted-foreground line-clamp-1 sm:text-[11px]">
                   {product.subtitle}
                 </p>
-                <p className="text-xs font-medium text-foreground sm:text-sm">
-                  {product.price.toFixed(2)} AED
-                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-xs font-medium text-foreground sm:text-sm">
+                    {product.price.toFixed(2)} AED
+                  </p>
+                  {"originalPrice" in product && product.originalPrice && (
+                    <p className="text-[10px] text-muted-foreground line-through sm:text-xs">
+                      {(product as any).originalPrice.toFixed(2)} AED
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           ))}
