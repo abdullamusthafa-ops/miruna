@@ -12,10 +12,13 @@ const BestSellersBanner = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <h2 className="text-xl font-display tracking-wider text-white sm:text-2xl md:text-3xl lg:text-4xl">
-                BEST SELLERS
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/80 sm:text-xs mb-2">
+                BACK TO STOCK
+              </p>
+              <h2 className="text-xl font-display font-bold tracking-wider text-white sm:text-2xl md:text-3xl lg:text-4xl">
+                BEST SELLER
               </h2>
-              <span className="mt-2 inline-block border border-white bg-transparent px-4 py-1.5 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-colors hover:bg-white hover:text-foreground sm:mt-3 sm:px-6 sm:py-2 sm:text-xs">
+              <span className="mt-3 inline-block border-b border-white bg-transparent px-1 pb-1 text-[10px] font-medium tracking-[0.15em] uppercase text-white transition-colors hover:text-white/70 sm:mt-4 sm:text-xs">
                 SHOP NOW
               </span>
             </div>
