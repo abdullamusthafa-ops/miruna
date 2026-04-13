@@ -180,38 +180,23 @@ const bestsellersProducts = [
   },
 ];
 
-const newInProducts = [
-  ...sheProducts.slice(0, 5),
-  {
-    id: "soft-but-spicy-white-new",
-    name: "SOFT BUT SPICY - WHITE",
-    subtitle: "Draped Lace Mini Dress with Gloves",
-    price: 949,
-    image: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE03.webp?v=1769555259&width=2965",
-    hoverImage: "https://miruna.io/cdn/shop/files/SOFTBUTSPICY-WHITE02.webp?v=1769555259&width=3136",
-    badge: "New",
-  },
-  ...sheProducts.slice(5),
-];
 
-type Tab = "new-in" | "bestsellers" | "trending";
+type Tab = "she" | "bestsellers";
 
 const tabs: { key: Tab; label: string }[] = [
-  { key: "new-in", label: "New In" },
+  { key: "she", label: "She" },
   { key: "bestsellers", label: "Bestsellers" },
-  { key: "trending", label: "Trending" },
 ];
 
 const productsByTab: Record<Tab, typeof sheProducts> = {
-  "new-in": newInProducts,
+  she: sheProducts,
   bestsellers: bestsellersProducts,
-  trending: sheProducts,
 };
 
 const SheCollectionCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
-  const [activeTab, setActiveTab] = useState<Tab>("new-in");
+  const [activeTab, setActiveTab] = useState<Tab>("she");
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
