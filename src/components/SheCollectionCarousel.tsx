@@ -42,12 +42,12 @@ const SheCollectionCarousel = () => {
         {/* Header with Tabs */}
         <div className="mb-5 flex flex-col gap-3 md:mb-8 md:flex-row md:items-center md:justify-between">
           {/* Scrollable tabs with snap on mobile */}
-          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-3">
+          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-3">
             {carouselTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
-                className={`whitespace-nowrap snap-start px-4 py-2 text-[10px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-5 sm:py-2.5 sm:text-xs active:scale-95 ${
+                className={`whitespace-nowrap px-3 py-1.5 text-[9px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-5 sm:py-2.5 sm:text-xs active:scale-95 ${
                   activeTab === tab.key
                     ? "bg-primary text-primary-foreground"
                     : "border border-border bg-background text-foreground hover:bg-muted"
