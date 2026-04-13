@@ -242,33 +242,41 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-0" onMouseLeave={handleMouseLeave}>
-            {/* Sale */}
+            {/* New In */}
             <Link
-              to="/collection/sale"
-              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase border border-foreground mx-2 hover:bg-foreground hover:text-background transition-colors"
+              to="/collection/new-in"
+              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase hover:text-muted-foreground transition-colors"
             >
-              Sale
+              New In
             </Link>
 
-            {/* Shop */}
+            {/* Spring */}
+            <Link
+              to="/collection/spring-collection"
+              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase hover:text-muted-foreground transition-colors"
+            >
+              Spring
+            </Link>
+
+            {/* Clothing */}
+            <div 
+              className="relative"
+              onMouseEnter={() => handleMouseEnter('clothing')}
+            >
+              <button className={`flex items-center gap-1 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors ${activeMenu === 'clothing' ? 'bg-muted' : 'hover:text-muted-foreground'}`}>
+                Clothing
+                <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMenu === 'clothing' ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            {/* Occasion */}
             <div 
               className="relative"
               onMouseEnter={() => handleMouseEnter('shop')}
             >
               <button className={`flex items-center gap-1 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors ${activeMenu === 'shop' ? 'bg-muted' : 'hover:text-muted-foreground'}`}>
-                Shop
+                Occasion
                 <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMenu === 'shop' ? 'rotate-180' : ''}`} />
-              </button>
-            </div>
-
-            {/* Drops */}
-            <div 
-              className="relative"
-              onMouseEnter={() => handleMouseEnter('drops')}
-            >
-              <button className={`flex items-center gap-1 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors ${activeMenu === 'drops' ? 'bg-muted' : 'hover:text-muted-foreground'}`}>
-                Drops
-                <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMenu === 'drops' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
@@ -283,23 +291,23 @@ const Header = () => {
               </button>
             </div>
 
-            {/* Clothing */}
+            {/* Drops */}
             <div 
               className="relative"
-              onMouseEnter={() => handleMouseEnter('clothing')}
+              onMouseEnter={() => handleMouseEnter('drops')}
             >
-              <button className={`flex items-center gap-1 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors ${activeMenu === 'clothing' ? 'bg-muted' : 'hover:text-muted-foreground'}`}>
-                Clothing
-                <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMenu === 'clothing' ? 'rotate-180' : ''}`} />
+              <button className={`flex items-center gap-1 px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors ${activeMenu === 'drops' ? 'bg-muted' : 'hover:text-muted-foreground'}`}>
+                Drops
+                <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${activeMenu === 'drops' ? 'rotate-180' : ''}`} />
               </button>
             </div>
 
-            {/* Lookbook */}
+            {/* Sale */}
             <Link
-              to="/lookbook"
-              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase hover:bg-muted transition-colors"
+              to="/collection/sale"
+              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase border border-foreground mx-2 hover:bg-foreground hover:text-background transition-colors"
             >
-              Lookbook
+              Sale
             </Link>
           </nav>
 

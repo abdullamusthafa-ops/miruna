@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const announcements = [
-  "TABBY AVAILABLE NOW",
+  "15% OFF ON FIRST PURCHASE",
   "FREE DELIVERY ON ORDERS ABOVE AED 1000",
   "MADE IN UAE",
   "4-HOUR DELIVERY IN DUBAI",
