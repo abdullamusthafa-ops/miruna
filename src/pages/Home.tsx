@@ -17,6 +17,7 @@ const Home = () => {
       <Header />
       <HeroSlideshow />
       <CategoryGrid />
+      <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
       <BestSellersBanner />
