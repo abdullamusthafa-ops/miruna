@@ -90,7 +90,6 @@ const SheCollectionCarousel = () => {
             className={`flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 ${!isMobile ? 'md:gap-3 md:snap-none md:overflow-hidden' : ''}`}
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
-          >
             {(isMobile ? products : products.slice(0, 5)).map((product) => (
               <div
                 key={product.id}
