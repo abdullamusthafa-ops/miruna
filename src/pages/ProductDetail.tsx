@@ -161,7 +161,7 @@ const ProductDetail = () => {
     <div className="min-h-screen bg-background">
       <Header solidBackground />
 
-      <div className="max-w-[1400px] mx-auto px-0 lg:px-8 py-0 lg:py-8">
+      <div className="max-w-[1400px] mx-auto px-0 lg:px-8 pt-[100px] lg:pt-[120px] pb-0 lg:pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 lg:gap-12">
 
           {/* ===== MOBILE: Swipeable Image Carousel (< lg) ===== */}
