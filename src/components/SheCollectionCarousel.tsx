@@ -95,7 +95,7 @@ const SheCollectionCarousel = () => {
                 className={`group flex-shrink-0 snap-start ${!isMobile ? 'flex-1 min-w-0' : ''}`}
                 style={isMobile ? { width: "calc(50% - 4px)", minWidth: "140px" } : undefined}
               >
-                <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                <div className="relative aspect-[3/4] md:aspect-[3/4.2] overflow-hidden bg-muted">
                   <Link to={`/product/${product.id}`}>
                     <img
                       src={product.image}
