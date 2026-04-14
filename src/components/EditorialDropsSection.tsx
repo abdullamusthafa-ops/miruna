@@ -31,29 +31,6 @@ const sheCategories = [
   },
 ];
 
-const styleEdits = [
-  {
-    name: "AFTER DARK",
-    image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=2910",
-    link: "/collection/evening-dresses",
-  },
-  {
-    name: "EVERYDAY EASE",
-    image: "https://miruna.io/cdn/shop/files/Elevated_Essentials_Category.jpg?v=1774348407&width=3112",
-    link: "/collection/elevated-essentials",
-  },
-  {
-    name: "OCCASION READY",
-    image: "https://miruna.io/cdn/shop/files/Wedding_Guest_Category_-_3.4.jpg?v=1774348428&width=1069",
-    link: "/collection/wedding-guest-edit",
-  },
-  {
-    name: "TAILORED EDGE",
-    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
-    link: "/collection/tailored-edit",
-  },
-];
-
 const EditorialDropsSection = () => {
   return (
     <section className="py-6 md:py-14">
@@ -93,34 +70,6 @@ const EditorialDropsSection = () => {
               preload="metadata"
             />
           </div>
-        </div>
-      </div>
-
-      {/* Style Edits — second strip */}
-      <div className="container mx-auto px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
-          {styleEdits.map((edit) => (
-            <Link
-              key={edit.name}
-              to={edit.link}
-              className="group relative overflow-hidden"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={edit.image}
-                  alt={edit.name}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
-                <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs leading-tight block">
-                  {edit.name}
-                </span>
-              </div>
-            </Link>
-          ))}
         </div>
       </div>
 
@@ -172,12 +121,8 @@ const EditorialDropsSection = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">
-                Dresses
-              </h3>
-              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">
-                Find your perfect fit
-              </p>
+              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">Dresses</h3>
+              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">Find your perfect fit</p>
             </div>
           </Link>
           <Link to="/collection/occasion" className="group relative overflow-hidden">
@@ -190,12 +135,8 @@ const EditorialDropsSection = () => {
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">
-                Occasion
-              </h3>
-              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">
-                For every moment
-              </p>
+              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">Occasion</h3>
+              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">For every moment</p>
             </div>
           </Link>
         </div>
