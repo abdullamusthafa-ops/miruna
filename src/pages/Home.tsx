@@ -5,6 +5,7 @@ import CategoryGrid from "@/components/CategoryGrid";
 import DualCollectionGrid from "@/components/DualCollectionGrid";
 import SpringPromoSection from "@/components/SpringPromoSection";
 import SheCollectionCarousel from "@/components/SheCollectionCarousel";
+import EditorialDropsSection from "@/components/EditorialDropsSection";
 
 import InstagramGallery from "@/components/InstagramGallery";
 import TrustBadges from "@/components/TrustBadges";
