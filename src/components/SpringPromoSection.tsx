@@ -21,20 +21,20 @@ const SpringPromoSection = () => {
           {/* Text Side */}
           <div className="flex flex-col justify-center text-center px-6 py-8 md:text-left md:px-0 md:py-0">
             <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground mb-2 sm:text-xs sm:mb-3">
-              Exclusive for Spring 2026
+              Spring 2026 Exclusive Drop
             </p>
             <h2 className="text-lg font-display tracking-tight sm:text-xl md:text-2xl lg:text-3xl mb-3 sm:mb-4 leading-tight">
-              Discover sculpted silhouettes, elegant abayas, and refined evening styles
+              Sculpted silhouettes, elegant abayas, and refined evening styles designed for standout moments.
             </h2>
             <p className="text-[11px] text-muted-foreground mb-5 sm:text-sm sm:mb-6">
-              Limited pieces
+              Limited Pieces
             </p>
             <div>
               <Link
                 to="/collection/spring-collection"
                 className="inline-block border border-foreground px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.15em] text-foreground transition-all hover:bg-foreground hover:text-background active:scale-95 sm:border-b sm:border-t-0 sm:border-l-0 sm:border-r-0 sm:px-0 sm:py-0 sm:pb-1"
               >
-                Explore now
+                Explore Collection
               </Link>
             </div>
           </div>

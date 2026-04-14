@@ -6,17 +6,17 @@ const slides = [
   {
     image: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=3200",
     mobileImage: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=1200",
-    subtitle: "CURATED DAY TO NIGHT",
-    title: "SPRING COLLECTION",
-    cta: "SHOP NOW",
-    link: "/collection/spring-collection",
+    subtitle: "Evening glamour • Everyday ease • Occasion moments",
+    title: "DRESSES FOR EVERY VERSION OF YOU",
+    cta: "SHOP NEW IN",
+    link: "/collection/new-in",
   },
   {
     image: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=3200",
     mobileImage: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=1200",
-    subtitle: "",
+    subtitle: "Limited pieces. Designed to stand out.",
     title: "NEW IN",
-    cta: "Shop Now",
+    cta: "SHOP NOW",
     link: "/collection/new-in",
   },
 ];

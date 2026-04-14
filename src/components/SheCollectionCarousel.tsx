@@ -62,7 +62,10 @@ const SheCollectionCarousel = () => {
           <div>
             <h2 className="text-lg font-light text-foreground md:text-2xl">A Moment For New</h2>
             <p className="mt-0.5 text-[10px] text-muted-foreground md:text-xs">
-              Season defining styles that are as versatile as they are timeless.
+              Season-defining styles designed for every mood and moment.
+            </p>
+            <p className="mt-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground md:text-[10px]">
+              Limited Pieces. High demand. Fast movement.
             </p>
           </div>
           <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-2">

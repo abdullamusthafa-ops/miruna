@@ -2,22 +2,22 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    name: "EVENING GLAM",
+    name: "AFTER DARK",
     image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=2910",
     link: "/collection/evening-dresses",
   },
   {
-    name: "CASUAL ESSENTIALS",
+    name: "EVERYDAY EASE",
     image: "https://miruna.io/cdn/shop/files/Elevated_Essentials_Category.jpg?v=1774348407&width=3112",
     link: "/collection/elevated-essentials",
   },
   {
-    name: "WEDDING GUEST EDIT",
+    name: "OCCASION READY",
     image: "https://miruna.io/cdn/shop/files/Wedding_Guest_Category_-_3.4.jpg?v=1774348428&width=1069",
     link: "/collection/wedding-guest-edit",
   },
   {
-    name: "TAILORED EDIT",
+    name: "TAILORED EDGE",
     image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
     link: "/collection/tailored-edit",
   },
