@@ -21,7 +21,7 @@ const Home = () => {
       <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
-      
+      <EditorialDropsSection />
       <InstagramGallery />
       <TrustBadges />
       <NewsletterSection />
