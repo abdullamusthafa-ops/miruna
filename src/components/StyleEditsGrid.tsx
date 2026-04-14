@@ -26,8 +26,8 @@ const styleEdits = [
 const StyleEditsGrid = () => {
   return (
     <section className="h-screen">
-      <div className="h-full px-1">
-        <div className="grid grid-cols-2 gap-1 md:grid-cols-4 h-full">
+      <div className="h-full px-0">
+        <div className="grid grid-cols-2 gap-0 md:grid-cols-4 h-full">
           {styleEdits.map((edit) => (
             <Link
               key={edit.name}
