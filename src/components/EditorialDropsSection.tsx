@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import editorialHero from "@/assets/editorial-hero.jpg";
+import categoryImg1 from "@/assets/category-img-1.jpeg";
+import categoryImg2 from "@/assets/category-img-2.jpg";
+import categoryImg3 from "@/assets/category-img-3.jpeg";
 
 const drops = [
   {
@@ -25,6 +28,29 @@ const drops = [
     tag: "Bold Picks",
     image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
     link: "/collection/my-mom-said-no",
+  },
+];
+
+const sheCategories = [
+  {
+    name: "AFTER DARK",
+    image: categoryImg3,
+    link: "/collection/evening-dresses",
+  },
+  {
+    name: "EVERYDAY EASE",
+    image: categoryImg1,
+    link: "/collection/elevated-essentials",
+  },
+  {
+    name: "OCCASION READY",
+    image: categoryImg2,
+    link: "/collection/wedding-guest-edit",
+  },
+  {
+    name: "BESTSELLERS",
+    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
+    link: "/collection/bestsellers",
   },
 ];
 
@@ -69,6 +95,34 @@ const EditorialDropsSection = () => {
               preload="metadata"
             />
           </div>
+        </div>
+      </div>
+
+      {/* SHE Category Strip — visually connected */}
+      <div className="container mx-auto px-0 md:px-4 mt-1">
+        <div className="grid grid-cols-4 gap-1">
+          {sheCategories.map((cat) => (
+            <Link
+              key={cat.name}
+              to={cat.link}
+              className="group relative overflow-hidden"
+            >
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-5">
+                <span className="text-[8px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs">
+                  {cat.name}
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 
