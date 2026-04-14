@@ -46,15 +46,18 @@ const InstagramGallery = () => {
             rel="noopener noreferrer"
             className="group inline-block"
           >
-            <div className="mb-2 flex items-center justify-center gap-2 sm:gap-3 sm:mb-3">
-              <Instagram className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
-              <span className="text-base font-display tracking-wide sm:text-lg md:text-xl">
+            <h2 className="mb-1 text-base font-display tracking-wide sm:text-lg md:text-xl sm:mb-2">
+              Seen on Miruna Girls
+            </h2>
+            <p className="text-[11px] text-muted-foreground group-hover:text-foreground transition-colors sm:text-sm mb-1 sm:mb-2">
+              Real moments. Real style. Real confidence.
+            </p>
+            <div className="flex items-center justify-center gap-2 sm:gap-3">
+              <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="text-[11px] tracking-wide sm:text-sm">
                 @miruna.studio
               </span>
             </div>
-            <p className="text-[11px] text-muted-foreground group-hover:text-foreground transition-colors sm:text-sm">
-              Follow us for daily inspiration
-            </p>
           </a>
         </div>
 
