@@ -7,12 +7,12 @@ const DualCollectionGrid = () => {
     <section className="h-[100dvh]">
       <div className="h-full px-0">
         <div className="grid grid-cols-2 gap-0 h-full">
-          <Link to="/collection/dresses" className="group relative overflow-hidden">
+          <Link to="/collection/dresses" className="relative overflow-hidden">
             <div className="h-full overflow-hidden">
               <img
                 src={dressesImg}
                 alt="Dresses"
-                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover object-top"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
@@ -23,17 +23,17 @@ const DualCollectionGrid = () => {
               <p className="mt-1 text-[9px] tracking-wide text-white/70 md:text-[11px] hidden sm:block">
                 Find your perfect fit
               </p>
-              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 transition-colors group-hover:border-white group-hover:text-white md:mt-3 md:text-[10px]">
+              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 md:mt-3 md:text-[10px]">
                 Shop Now
               </span>
             </div>
           </Link>
-          <Link to="/collection/occasion" className="group relative overflow-hidden">
+          <Link to="/collection/occasion" className="relative overflow-hidden">
             <div className="h-full overflow-hidden">
               <img
                 src={occasionImg}
                 alt="Occasion"
-                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover object-top"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
@@ -44,7 +44,7 @@ const DualCollectionGrid = () => {
               <p className="mt-1 text-[9px] tracking-wide text-white/70 md:text-[11px] hidden sm:block">
                 For every moment
               </p>
-              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 transition-colors group-hover:border-white group-hover:text-white md:mt-3 md:text-[10px]">
+              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 md:mt-3 md:text-[10px]">
                 Shop Now
               </span>
             </div>

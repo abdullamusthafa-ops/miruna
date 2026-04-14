@@ -33,13 +33,13 @@ const StyleEditsGrid = () => {
               <Link
                 key={edit.name}
                 to={edit.link}
-                className="group relative overflow-hidden"
+                className="relative overflow-hidden"
               >
                 <div className="h-full overflow-hidden bg-muted">
                   <img
                     src={edit.image}
                     alt={edit.name}
-                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top"
                     loading="lazy"
                   />
                 </div>
