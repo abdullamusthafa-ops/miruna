@@ -4,8 +4,6 @@ import dropFluffStuff from "@/assets/drop-fluff-stuff.jpg";
 import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.jpg";
 import dropIWokeUp from "@/assets/drop-i-woke-up-like-this.jpg";
 import dropMyMomSaidNo from "@/assets/drop-my-mom-said-no.jpg";
-import dressesImg from "@/assets/dresses-collection.jpg";
-import occasionImg from "@/assets/occasion-collection.jpeg";
 
 const sheCategories = [
   {
@@ -105,40 +103,6 @@ const EditorialDropsSection = () => {
               </div>
             </Link>
           ))}
-        </div>
-      </div>
-
-      {/* Dresses & Occasion */}
-      <div className="container mx-auto px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-2 gap-1">
-          <Link to="/collection/dresses" className="group relative overflow-hidden">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={dressesImg}
-                alt="Dresses"
-                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">Dresses</h3>
-              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">Find your perfect fit</p>
-            </div>
-          </Link>
-          <Link to="/collection/occasion" className="group relative overflow-hidden">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
-                src={occasionImg}
-                alt="Occasion"
-                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-              <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">Occasion</h3>
-              <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">For every moment</p>
-            </div>
-          </Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSlideshow from "@/components/HeroSlideshow";
 import StyleEditsGrid from "@/components/StyleEditsGrid";
+import DualCollectionGrid from "@/components/DualCollectionGrid";
 import SpringPromoSection from "@/components/SpringPromoSection";
 import SheCollectionCarousel from "@/components/SheCollectionCarousel";
 import EditorialDropsSection from "@/components/EditorialDropsSection";
@@ -17,6 +18,7 @@ const Home = () => {
       <Header />
       <HeroSlideshow />
       <StyleEditsGrid />
+      <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
       <EditorialDropsSection />

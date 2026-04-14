@@ -19,7 +19,7 @@ const collections = [
 
 const DualCollectionGrid = () => {
   return (
-    <section className="py-1">
+    <section className="pt-1 pb-0">
       <div className="container mx-auto px-1">
         <div className="grid grid-cols-2 gap-1">
           {collections.map((col) => (
