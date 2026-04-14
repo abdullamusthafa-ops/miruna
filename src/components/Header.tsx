@@ -99,12 +99,16 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(solidBackground);
 
   useEffect(() => {
+    if (solidBackground) {
+      setIsScrolled(true);
+      return;
+    }
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 80);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [solidBackground]);
 
   const handleMouseEnter = (menu: string) => {
     setActiveMenu(menu);
