@@ -25,7 +25,7 @@ const styleEdits = [
 
 const StyleEditsGrid = () => {
   return (
-    <section className="py-1">
+    <section className="pt-1 pb-0">
       <div className="container mx-auto px-1">
         <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
           {styleEdits.map((edit) => (
