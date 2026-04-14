@@ -136,7 +136,7 @@ const Header = () => {
 
       {/* Main Header */}
       <div className={`transition-all duration-300 ${isScrolled ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <div className={`container mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
