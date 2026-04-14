@@ -31,12 +31,12 @@ const sheCategories = [
 
 const EditorialDropsSection = () => {
   return (
-    <section className="py-6 md:py-14">
-      {/* Editorial Split: Left Image + Right Video */}
-      <div className="container mx-auto px-0 md:px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1">
+    <section>
+      {/* Editorial Split: Left Image + Right Video — full screen */}
+      <div className="h-screen px-0 md:px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
           <Link to="/collection/she" className="group relative block overflow-hidden">
-            <div className="aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
+            <div className="h-full overflow-hidden bg-muted">
               <img
                 src={editorialHero}
                 alt="SHE Collection"
@@ -57,7 +57,7 @@ const EditorialDropsSection = () => {
             </div>
           </Link>
 
-          <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
+          <div className="relative h-full overflow-hidden bg-muted hidden md:block">
             <video
               src="/videos/editorial-video.mp4"
               autoPlay
@@ -71,16 +71,16 @@ const EditorialDropsSection = () => {
         </div>
       </div>
 
-      {/* Drop Names Strip */}
-      <div className="container mx-auto px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+      {/* Drop Names Strip — full screen */}
+      <div className="h-screen px-0 md:px-4 mt-1">
+        <div className="grid grid-cols-2 gap-1 md:grid-cols-4 h-full">
           {sheCategories.map((cat) => (
             <Link
               key={cat.name}
               to={cat.link}
               className="group relative overflow-hidden"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
+              <div className="h-full overflow-hidden bg-muted">
                 <img
                   src={cat.image}
                   alt={cat.name}
