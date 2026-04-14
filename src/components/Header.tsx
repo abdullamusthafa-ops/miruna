@@ -92,6 +92,15 @@ const megaMenuData = {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 80);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMouseEnter = (menu: string) => {
     setActiveMenu(menu);
@@ -121,12 +130,12 @@ const Header = () => {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="fixed top-0 z-50 w-full">
       {/* Announcement Bar */}
       <AnnouncementBar />
 
       {/* Main Header */}
-      <div className="bg-background border-b border-border">
+      <div className={`transition-all duration-300 ${isScrolled ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
