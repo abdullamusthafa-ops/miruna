@@ -244,7 +244,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="text-2xl font-display tracking-tight">
-              mi<span className="text-muted-foreground">·</span>ru<span className="text-muted-foreground">·</span>na
+              mi<span className={isScrolled ? 'text-muted-foreground' : 'text-white/60'}>·</span>ru<span className={isScrolled ? 'text-muted-foreground' : 'text-white/60'}>·</span>na
               <span className="text-[8px] align-super font-sans">®</span>
             </span>
           </Link>
@@ -314,7 +314,7 @@ const Header = () => {
             {/* Sale */}
             <Link
               to="/collection/sale"
-              className="px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase border border-foreground mx-2 hover:bg-foreground hover:text-background transition-colors"
+              className={`px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase mx-2 transition-colors ${isScrolled ? 'border border-foreground hover:bg-foreground hover:text-background' : 'border border-white hover:bg-white hover:text-black'}`}
             >
               Sale
             </Link>
@@ -326,7 +326,7 @@ const Header = () => {
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </Button>
-            <Button variant="ghost" size="icon" className="hidden sm:flex hover:bg-transparent border border-border rounded-none">
+            <Button variant="ghost" size="icon" className={`hidden sm:flex hover:bg-transparent rounded-none ${isScrolled ? 'border border-border' : 'border border-white/50'}`}>
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
             </Button>
