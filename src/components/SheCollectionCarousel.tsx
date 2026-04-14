@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { carouselTabs, productsByTab, type CarouselTab } from "@/data/carouselProducts";
 
 const SheCollectionCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<CarouselTab>("new-in");
 
@@ -37,23 +39,22 @@ const SheCollectionCarousel = () => {
   const products = productsByTab[activeTab];
 
   return (
-    <section className="py-8 md:py-16">
-      <div className="container mx-auto px-4">
+    <section className="py-4 md:py-8">
+      <div className="container mx-auto px-4 md:px-10">
         {/* Header: Title left, Tabs right */}
-        <div className="mb-5 flex flex-col gap-3 md:mb-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-3 flex flex-col gap-2 md:mb-5 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="text-xl font-light text-foreground md:text-3xl">A Moment For New</h2>
-            <p className="mt-1 text-xs text-muted-foreground md:text-sm">
+            <h2 className="text-lg font-light text-foreground md:text-2xl">A Moment For New</h2>
+            <p className="mt-0.5 text-[10px] text-muted-foreground md:text-xs">
               Season defining styles that are as versatile as they are timeless.
             </p>
           </div>
-          {/* Scrollable tabs */}
-          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-3">
+          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-2">
             {carouselTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
-                className={`whitespace-nowrap rounded-full px-4 py-1.5 text-[9px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-5 sm:py-2 sm:text-xs active:scale-95 ${
+                className={`whitespace-nowrap rounded-full px-3 py-1 text-[9px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-4 sm:py-1.5 sm:text-[10px] active:scale-95 ${
                   activeTab === tab.key
                     ? "bg-primary text-primary-foreground"
                     : "border border-border bg-background text-foreground hover:bg-muted"
@@ -86,15 +87,15 @@ const SheCollectionCarousel = () => {
 
           <div
             ref={scrollRef}
-            className="flex gap-2.5 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory sm:gap-3 md:gap-4 md:snap-none"
+            className={`flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 ${!isMobile ? 'md:gap-3 md:snap-none md:overflow-hidden' : ''}`}
           >
-            {products.map((product) => (
+            {(isMobile ? products : products.slice(0, 5)).map((product) => (
               <div
                 key={product.id}
-                className="group flex-shrink-0 snap-start"
-                style={{ width: "calc(50% - 5px)", minWidth: "160px", maxWidth: "300px" }}
+                className={`group flex-shrink-0 snap-start ${!isMobile ? 'flex-1 min-w-0' : ''}`}
+                style={isMobile ? { width: "calc(50% - 4px)", minWidth: "140px" } : undefined}
               >
-                <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                <div className="relative aspect-[3/4] md:aspect-[3/4.2] overflow-hidden bg-muted">
                   <Link to={`/product/${product.id}`}>
                     <img
                       src={product.image}
