@@ -1,29 +1,29 @@
 import { Link } from "react-router-dom";
 import editorialHero from "@/assets/editorial-hero.jpg";
-import categoryImg1 from "@/assets/category-img-1.jpeg";
-import categoryImg2 from "@/assets/category-img-2.jpg";
-import categoryImg3 from "@/assets/category-img-3.jpeg";
+import dropFluffStuff from "@/assets/drop-fluff-stuff.jpg";
+import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.jpg";
+import dropIWokeUp from "@/assets/drop-i-woke-up-like-this.jpg";
+import dropMyMomSaidNo from "@/assets/drop-my-mom-said-no.jpg";
 
 const sheCategories = [
   {
     name: "FLUFF STUFF",
-    tag: "Limited Edition",
-    image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
+    image: dropFluffStuff,
     link: "/collection/fluff-stuff",
   },
   {
     name: "TOO GOOD TO LOSE",
-    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=600",
+    image: dropTooGoodToLose,
     link: "/collection/too-good-to-lose",
   },
   {
     name: "I WOKE UP LIKE THIS",
-    image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=800",
+    image: dropIWokeUp,
     link: "/collection/i-woke-up-like-this",
   },
   {
     name: "MY MOM SAID NO",
-    image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
+    image: dropMyMomSaidNo,
     link: "/collection/my-mom-said-no",
   },
 ];
