@@ -4,16 +4,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=3200",
-    mobileImage: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=1200",
+    image: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=1600",
+    mobileImage: "https://miruna.io/cdn/shop/files/Spring_Collection.webp?v=1774342505&width=800",
     subtitle: "Evening glamour • Everyday ease • Occasion moments",
     title: "DRESSES FOR EVERY VERSION OF YOU",
     cta: "SHOP NEW IN",
     link: "/collection/new-in",
   },
   {
-    image: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=3200",
-    mobileImage: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=1200",
+    image: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=1600",
+    mobileImage: "https://miruna.io/cdn/shop/files/New_In.webp?v=1774342505&width=800",
     subtitle: "Limited pieces. Designed to stand out.",
     title: "NEW IN",
     cta: "SHOP NOW",
@@ -45,7 +45,6 @@ const HeroSlideshow = () => {
     return () => clearInterval(interval);
   }, [goNext]);
 
-  // Touch swipe support
   const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -81,6 +80,7 @@ const HeroSlideshow = () => {
               className="h-full w-full object-cover object-center"
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "auto"}
+              decoding={index === 0 ? "sync" : "async"}
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent sm:bg-black/20" />
@@ -105,7 +105,7 @@ const HeroSlideshow = () => {
         </div>
       ))}
 
-      {/* Navigation Arrows - hidden on mobile */}
+      {/* Navigation Arrows */}
       <button
         onClick={goPrev}
         className="absolute left-4 top-1/2 z-10 -translate-y-1/2 hidden sm:flex items-center justify-center text-white/70 hover:text-white transition-colors"
@@ -121,7 +121,7 @@ const HeroSlideshow = () => {
         <ChevronRight className="h-8 w-8" />
       </button>
 
-      {/* Dots - centered on mobile */}
+      {/* Dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2.5 sm:left-auto sm:right-6 sm:bottom-6 sm:translate-x-0">
         {slides.map((_, index) => (
           <button

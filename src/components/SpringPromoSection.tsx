@@ -1,21 +1,46 @@
 import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
 
 const SpringPromoSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Only load and play video when section is in viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(() => {});
+        } else if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      },
+      { rootMargin: "200px", threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="min-h-[100dvh] flex items-center py-10 md:py-16">
+    <section ref={sectionRef} className="min-h-[100dvh] flex items-center py-10 md:py-16">
       <div className="container mx-auto px-0 md:px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 items-center">
-          {/* Video Side - full bleed on mobile */}
+          {/* Video Side */}
           <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
-            <video
-              src="https://miruna.io/cdn/shop/videos/c/vp/0a179ebae7f8446f80a61f738aa903ae/0a179ebae7f8446f80a61f738aa903ae.HD-1080p-7.2Mbps-77810477.mp4?v=0"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-              preload="metadata"
-            />
+            {isVisible && (
+              <video
+                ref={videoRef}
+                src="https://miruna.io/cdn/shop/videos/c/vp/0a179ebae7f8446f80a61f738aa903ae/0a179ebae7f8446f80a61f738aa903ae.HD-1080p-7.2Mbps-77810477.mp4?v=0"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+                preload="none"
+              />
+            )}
           </div>
 
           {/* Text Side */}
