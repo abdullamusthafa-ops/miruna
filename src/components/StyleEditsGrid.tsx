@@ -25,7 +25,7 @@ const styleEdits = [
 
 const StyleEditsGrid = () => {
   return (
-    <section className="h-[100dvh] mb-4 md:mb-0">
+    <section className="h-[100dvh] mb-4 sm:mb-6 md:mb-8">
       <div className="h-full px-0">
         <div className="grid grid-cols-2 gap-0 md:grid-cols-4 h-full">
           {styleEdits.map((edit) => (
