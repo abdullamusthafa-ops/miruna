@@ -159,7 +159,7 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header solidBackground />
 
       <div className="max-w-[1400px] mx-auto px-0 lg:px-8 py-0 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 lg:gap-12">

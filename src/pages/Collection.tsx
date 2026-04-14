@@ -79,7 +79,7 @@ const Collection = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header solidBackground />
 
       {/* Clean Title Section */}
       <section className="pt-8 pb-4 md:pt-12 md:pb-6">
