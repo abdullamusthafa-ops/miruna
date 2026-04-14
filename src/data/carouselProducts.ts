@@ -324,6 +324,14 @@ const midiDressesProducts: CarouselProduct[] = [
     image: "https://miruna.io/cdn/shop/files/MEETMETHERE-RED01.webp?v=1769080404&width=3717",
     hoverImage: "https://miruna.io/cdn/shop/files/MEETMETHERE-RED02.webp?v=1769080404&width=3243",
   },
+  {
+    id: "meet-me-there-black",
+    name: "MEET ME THERE - BLACK",
+    subtitle: "Off-Shoulder Corset Mini Dress",
+    price: 849,
+    image: "https://miruna.io/cdn/shop/files/CALLMECEO-BLACK01.webp?v=1770061405&width=3362",
+    hoverImage: "https://miruna.io/cdn/shop/files/CALLMECEO-BLACK02.webp?v=1769079898&width=3373",
+  },
 ];
 
 const maxiDressesProducts: CarouselProduct[] = [
