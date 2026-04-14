@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { carouselTabs, productsByTab, type CarouselTab } from "@/data/carouselProducts";
 
@@ -10,6 +10,7 @@ const SheCollectionCarousel = () => {
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<CarouselTab>("new-in");
   const [desktopPage, setDesktopPage] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -43,10 +44,14 @@ const SheCollectionCarousel = () => {
   const desktopProducts = products.slice(desktopPage * 5, desktopPage * 5 + 5);
 
   const handleDesktopNav = (direction: "left" | "right") => {
-    setDesktopPage((prev) => {
-      if (direction === "left") return Math.max(0, prev - 1);
-      return Math.min(totalPages - 1, prev + 1);
-    });
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setDesktopPage((prev) => {
+        if (direction === "left") return Math.max(0, prev - 1);
+        return Math.min(totalPages - 1, prev + 1);
+      });
+      setTimeout(() => setIsTransitioning(false), 50);
+    }, 250);
   };
 
   return (
@@ -103,13 +108,13 @@ const SheCollectionCarousel = () => {
             /* Mobile: 2-up scrollable */
             <div
               ref={scrollRef}
-              className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory"
+              className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory scroll-smooth"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="group flex-shrink-0 snap-start"
+                  className="group flex-shrink-0 snap-start transition-transform duration-300"
                   style={{ width: "calc(50% - 4px)", minWidth: "140px" }}
                 >
                   {renderProduct(product, wishlisted, toggleWishlist)}
@@ -118,9 +123,17 @@ const SheCollectionCarousel = () => {
             </div>
           ) : (
             /* Desktop/Tablet: 5 per page */
-            <div className="grid grid-cols-5 gap-3 transition-all duration-300">
-              {desktopProducts.map((product) => (
-                <div key={product.id} className="group min-w-0">
+            <div className={`grid grid-cols-5 gap-3 transition-all duration-500 ease-in-out ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
+              {desktopProducts.map((product, idx) => (
+                <div
+                  key={product.id}
+                  className="group min-w-0 transition-all duration-500 ease-out"
+                  style={{
+                    opacity: isTransitioning ? 0 : 1,
+                    transform: isTransitioning ? 'translateY(12px)' : 'translateY(0)',
+                    transitionDelay: `${idx * 60}ms`,
+                  }}
+                >
                   {renderProduct(product, wishlisted, toggleWishlist)}
                 </div>
               ))}
