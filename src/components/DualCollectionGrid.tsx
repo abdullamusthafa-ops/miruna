@@ -13,6 +13,8 @@ const DualCollectionGrid = () => {
                 src={dressesImg}
                 alt="Dresses"
                 className="h-full w-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
@@ -34,6 +36,8 @@ const DualCollectionGrid = () => {
                 src={occasionImg}
                 alt="Occasion"
                 className="h-full w-full object-cover object-top"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />

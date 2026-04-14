@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 const styleEdits = [
   {
     name: "AFTER DARK",
-    image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=2910",
+    image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=800",
     link: "/collection/evening-dresses",
   },
   {
     name: "EVERYDAY EASE",
-    image: "https://miruna.io/cdn/shop/files/Elevated_Essentials_Category.jpg?v=1774348407&width=3112",
+    image: "https://miruna.io/cdn/shop/files/Elevated_Essentials_Category.jpg?v=1774348407&width=800",
     link: "/collection/elevated-essentials",
   },
   {
     name: "OCCASION READY",
-    image: "https://miruna.io/cdn/shop/files/Wedding_Guest_Category_-_3.4.jpg?v=1774348428&width=1069",
+    image: "https://miruna.io/cdn/shop/files/Wedding_Guest_Category_-_3.4.jpg?v=1774348428&width=800",
     link: "/collection/wedding-guest-edit",
   },
   {
     name: "TAILORED EDGE",
-    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
+    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=800",
     link: "/collection/tailored-edit",
   },
 ];
@@ -41,6 +41,7 @@ const StyleEditsGrid = () => {
                     alt={edit.name}
                     className="h-full w-full object-cover object-top"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

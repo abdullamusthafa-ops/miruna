@@ -1,42 +1,54 @@
 import { Instagram, Play } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 const instagramPosts = [
   {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=70",
     alt: "Fashion editorial shot",
   },
   {
-    type: "video",
-    src: "/videos/brand-video.mp4",
-    poster: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&q=70",
     alt: "Behind the scenes",
   },
   {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=70",
     alt: "Street style look",
   },
   {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=70",
     alt: "Runway moment",
   },
   {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=400&q=70",
     alt: "Editorial portrait",
   },
   {
-    type: "image",
-    src: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80",
+    type: "image" as const,
+    src: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=70",
     alt: "Fashion week",
   },
 ];
 
 const InstagramGallery = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { rootMargin: "200px", threshold: 0 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="bg-muted min-h-[100dvh] flex flex-col justify-center py-16 md:py-24 mt-12 md:mt-16">
+    <section ref={sectionRef} className="bg-muted min-h-[100dvh] flex flex-col justify-center py-16 md:py-24 mt-12 md:mt-16">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-6 text-center md:mb-12">
@@ -61,7 +73,7 @@ const InstagramGallery = () => {
           </a>
         </div>
 
-        {/* Grid - 3 columns on mobile, 3 on tablet, 6 on desktop */}
+        {/* Grid */}
         <div className="grid grid-cols-3 gap-1 sm:gap-2 md:grid-cols-6 md:gap-3">
           {instagramPosts.map((post, index) => (
             <a
@@ -71,33 +83,13 @@ const InstagramGallery = () => {
               rel="noopener noreferrer"
               className="group relative overflow-hidden bg-background aspect-square"
             >
-              {post.type === "video" ? (
-                <>
-                  <video
-                    src={post.src}
-                    poster={post.poster}
-                    muted
-                    loop
-                    playsInline
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    onMouseEnter={(e) => e.currentTarget.play()}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.pause();
-                      e.currentTarget.currentTime = 0;
-                    }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 shadow-lg sm:h-10 sm:w-10 md:h-12 md:w-12">
-                      <Play className="h-3 w-3 text-foreground ml-0.5 sm:h-4 sm:w-4 md:h-5 md:w-5" fill="currentColor" />
-                    </div>
-                  </div>
-                </>
-              ) : (
+              {isVisible && (
                 <img
                   src={post.src}
                   alt={post.alt}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               )}
               

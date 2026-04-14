@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
 import editorialHero from "@/assets/editorial-hero.jpg";
 import dropFluffStuff from "@/assets/drop-fluff-stuff.jpg";
 import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.jpg";
@@ -30,9 +31,29 @@ const sheCategories = [
 ];
 
 const EditorialDropsSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const [videoVisible, setVideoVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setVideoVisible(entry.isIntersecting);
+        if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(() => {});
+        } else if (videoRef.current) {
+          videoRef.current.pause();
+        }
+      },
+      { rootMargin: "300px", threshold: 0.1 }
+    );
+    if (videoContainerRef.current) observer.observe(videoContainerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="pt-10 md:pt-16">
-      {/* Editorial Split: Left Image + Right Video — full screen */}
+      {/* Editorial Split */}
       <div className="h-[100dvh] px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
           <Link to="/collection/she" className="group relative block overflow-hidden">
@@ -41,6 +62,8 @@ const EditorialDropsSection = () => {
                 src={editorialHero}
                 alt="SHE Collection"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -57,21 +80,24 @@ const EditorialDropsSection = () => {
             </div>
           </Link>
 
-          <div className="relative h-full overflow-hidden bg-muted hidden md:block">
-            <video
-              src="/videos/editorial-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-              preload="metadata"
-            />
+          <div ref={videoContainerRef} className="relative h-full overflow-hidden bg-muted hidden md:block">
+            {videoVisible && (
+              <video
+                ref={videoRef}
+                src="/videos/editorial-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover"
+                preload="none"
+              />
+            )}
           </div>
         </div>
       </div>
 
-      {/* Drop Names Strip — full screen */}
+      {/* Drop Names Strip */}
       <div className="px-0 md:px-4 mt-1">
         <div className="grid grid-cols-2 gap-px md:grid-cols-4 md:gap-1">
           {sheCategories.map((cat) => (
@@ -86,6 +112,7 @@ const EditorialDropsSection = () => {
                   alt={cat.name}
                   className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
