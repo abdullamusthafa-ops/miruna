@@ -4,11 +4,11 @@ import occasionImg from "@/assets/occasion-collection.jpeg";
 
 const DualCollectionGrid = () => {
   return (
-    <section className="h-[100dvh]">
-      <div className="h-full px-0">
-        <div className="grid grid-cols-2 gap-0 h-full">
+    <section>
+      <div className="px-0">
+        <div className="grid grid-cols-2 gap-0">
           <Link to="/collection/dresses" className="relative overflow-hidden">
-            <div className="h-full overflow-hidden">
+            <div className="aspect-[3/4] overflow-hidden">
               <img
                 src={dressesImg}
                 alt="Dresses"
@@ -29,7 +29,7 @@ const DualCollectionGrid = () => {
             </div>
           </Link>
           <Link to="/collection/occasion" className="relative overflow-hidden">
-            <div className="h-full overflow-hidden">
+            <div className="aspect-[3/4] overflow-hidden">
               <img
                 src={occasionImg}
                 alt="Occasion"
