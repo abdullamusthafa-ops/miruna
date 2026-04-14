@@ -28,22 +28,5 @@ const Home = () => {
     </div>
   );
 };
-  return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <HeroSlideshow />
-      <CategoryGrid />
-      <DualCollectionGrid />
-      <SpringPromoSection />
-      <SheCollectionCarousel />
-      <EditorialDropsSection />
-      <InstagramGallery />
-      <TrustBadges />
-      <NewsletterSection />
-      <Footer />
-      <MobileBottomBar />
-    </div>
-  );
-};
 
 export default Home;
