@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const SpringPromoSection = () => {
   return (
-    <section className="py-6 md:py-16">
-      <div className="container mx-auto px-0 md:px-4">
+    <section className="min-h-screen flex items-center">
+      <div className="container mx-auto px-0 md:px-4 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 items-center">
           {/* Video Side - full bleed on mobile */}
           <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">

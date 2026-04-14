@@ -25,16 +25,16 @@ const styleEdits = [
 
 const StyleEditsGrid = () => {
   return (
-    <section className="pt-1 pb-0">
-      <div className="container mx-auto px-1">
-        <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+    <section className="h-screen">
+      <div className="h-full px-1">
+        <div className="grid grid-cols-2 gap-1 md:grid-cols-4 h-full">
           {styleEdits.map((edit) => (
             <Link
               key={edit.name}
               to={edit.link}
               className="group relative overflow-hidden"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
+              <div className="h-full overflow-hidden bg-muted">
                 <img
                   src={edit.image}
                   alt={edit.name}
