@@ -72,15 +72,15 @@ const EditorialDropsSection = () => {
       </div>
 
       {/* Drop Names Strip — full screen */}
-      <div className="h-[100dvh] px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-1 h-full">
+      <div className="px-0 md:px-4 mt-1">
+        <div className="grid grid-cols-2 gap-px md:grid-cols-4 md:gap-1">
           {sheCategories.map((cat) => (
             <Link
               key={cat.name}
               to={cat.link}
               className="group relative overflow-hidden"
             >
-              <div className="h-full overflow-hidden bg-muted">
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
                 <img
                   src={cat.image}
                   alt={cat.name}
