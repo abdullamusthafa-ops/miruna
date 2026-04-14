@@ -20,7 +20,7 @@ const Home = () => {
       <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
-      <BestSellersBanner />
+      
       <InstagramGallery />
       <TrustBadges />
       <NewsletterSection />
