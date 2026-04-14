@@ -60,7 +60,6 @@ const EditorialDropsSection = () => {
       {/* Editorial Split: Left Image + Right Video */}
       <div className="container mx-auto px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1">
-          {/* Left: Image */}
           <Link to="/collection/she" className="group relative block overflow-hidden">
             <div className="aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
               <img
@@ -83,7 +82,6 @@ const EditorialDropsSection = () => {
             </div>
           </Link>
 
-          {/* Right: Video */}
           <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
             <video
               src="/videos/editorial-video.mp4"
@@ -98,44 +96,9 @@ const EditorialDropsSection = () => {
         </div>
       </div>
 
-      {/* Drop Names Strip — visually connected */}
+      {/* Style Edits — second strip */}
       <div className="container mx-auto px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-4 gap-1">
-          {sheCategories.map((cat) => (
-            <Link
-              key={cat.name}
-              to={cat.link}
-              className="group relative overflow-hidden"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              {"tag" in cat && cat.tag && (
-                <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-                  <span className="bg-background/90 px-2 py-0.5 text-[7px] font-medium uppercase tracking-wider text-foreground sm:text-[9px]">
-                    {cat.tag}
-                  </span>
-                </div>
-              )}
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-5">
-                <span className="text-[7px] font-medium tracking-[0.1em] uppercase text-white sm:text-[9px] md:text-xs leading-tight block">
-                  {cat.name}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Style Edits — seamlessly connected */}
-      <div className="container mx-auto px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-4 gap-1">
+        <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
           {styleEdits.map((edit) => (
             <Link
               key={edit.name}
@@ -151,8 +114,8 @@ const EditorialDropsSection = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-5">
-                <span className="text-[7px] font-medium tracking-[0.1em] uppercase text-white sm:text-[9px] md:text-xs leading-tight block">
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
+                <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs leading-tight block">
                   {edit.name}
                 </span>
               </div>
@@ -161,7 +124,42 @@ const EditorialDropsSection = () => {
         </div>
       </div>
 
-      {/* Dresses & Occasion — integrated below */}
+      {/* Drop Names Strip */}
+      <div className="container mx-auto px-0 md:px-4 mt-1">
+        <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+          {sheCategories.map((cat) => (
+            <Link
+              key={cat.name}
+              to={cat.link}
+              className="group relative overflow-hidden"
+            >
+              <div className="aspect-[3/4] overflow-hidden bg-muted">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              {cat.tag && (
+                <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
+                  <span className="bg-background/90 px-2 py-0.5 text-[7px] font-medium uppercase tracking-wider text-foreground sm:text-[9px]">
+                    {cat.tag}
+                  </span>
+                </div>
+              )}
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
+                <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs leading-tight block">
+                  {cat.name}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Dresses & Occasion */}
       <div className="container mx-auto px-0 md:px-4 mt-1">
         <div className="grid grid-cols-2 gap-1">
           <Link to="/collection/dresses" className="group relative overflow-hidden">
