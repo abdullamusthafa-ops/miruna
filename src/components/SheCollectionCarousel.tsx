@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { carouselTabs, productsByTab, type CarouselTab } from "@/data/carouselProducts";
 
 const SheCollectionCarousel = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
   const [wishlisted, setWishlisted] = useState<Set<string>>(new Set());
   const [activeTab, setActiveTab] = useState<CarouselTab>("new-in");
 
@@ -85,13 +87,13 @@ const SheCollectionCarousel = () => {
 
           <div
             ref={scrollRef}
-            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 md:gap-3 md:snap-none md:overflow-hidden"
+            className={`flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 ${!isMobile ? 'md:gap-3 md:snap-none md:overflow-hidden' : ''}`}
           >
-            {products.slice(0, window?.innerWidth >= 768 ? 5 : products.length).map((product) => (
+            {(isMobile ? products : products.slice(0, 5)).map((product) => (
               <div
                 key={product.id}
-                className="group flex-shrink-0 snap-start md:flex-1 md:min-w-0"
-                style={{ width: window?.innerWidth >= 768 ? undefined : "calc(50% - 4px)", minWidth: window?.innerWidth >= 768 ? 0 : "140px" }}
+                className={`group flex-shrink-0 snap-start ${!isMobile ? 'flex-1 min-w-0' : ''}`}
+                style={isMobile ? { width: "calc(50% - 4px)", minWidth: "140px" } : undefined}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-muted">
                   <Link to={`/product/${product.id}`}>
