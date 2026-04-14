@@ -127,7 +127,7 @@ const SheCollectionCarousel = () => {
                   </button>
 
                   {product.badge && (
-                    <div className="absolute left-2 top-2 bg-background/90 px-2 py-0.5 text-[8px] font-medium uppercase tracking-wider text-foreground sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
+                    <div className="absolute left-2 bottom-2 bg-background/90 px-2 py-0.5 text-[8px] font-medium uppercase tracking-wider text-foreground sm:left-3 sm:bottom-3 sm:px-2.5 sm:py-1 sm:text-[10px]">
                       {product.badge}
                     </div>
                   )}
