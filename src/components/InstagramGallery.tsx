@@ -36,7 +36,7 @@ const instagramPosts = [
 
 const InstagramGallery = () => {
   return (
-    <section className="bg-muted min-h-screen flex flex-col justify-center py-10 md:py-20">
+    <section className="bg-muted min-h-screen flex flex-col justify-center py-16 md:py-24 mt-12 md:mt-16">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-6 text-center md:mb-12">
