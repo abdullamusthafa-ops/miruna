@@ -5,7 +5,7 @@ import CategoryGrid from "@/components/CategoryGrid";
 import DualCollectionGrid from "@/components/DualCollectionGrid";
 import SpringPromoSection from "@/components/SpringPromoSection";
 import SheCollectionCarousel from "@/components/SheCollectionCarousel";
-import BestSellersBanner from "@/components/BestSellersBanner";
+
 import InstagramGallery from "@/components/InstagramGallery";
 import TrustBadges from "@/components/TrustBadges";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -20,7 +20,7 @@ const Home = () => {
       <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
-      <BestSellersBanner />
+      
       <InstagramGallery />
       <TrustBadges />
       <NewsletterSection />
