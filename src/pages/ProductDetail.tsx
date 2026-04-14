@@ -167,33 +167,35 @@ const ProductDetail = () => {
           {/* ===== MOBILE: Swipeable Image Carousel (< lg) ===== */}
           <div className="lg:hidden relative">
             <div
-              className="overflow-hidden"
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
               ref={carouselRef}
+              onScroll={(e) => {
+                const el = e.currentTarget;
+                const index = Math.round(el.scrollLeft / el.clientWidth);
+                setCurrentSlide(index);
+              }}
+              style={{ WebkitOverflowScrolling: 'touch' }}
             >
-              <div
-                className="flex transition-transform duration-300 ease-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {product.images.map((img, i) => (
-                  <div key={i} className="min-w-full aspect-[3/4] bg-muted">
-                    <img
-                      src={img}
-                      alt={`${product.name} - View ${i + 1}`}
-                      className="h-full w-full object-cover"
-                      loading={i < 2 ? "eager" : "lazy"}
-                    />
-                  </div>
-                ))}
-              </div>
+              {product.images.map((img, i) => (
+                <div key={i} className="min-w-full snap-center aspect-[3/4] bg-muted">
+                  <img
+                    src={img}
+                    alt={`${product.name} - View ${i + 1}`}
+                    className="h-full w-full object-cover"
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                </div>
+              ))}
             </div>
             {/* Dots indicator */}
             <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
               {product.images.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrentSlide(i)}
+                  onClick={() => {
+                    setCurrentSlide(i);
+                    carouselRef.current?.scrollTo({ left: i * (carouselRef.current?.clientWidth || 0), behavior: 'smooth' });
+                  }}
                   className={`w-1.5 h-1.5 rounded-full transition-all ${
                     currentSlide === i ? "bg-foreground w-4" : "bg-foreground/30"
                   }`}
