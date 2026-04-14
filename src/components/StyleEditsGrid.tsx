@@ -56,12 +56,10 @@ const StyleEditsGrid = () => {
       </section>
 
       {/* Divider */}
-      <div className="flex items-center justify-center py-6 sm:py-8 md:py-10">
-        <div className="h-px w-16 bg-border sm:w-20 md:w-24" />
-        <span className="mx-3 text-[8px] font-medium uppercase tracking-[0.25em] text-muted-foreground sm:text-[9px] md:text-[10px]">
-          ✦
-        </span>
-        <div className="h-px w-16 bg-border sm:w-20 md:w-24" />
+      <div className="flex items-center justify-center py-3 sm:py-4 md:py-5">
+        <div className="h-px w-10 bg-border sm:w-14 md:w-16" />
+        <span className="mx-2 text-[7px] text-muted-foreground/60 sm:text-[8px]">✦</span>
+        <div className="h-px w-10 bg-border sm:w-14 md:w-16" />
       </div>
     </div>
   );
