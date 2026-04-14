@@ -3,23 +3,27 @@ import { Link } from "react-router-dom";
 const styleEdits = [
   {
     name: "AFTER DARK",
+    subtext: "For nights that ask for presence.",
     image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=800",
     link: "/collection/evening-dresses",
   },
   {
-    name: "EVERYDAY EASE",
-    image: "https://miruna.io/cdn/shop/files/Elevated_Essentials_Category.jpg?v=1774348407&width=800",
-    link: "/collection/elevated-essentials",
+    name: "IN WHITE",
+    subtext: "Clean lines. Quiet confidence.",
+    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=800",
+    link: "/collection/white",
   },
   {
-    name: "OCCASION READY",
+    name: "THE PARTY EDIT",
+    subtext: "Made for movement, energy, and attention.",
     image: "https://miruna.io/cdn/shop/files/Wedding_Guest_Category_-_3.4.jpg?v=1774348428&width=800",
-    link: "/collection/wedding-guest-edit",
+    link: "/collection/party",
   },
   {
-    name: "TAILORED EDGE",
+    name: "STATEMENT MOMENTS",
+    subtext: "For the nights you'll be remembered.",
     image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=800",
-    link: "/collection/tailored-edit",
+    link: "/collection/prom",
   },
 ];
 
@@ -33,21 +37,24 @@ const StyleEditsGrid = () => {
               <Link
                 key={edit.name}
                 to={edit.link}
-                className="relative overflow-hidden"
+                className="relative overflow-hidden group"
               >
                 <div className="aspect-[3/4] overflow-hidden bg-muted">
                   <img
                     src={edit.image}
                     alt={edit.name}
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
                   <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs leading-tight block">
                     {edit.name}
+                  </span>
+                  <span className="text-[8px] text-white/70 sm:text-[9px] md:text-[10px] leading-tight block mt-0.5 font-light tracking-wide">
+                    {edit.subtext}
                   </span>
                 </div>
               </Link>
