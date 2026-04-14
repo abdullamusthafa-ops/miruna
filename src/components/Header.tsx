@@ -2,7 +2,7 @@ import { ShoppingCart, Search, User, Heart, Menu, ChevronDown } from "lucide-rea
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 
 const megaMenuData = {
