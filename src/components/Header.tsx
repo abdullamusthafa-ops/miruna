@@ -131,8 +131,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 z-50 w-full">
-      {/* Announcement Bar */}
-      <AnnouncementBar />
+      {/* Announcement Bar - only visible when scrolled */}
+      {isScrolled && <AnnouncementBar />}
 
       {/* Main Header */}
       <div className={`transition-all duration-300 ${isScrolled ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
