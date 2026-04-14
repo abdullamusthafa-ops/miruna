@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSlideshow from "@/components/HeroSlideshow";
-import DualCollectionGrid from "@/components/DualCollectionGrid";
 import SpringPromoSection from "@/components/SpringPromoSection";
 import SheCollectionCarousel from "@/components/SheCollectionCarousel";
 import EditorialDropsSection from "@/components/EditorialDropsSection";
@@ -16,7 +15,6 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <HeroSlideshow />
-      <DualCollectionGrid />
       <SpringPromoSection />
       <SheCollectionCarousel />
       <EditorialDropsSection />
