@@ -89,10 +89,14 @@ const megaMenuData = {
   },
 };
 
-const Header = () => {
+interface HeaderProps {
+  solidBackground?: boolean;
+}
+
+const Header = ({ solidBackground = false }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(solidBackground);
 
   useEffect(() => {
     const handleScroll = () => {
