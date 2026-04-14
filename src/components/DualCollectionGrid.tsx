@@ -2,50 +2,56 @@ import { Link } from "react-router-dom";
 import dressesImg from "@/assets/dresses-collection.jpg";
 import occasionImg from "@/assets/occasion-collection.jpeg";
 
-const collections = [
-  {
-    name: "Dresses",
-    subtitle: "Find your perfect fit",
-    image: dressesImg,
-    link: "/collection/dresses",
-  },
-  {
-    name: "Occasion",
-    subtitle: "For every moment",
-    image: occasionImg,
-    link: "/collection/occasion",
-  },
-];
-
 const DualCollectionGrid = () => {
   return (
-    <section className="pt-1 pb-0">
+    <section className="pb-0">
       <div className="container mx-auto px-1">
-        <div className="grid grid-cols-2 gap-1">
-          {collections.map((col) => (
-            <Link
-              key={col.name}
-              to={col.link}
-              className="group relative overflow-hidden"
-            >
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={col.image}
-                  alt={col.name}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-                <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-white md:text-base">
-                  {col.name}
-                </h3>
-                <p className="mt-0.5 text-[10px] tracking-wide text-white/80 md:text-xs">
-                  {col.subtitle}
-                </p>
-              </div>
-            </Link>
-          ))}
+        <div className="grid grid-cols-2 gap-0">
+          {/* Dresses */}
+          <Link to="/collection/dresses" className="group relative overflow-hidden">
+            <div className="aspect-[2/3] md:aspect-[3/4] overflow-hidden">
+              <img
+                src={dressesImg}
+                alt="Dresses"
+                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 flex flex-col items-center text-center">
+              <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-white md:text-sm">
+                Dresses
+              </h3>
+              <p className="mt-1 text-[9px] tracking-wide text-white/70 md:text-[11px] hidden sm:block">
+                Find your perfect fit
+              </p>
+              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 transition-colors group-hover:border-white group-hover:text-white md:mt-3 md:text-[10px]">
+                Shop Now
+              </span>
+            </div>
+          </Link>
+
+          {/* Occasion */}
+          <Link to="/collection/occasion" className="group relative overflow-hidden">
+            <div className="aspect-[2/3] md:aspect-[3/4] overflow-hidden">
+              <img
+                src={occasionImg}
+                alt="Occasion"
+                className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 flex flex-col items-center text-center">
+              <h3 className="text-xs font-medium tracking-[0.2em] uppercase text-white md:text-sm">
+                Occasion
+              </h3>
+              <p className="mt-1 text-[9px] tracking-wide text-white/70 md:text-[11px] hidden sm:block">
+                For every moment
+              </p>
+              <span className="mt-2 inline-block border-b border-white/60 pb-0.5 text-[8px] font-medium uppercase tracking-[0.15em] text-white/80 transition-colors group-hover:border-white group-hover:text-white md:mt-3 md:text-[10px]">
+                Shop Now
+              </span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
