@@ -135,11 +135,11 @@ const SheCollectionCarousel = () => {
 
                 <div className="mt-2.5 space-y-0.5 sm:mt-3 sm:space-y-1">
                   <Link to={`/product/${product.id}`}>
-                    <h3 className="text-[10px] font-semibold uppercase tracking-wide text-foreground line-clamp-1 sm:text-xs hover:text-muted-foreground transition-colors">
+                    <h3 className="text-[10px] font-semibold uppercase tracking-wide text-foreground sm:text-xs hover:text-muted-foreground transition-colors line-clamp-2">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-[9px] text-muted-foreground line-clamp-1 sm:text-[11px]">
+                  <p className="text-[9px] text-muted-foreground sm:text-[11px] line-clamp-2">
                     {product.subtitle}
                   </p>
                   <div className="flex items-center gap-1.5 sm:gap-2">
