@@ -55,7 +55,7 @@ const SheCollectionCarousel = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col justify-center py-8 md:py-12">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-8 md:py-12">
       <div className="container mx-auto px-4 md:px-10">
         {/* Header: Title left, Tabs right */}
         <div className="mb-3 flex flex-col gap-2 md:mb-5 md:flex-row md:items-end md:justify-between">

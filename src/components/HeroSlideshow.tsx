@@ -63,7 +63,7 @@ const HeroSlideshow = () => {
 
   return (
     <section
-      className="relative h-[75vh] sm:h-[85vh] md:h-screen w-full overflow-hidden"
+      className="relative h-[100dvh] w-full overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
