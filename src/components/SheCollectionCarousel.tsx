@@ -85,16 +85,13 @@ const SheCollectionCarousel = () => {
 
           <div
             ref={scrollRef}
-            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 md:gap-3 md:snap-none"
+            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory sm:gap-2.5 md:gap-3 md:snap-none md:overflow-hidden"
           >
-            {products.map((product) => (
+            {products.slice(0, window?.innerWidth >= 768 ? 5 : products.length).map((product) => (
               <div
                 key={product.id}
-                className="group flex-shrink-0 snap-start"
-                style={{ width: "calc(50% - 4px)", minWidth: "140px", maxWidth: "none" }}
-                // On md+, show 5 cards: width = (100% - 4*gap) / 5
-                // Using inline style for precise 5-column layout
-
+                className="group flex-shrink-0 snap-start md:flex-1 md:min-w-0"
+                style={{ width: window?.innerWidth >= 768 ? undefined : "calc(50% - 4px)", minWidth: window?.innerWidth >= 768 ? 0 : "140px" }}
               >
                 <div className="relative aspect-[3/4] overflow-hidden bg-muted">
                   <Link to={`/product/${product.id}`}>
