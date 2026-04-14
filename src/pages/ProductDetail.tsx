@@ -442,10 +442,10 @@ const ProductDetail = () => {
           <div className="overflow-hidden">
             <div
               className="flex gap-2 sm:gap-3 transition-transform duration-300"
-              style={{ transform: `translateX(-${recommendScrollIndex * (100 / 2)}%)` }}
+              style={{ transform: `translateX(-${recommendScrollIndex * 52}%)` }}
             >
               {recommendedProducts.map((p) => (
-                <div key={p.id} className="min-w-[calc(50%-4px)] sm:min-w-[calc(33.333%-8px)] lg:min-w-[calc(25%-9px)] flex-shrink-0">
+                <div key={p.id} className="w-[48%] sm:w-[31%] lg:w-[23.5%] flex-shrink-0">
                   <ProductCard {...p} />
                 </div>
               ))}
