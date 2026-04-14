@@ -5,7 +5,7 @@ import occasionImg from "@/assets/occasion-collection.jpeg";
 const DualCollectionGrid = () => {
   return (
     <section className="h-screen">
-      <div className="h-full px-1">
+      <div className="h-full px-0">
         <div className="grid grid-cols-2 gap-0 h-full">
           <Link to="/collection/dresses" className="group relative overflow-hidden">
             <div className="h-full overflow-hidden">

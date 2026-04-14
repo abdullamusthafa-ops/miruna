@@ -31,7 +31,7 @@ const sheCategories = [
 
 const EditorialDropsSection = () => {
   return (
-    <section>
+    <section className="pt-10 md:pt-16">
       {/* Editorial Split: Left Image + Right Video — full screen */}
       <div className="h-screen px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
