@@ -4,53 +4,27 @@ import categoryImg1 from "@/assets/category-img-1.jpeg";
 import categoryImg2 from "@/assets/category-img-2.jpg";
 import categoryImg3 from "@/assets/category-img-3.jpeg";
 
-const drops = [
+const sheCategories = [
   {
-    name: "Fluff Stuff",
+    name: "FLUFF STUFF",
     tag: "Limited Edition",
     image: "https://miruna.io/cdn/shop/files/D0001205.webp?v=1761725544&width=600",
     link: "/collection/fluff-stuff",
   },
   {
-    name: "Too Good To Lose",
-    tag: "Signature Drop",
+    name: "TOO GOOD TO LOSE",
     image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=600",
     link: "/collection/too-good-to-lose",
   },
   {
-    name: "I Woke Up Like This",
-    tag: "Everyday Edit",
+    name: "I WOKE UP LIKE THIS",
     image: "https://miruna.io/cdn/shop/files/Facetune_26-10-2025-15-54-01_b734120f-4b7f-4886-bd7f-1d61d4a3e6ae.jpg?v=1761560458&width=800",
     link: "/collection/i-woke-up-like-this",
   },
   {
-    name: "My Mom Said No",
-    tag: "Bold Picks",
+    name: "MY MOM SAID NO",
     image: "https://miruna.io/cdn/shop/files/D0006764.webp?v=1761729466&width=600",
     link: "/collection/my-mom-said-no",
-  },
-];
-
-const sheCategories = [
-  {
-    name: "AFTER DARK",
-    image: categoryImg3,
-    link: "/collection/evening-dresses",
-  },
-  {
-    name: "EVERYDAY EASE",
-    image: categoryImg1,
-    link: "/collection/elevated-essentials",
-  },
-  {
-    name: "OCCASION READY",
-    image: categoryImg2,
-    link: "/collection/wedding-guest-edit",
-  },
-  {
-    name: "BESTSELLERS",
-    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
-    link: "/collection/bestsellers",
   },
 ];
 
@@ -98,7 +72,7 @@ const EditorialDropsSection = () => {
         </div>
       </div>
 
-      {/* SHE Category Strip — visually connected */}
+      {/* Drop Names Strip — visually connected */}
       <div className="container mx-auto px-0 md:px-4 mt-1">
         <div className="grid grid-cols-4 gap-1">
           {sheCategories.map((cat) => (
@@ -117,49 +91,9 @@ const EditorialDropsSection = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 md:p-5">
-                <span className="text-[8px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs">
+                <span className="text-[7px] font-medium tracking-[0.1em] uppercase text-white sm:text-[9px] md:text-xs leading-tight block">
                   {cat.name}
                 </span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Drops Grid */}
-      <div className="container mx-auto px-4 mt-8 md:mt-12">
-        <div className="mb-5 md:mb-7 text-center">
-          <p className="text-[9px] font-medium uppercase tracking-[0.25em] text-muted-foreground sm:text-[10px]">
-            Curated for you
-          </p>
-          <h2 className="mt-1 text-lg font-light tracking-tight text-foreground sm:text-xl md:text-2xl">
-            Explore The Drops
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-3">
-          {drops.map((drop) => (
-            <Link
-              key={drop.name}
-              to={drop.link}
-              className="group relative overflow-hidden"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
-                <img
-                  src={drop.image}
-                  alt={drop.name}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-                <p className="text-[7px] font-medium uppercase tracking-[0.15em] text-white/60 sm:text-[8px]">
-                  {drop.tag}
-                </p>
-                <h3 className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-white sm:text-xs md:text-sm">
-                  {drop.name}
-                </h3>
               </div>
             </Link>
           ))}
