@@ -33,7 +33,7 @@ const EditorialDropsSection = () => {
   return (
     <section className="pt-10 md:pt-16">
       {/* Editorial Split: Left Image + Right Video — full screen */}
-      <div className="h-screen px-0 md:px-4">
+      <div className="h-[100dvh] px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
           <Link to="/collection/she" className="group relative block overflow-hidden">
             <div className="h-full overflow-hidden bg-muted">
@@ -72,8 +72,8 @@ const EditorialDropsSection = () => {
       </div>
 
       {/* Drop Names Strip — full screen */}
-      <div className="h-screen px-0 md:px-4 mt-1">
-        <div className="grid grid-cols-2 gap-1 md:grid-cols-4 h-full">
+      <div className="h-[100dvh] px-0 md:px-4 mt-1">
+        <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-1 h-full">
           {sheCategories.map((cat) => (
             <Link
               key={cat.name}
