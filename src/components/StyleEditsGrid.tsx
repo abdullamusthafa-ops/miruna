@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import inWhiteImage from "@/assets/in-white-category.jpg";
 
 const styleEdits = [
   {
@@ -10,7 +11,7 @@ const styleEdits = [
   {
     name: "IN WHITE",
     subtext: "Clean lines. Quiet confidence.",
-    image: "https://miruna.io/cdn/shop/files/D0001304.webp?v=1761726685&width=800",
+    image: inWhiteImage,
     link: "/collection/white",
   },
   {
