@@ -66,7 +66,7 @@ const HeroSlideshow = () => {
           />
         </div>
         {/* Text at the seam between images */}
-        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-10 text-center px-4 pointer-events-none">
+        <div className="absolute left-0 right-0 bottom-[46%] z-10 text-center px-4 pointer-events-none">
           <p className="mb-1 text-[8px] font-medium uppercase tracking-[0.2em] text-white/90 drop-shadow-md">
             Evening glamour • Everyday ease • Occasion moments
           </p>
