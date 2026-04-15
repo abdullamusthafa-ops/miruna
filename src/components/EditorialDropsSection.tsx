@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
-import editorialHero from "@/assets/editorial-hero.jpg";
-import dropFluffStuff from "@/assets/drop-fluff-stuff.jpg";
-import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.jpg";
-import dropIWokeUp from "@/assets/drop-i-woke-up-like-this.jpg";
-import dropMyMomSaidNo from "@/assets/drop-my-mom-said-no.jpg";
+import editorialHero from "@/assets/editorial-hero.webp";
+import dropFluffStuff from "@/assets/drop-fluff-stuff.webp";
+import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.webp";
+import dropIWokeUp from "@/assets/drop-i-woke-up-like-this.webp";
+import dropMyMomSaidNo from "@/assets/drop-my-mom-said-no.webp";
 
 const sheCategories = [
   {
