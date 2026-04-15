@@ -251,10 +251,11 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-display tracking-tight">
-              mi<span className={isScrolled ? 'text-muted-foreground' : 'text-white/60'}>·</span>ru<span className={isScrolled ? 'text-muted-foreground' : 'text-white/60'}>·</span>na
-              <span className="text-[8px] align-super font-sans">®</span>
-            </span>
+            <img
+              src={isScrolled ? logoBlack : logoWhite}
+              alt="Miruna"
+              className="h-5 sm:h-6 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

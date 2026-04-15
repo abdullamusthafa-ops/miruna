@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
           {/* Brand Info */}
           <div className="pb-6 md:pb-0">
-            <h3 className="mb-3 text-2xl font-display tracking-wider md:mb-4">mi·ru·na</h3>
+            <img src={logoBlack} alt="Miruna" className="h-6 w-auto mb-3 md:mb-4" />
             <p className="text-[11px] text-muted-foreground sm:text-sm leading-relaxed">
               Discover bold fashion and statement pieces crafted with passion and precision.
             </p>
