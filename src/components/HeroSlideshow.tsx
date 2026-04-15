@@ -11,7 +11,7 @@ const HeroSlideshow = () => {
           <img
             src={heroNewIn}
             alt="New In Collection"
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-[center_15%]"
             fetchPriority="high"
             decoding="sync"
           />
@@ -20,7 +20,7 @@ const HeroSlideshow = () => {
           <img
             src={heroSpring}
             alt="Spring Collection"
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-[center_15%]"
             fetchPriority="high"
             decoding="sync"
           />
