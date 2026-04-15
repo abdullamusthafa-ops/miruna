@@ -252,7 +252,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
           </Sheet>
 
           {/* Logo */}
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center">
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center">
             <img
               src={isScrolled ? logoBlack : logoWhite}
               alt="Miruna"
