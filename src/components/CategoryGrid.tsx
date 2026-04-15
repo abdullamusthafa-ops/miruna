@@ -5,7 +5,7 @@ const categories = [
   {
     name: "AFTER DARK",
     subtext: "For nights that ask for presence.",
-    image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=2910",
+    image: "https://miruna.io/cdn/shop/files/Evening_Glam_Category.jpg?v=1774348380&width=800",
     link: "/collection/evening-dresses",
   },
   {
@@ -23,7 +23,7 @@ const categories = [
   {
     name: "STATEMENT MOMENTS",
     subtext: "For the nights you'll be remembered.",
-    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=2344",
+    image: "https://miruna.io/cdn/shop/files/DSCF4817_2.jpg?v=1774348358&width=800",
     link: "/collection/prom",
   },
 ];

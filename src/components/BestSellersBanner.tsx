@@ -14,7 +14,7 @@ const BestSellersBanner = () => {
           {/* Mobile: taller crop for better visibility */}
           <div className="sm:hidden aspect-[16/9] overflow-hidden">
             <img
-              src="https://miruna.io/cdn/shop/files/Best_Sellers_Banner_Desktop.webp?v=1769175064&width=1200"
+              src="https://miruna.io/cdn/shop/files/Best_Sellers_Banner_Desktop.webp?v=1769175064&width=800"
               alt="Best Sellers"
               className="w-full h-full object-cover object-center"
               loading="lazy"
