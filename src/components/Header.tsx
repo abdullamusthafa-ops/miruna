@@ -252,11 +252,11 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
           </Sheet>
 
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 flex items-center">
             <img
               src={isScrolled ? logoBlack : logoWhite}
               alt="Miruna"
-              className="h-5 sm:h-6 w-auto"
+              className="h-4 sm:h-4 md:h-5 w-auto"
             />
           </Link>
 
