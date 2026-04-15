@@ -1,4 +1,6 @@
 import { ShoppingCart, Search, User, Heart, Menu, ChevronDown } from "lucide-react";
+import logoBlack from "@/assets/logo-black.png";
+import logoWhite from "@/assets/logo-white.png";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";

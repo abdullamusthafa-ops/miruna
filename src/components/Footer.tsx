@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoBlack from "@/assets/logo-black.png";
 import { Instagram, Facebook, Twitter, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
