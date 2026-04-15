@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Heart, Sparkles, Star, Clock, MapPin, Truck, RotateCcw, Instagram, ArrowRight } from "lucide-react";
-import mirunaFounder from "@/assets/miruna-founder.jpg";
+import mirunaFounder from "@/assets/miruna-founder.webp";
 
 // Animated Text Component
 const AnimatedText = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => {

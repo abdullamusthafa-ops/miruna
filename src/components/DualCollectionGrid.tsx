@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import dressesImg from "@/assets/dresses-collection.jpg";
-import occasionImg from "@/assets/occasion-collection.jpeg";
+import dressesImg from "@/assets/dresses-collection.webp";
+import occasionImg from "@/assets/occasion-collection.webp";
 
 const DualCollectionGrid = () => {
   return (

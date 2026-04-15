@@ -6,7 +6,7 @@ const ValentinesEditSection = () => {
       <Link to="/collection/valentines" className="block">
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[400px] lg:h-[450px] overflow-hidden">
           <img
-            src="https://miruna.io/cdn/shop/files/notext_1.png?v=1769141932&width=1920"
+            src="https://miruna.io/cdn/shop/files/notext_1.png?v=1769141932&width=800"
             alt="The Valentines Edit"
             className="w-full h-full object-cover object-center"
           />
