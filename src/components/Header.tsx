@@ -264,7 +264,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0" onMouseLeave={handleMouseLeave}>
+          <nav className="hidden lg:flex items-center gap-0">
             {/* New In */}
             <Link
               to="/collection/new-in"
