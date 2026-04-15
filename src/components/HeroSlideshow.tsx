@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import heroBanner from "@/assets/hero-banner.webp";
+import heroBannerMobile from "@/assets/hero-banner-mobile.webp";
 
 const HeroSlideshow = () => {
   return (
     <section className="relative h-[100dvh] w-full overflow-hidden mb-px">
-      <img
-        src={heroBanner}
-        alt="Dresses for every version of you"
-        className="h-full w-full object-cover object-center"
-        fetchPriority="high"
-        decoding="sync"
-      />
+      <picture>
+        <source media="(max-width: 768px)" srcSet={heroBannerMobile} />
+        <img
+          src={heroBanner}
+          alt="Dresses for every version of you"
+          className="h-full w-full object-cover object-center"
+          fetchPriority="high"
+          decoding="sync"
+        />
+      </picture>
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent sm:bg-black/20" />
       <div className="absolute inset-0 flex items-end justify-center pb-[18%] sm:pb-[12%] md:pb-[10%]">
         <div className="text-center px-6">
