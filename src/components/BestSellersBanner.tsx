@@ -6,7 +6,7 @@ const BestSellersBanner = () => {
       <Link to="/products?filter=bestsellers" className="block active:opacity-90 transition-opacity">
         <div className="relative w-full overflow-hidden">
           <img
-            src="https://miruna.io/cdn/shop/files/Best_Sellers_Banner_Desktop.webp?v=1769175064&width=3200"
+            src="https://miruna.io/cdn/shop/files/Best_Sellers_Banner_Desktop.webp?v=1769175064&width=800"
             alt="Best Sellers"
             className="w-full h-auto object-cover hidden sm:block"
             loading="lazy"
