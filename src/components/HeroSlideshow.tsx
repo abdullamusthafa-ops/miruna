@@ -45,9 +45,9 @@ const HeroSlideshow = () => {
         </div>
       </div>
 
-      {/* Mobile / Tablet portrait: stacked with text strip between */}
-      <div className="md:hidden flex flex-col h-[100dvh]">
-        <div className="relative flex-[3] overflow-hidden bg-muted min-h-0">
+      {/* Mobile / Tablet portrait: stacked with text at the seam */}
+      <div className="md:hidden relative flex flex-col h-[100dvh]" style={{ gap: "1px" }}>
+        <div className="relative flex-1 overflow-hidden bg-muted min-h-0">
           <img
             src={heroNewIn}
             alt="New In Collection"
@@ -56,22 +56,7 @@ const HeroSlideshow = () => {
             decoding="sync"
           />
         </div>
-        {/* CTA strip between images */}
-        <div className="bg-foreground py-4 px-4 text-center flex-shrink-0">
-          <p className="mb-1 text-[8px] font-medium uppercase tracking-[0.2em] text-background/70">
-            Evening glamour • Everyday ease • Occasion moments
-          </p>
-          <h1 className="mb-2 text-lg font-display font-bold tracking-wide text-background sm:text-xl">
-            DRESSES FOR EVERY VERSION OF YOU
-          </h1>
-          <Link
-            to="/collection/new-in"
-            className="inline-block border border-background/30 px-5 py-2 text-[9px] font-medium tracking-[0.15em] uppercase text-background transition-all hover:bg-background hover:text-foreground active:scale-95"
-          >
-            SHOP NEW IN
-          </Link>
-        </div>
-        <div className="relative flex-[3] overflow-hidden bg-muted min-h-0">
+        <div className="relative flex-1 overflow-hidden bg-muted min-h-0">
           <img
             src={heroSpring}
             alt="Spring Collection"
@@ -79,6 +64,21 @@ const HeroSlideshow = () => {
             fetchPriority="high"
             decoding="sync"
           />
+        </div>
+        {/* Text at the seam between images */}
+        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 z-10 text-center px-4 pointer-events-none">
+          <p className="mb-1 text-[8px] font-medium uppercase tracking-[0.2em] text-white/90 drop-shadow-md">
+            Evening glamour • Everyday ease • Occasion moments
+          </p>
+          <h1 className="mb-2 text-xl font-display font-bold tracking-wide text-white drop-shadow-lg sm:text-2xl">
+            DRESSES FOR EVERY VERSION OF YOU
+          </h1>
+          <Link
+            to="/collection/new-in"
+            className="pointer-events-auto inline-block border border-white bg-white/10 backdrop-blur-sm px-5 py-2 text-[9px] font-medium tracking-[0.15em] uppercase text-white transition-all hover:bg-white hover:text-foreground active:scale-95"
+          >
+            SHOP NEW IN
+          </Link>
         </div>
       </div>
     </section>
