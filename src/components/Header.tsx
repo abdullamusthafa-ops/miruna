@@ -99,6 +99,9 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(solidBackground);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const isSolid = isScrolled || isHovered || activeMenu !== null;
 
   useEffect(() => {
     if (solidBackground) {
