@@ -143,13 +143,13 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
   );
 
   return (
-    <header className="fixed top-0 z-50 w-full">
+    <header className="fixed top-0 z-50 w-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => { setIsHovered(false); setActiveMenu(null); }}>
       {/* Announcement Bar - only visible when scrolled */}
       {isScrolled && <AnnouncementBar />}
 
       {/* Main Header */}
-      <div className={`transition-all duration-300 ${isScrolled ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
-        <div className={`container mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`}>
+      <div className={`transition-all duration-300 ${isSolid ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
+        <div className={`container mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-300 ${isSolid ? 'text-foreground' : 'text-white'}`}>
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
@@ -257,7 +257,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
           {/* Logo */}
           <Link to="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 flex items-center">
             <img
-              src={isScrolled ? logoBlack : logoWhite}
+              src={isSolid ? logoBlack : logoWhite}
               alt="Miruna"
               className="h-4 sm:h-4 md:h-5 w-auto"
             />
@@ -328,7 +328,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
             {/* Sale */}
             <Link
               to="/collection/sale"
-              className={`px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase mx-2 transition-colors ${isScrolled ? 'border border-foreground hover:bg-foreground hover:text-background' : 'border border-white hover:bg-white hover:text-black'}`}
+              className={`px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase mx-2 transition-colors ${isSolid ? 'border border-foreground hover:bg-foreground hover:text-background' : 'border border-white hover:bg-white hover:text-black'}`}
             >
               Sale
             </Link>
@@ -340,7 +340,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </Button>
-            <Button variant="ghost" size="icon" className={`hidden sm:flex hover:bg-transparent rounded-none ${isScrolled ? 'border border-border' : 'border border-white/50'}`}>
+            <Button variant="ghost" size="icon" className={`hidden sm:flex hover:bg-transparent rounded-none ${isSolid ? 'border border-border' : 'border border-white/50'}`}>
               <User className="h-5 w-5" />
               <span className="sr-only">Account</span>
             </Button>
