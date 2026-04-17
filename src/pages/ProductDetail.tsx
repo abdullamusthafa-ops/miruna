@@ -304,52 +304,51 @@ const ProductDetail = () => {
             <p className="text-[10px] sm:text-[11px] text-muted-foreground mb-0.5">{product.sizeNote}</p>
             <p className="text-[10px] sm:text-[11px] text-muted-foreground mb-4">{product.fitNote}</p>
 
-            {/* Flash Offer CRO Block */}
-            <div className="border border-foreground p-3 sm:p-4 mb-4 text-center">
-              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wide mb-0.5">
-                Flash Offer - Get 15% Off Your Order
-              </p>
-              <p className="text-[9px] sm:text-[10px] text-muted-foreground mb-2.5">
-                Tap the discount code below to copy. Expires soon!
-              </p>
+            {/* Quiet Welcome Offer Line */}
+            <p className="text-[11px] sm:text-xs text-[hsl(var(--luxury-gold))] mb-4 leading-relaxed">
+              New to Miruna? Code{" "}
               <button
                 onClick={handleCopyCode}
-                className="w-full border border-dashed border-foreground py-2 sm:py-2.5 flex items-center justify-center gap-2 hover:bg-muted/50 transition-colors active:scale-[0.98]"
+                className="font-semibold tracking-wider underline underline-offset-2 hover:text-foreground transition-colors"
               >
-                <span className="text-xs sm:text-sm font-semibold tracking-widest">{copiedCode ? "COPIED!" : "WELCOME"}</span>
-                <Copy className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-              </button>
-            </div>
+                {copiedCode ? "COPIED" : "WELCOME15"}
+              </button>{" "}
+              saves you 15% at checkout.
+            </p>
 
             {/* Add to Cart */}
             <button
               ref={addToCartRef}
               onClick={handleAddToCart}
-              className="w-full h-11 sm:h-12 bg-foreground text-background text-[13px] sm:text-sm font-medium uppercase tracking-wider hover:bg-foreground/90 transition-colors active:scale-[0.98] mb-2"
+              className="w-full h-11 sm:h-12 bg-foreground text-background text-[13px] sm:text-sm font-medium uppercase tracking-wider hover:bg-foreground/90 transition-colors active:scale-[0.98] mb-3"
             >
               ADD TO CART
             </button>
 
+            {/* Reassurance Row — directly below ATC */}
+            <div className="grid grid-cols-3 gap-2 mb-3 py-2.5 border-y border-border">
+              <div className="flex flex-col items-center text-center gap-1">
+                <Truck className="h-4 w-4 text-foreground" strokeWidth={1.5} />
+                <p className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-tight">Same-day Dubai delivery</p>
+              </div>
+              <div className="flex flex-col items-center text-center gap-1 border-x border-border px-1">
+                <RotateCcw className="h-4 w-4 text-foreground" strokeWidth={1.5} />
+                <p className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-tight">7-day returns</p>
+              </div>
+              <div className="flex flex-col items-center text-center gap-1">
+                <span className="inline-flex items-center justify-center h-4 px-1.5 rounded-sm bg-[#3CFFD0] text-foreground text-[8px] font-bold leading-none">tabby</span>
+                <p className="text-[9px] sm:text-[10px] uppercase tracking-wider text-muted-foreground leading-tight">Pay in 4 — 0% interest</p>
+              </div>
+            </div>
+
             {/* Wishlist */}
             <button
               onClick={() => toast({ title: "Added to wishlist", description: `${product.name} saved` })}
-              className="w-full flex items-center justify-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider py-2 text-muted-foreground hover:text-foreground transition-colors mb-4"
+              className="w-full flex items-center justify-center gap-1.5 text-[11px] sm:text-xs uppercase tracking-wider py-2 text-muted-foreground hover:text-foreground transition-colors mb-2"
             >
               <Heart className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               ADD TO WISHLIST
             </button>
-
-            {/* Trust Badges */}
-            <div className="space-y-2.5 py-3 border-t border-border mb-1">
-              <div className="flex items-center gap-2.5">
-                <Truck className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <p className="text-[11px] sm:text-xs">International Delivery : 2–3 working days.</p>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <RotateCcw className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                <p className="text-[11px] sm:text-xs">7-Day Easy Returns & Exchanges</p>
-              </div>
-            </div>
 
             {/* Accordion */}
             <Accordion type="single" collapsible className="w-full border-t border-border">
