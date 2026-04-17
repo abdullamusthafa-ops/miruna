@@ -247,14 +247,13 @@ const ProductDetail = () => {
 
             {/* Price */}
             <p className="text-sm mb-3">
-              <span className="text-muted-foreground text-[11px] mr-1">Sale price</span>
               <span className="font-medium">{product.priceDhs.toLocaleString()}.00 AED</span>
             </p>
 
             {/* Tabby Payment */}
             <div className="flex items-center justify-between border border-border p-3 mb-4">
               <p className="text-[11px] sm:text-xs">
-                As low as <span className="font-semibold">৳ {tabbyMonthlyPrice}/month</span> or 4 interest-free payments.{" "}
+                4 interest-free payments of <span className="font-semibold">{tabbyMonthlyPrice} AED</span>.{" "}
                 <button className="underline font-medium hover:text-muted-foreground">Learn more</button>
               </p>
               <div className="bg-[#3CFFD0] text-foreground font-bold text-[10px] sm:text-[11px] px-2 py-1 rounded flex-shrink-0 ml-2">
