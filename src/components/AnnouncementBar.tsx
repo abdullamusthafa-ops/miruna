@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const announcements = [
-  "15% OFF ON FIRST PURCHASE",
+  "15% OFF ON FIRST PURCHASE — CODE: WELCOME15",
   "FREE DELIVERY ON ORDERS ABOVE AED 1000",
   "MADE IN UAE",
   "4-HOUR DELIVERY IN DUBAI",
