@@ -22,22 +22,23 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24 md:pt-28">
+      <main className="pt-24 md:pt-32">
         {/* Hero */}
-        <section className="container mx-auto px-4 py-10 md:py-16 text-center">
-          <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground mb-4">
+        <section className="container mx-auto px-4 py-10 md:py-16 text-center max-w-3xl">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-5">
             The Journal
           </p>
-          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] tracking-tight">
-            Notes on dressing with intention.
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
+            Notes on dressing<br className="hidden sm:block" /> with intention.
           </h1>
-          <p className="mt-5 max-w-xl mx-auto text-sm md:text-base text-muted-foreground">
+          <div className="mx-auto mt-6 h-px w-12 bg-foreground/30" />
+          <p className="mt-6 text-sm md:text-base text-muted-foreground italic max-w-xl mx-auto">
             Slow reads on the dresses, moments and small decisions that make a wardrobe feel like yours.
           </p>
         </section>
 
         {/* Posts grid */}
-        <section className="container mx-auto px-4 pb-16 md:pb-24">
+        <section className="container mx-auto px-4 pb-20 md:pb-28">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
             {blogPosts.map((post) => (
               <Link
@@ -45,7 +46,7 @@ const Blog = () => {
                 to={`/journal/${post.slug}`}
                 className="group bg-background block"
               >
-                <div className="relative aspect-[3/4] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={post.cover}
                     alt={post.title}
@@ -57,13 +58,13 @@ const Blog = () => {
                   <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-3">
                     {post.category} · {post.readTime}
                   </p>
-                  <h2 className="font-serif text-xl md:text-2xl leading-snug mb-2 group-hover:underline underline-offset-4 decoration-1">
+                  <h2 className="font-serif text-xl md:text-2xl leading-snug mb-3 group-hover:underline underline-offset-4 decoration-1">
                     {post.title}
                   </h2>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
+                  <p className="font-sans text-sm leading-relaxed text-muted-foreground line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <span className="mt-4 inline-block text-[11px] uppercase tracking-[0.2em] border-b border-foreground pb-0.5">
+                  <span className="mt-5 inline-block text-[11px] uppercase tracking-[0.25em] border-b border-foreground pb-1">
                     Read story
                   </span>
                 </div>
