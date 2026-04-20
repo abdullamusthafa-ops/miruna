@@ -37,6 +37,7 @@ const Footer = () => {
               <li><Link to="/products" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">Shop All</Link></li>
               <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">About Us</Link></li>
               <li><Link to="/story" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">Meet Miruna</Link></li>
+              <li><Link to="/journal" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">Journal</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">Contact</Link></li>
               <li><Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors text-[12px]">FAQ</Link></li>
             </ul>
