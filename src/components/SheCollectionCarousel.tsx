@@ -180,7 +180,7 @@ function renderProduct(
 ) {
   return (
     <>
-      <div className="relative aspect-[3/4] md:aspect-[3/4.2] overflow-hidden bg-muted">
+      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
         <Link to={`/product/${product.id}`}>
           <img
             src={product.image}

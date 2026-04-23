@@ -48,7 +48,7 @@ const InstagramGallery = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-muted py-16 md:py-24">
+    <section ref={sectionRef} className="bg-muted py-12 md:py-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-8 text-center md:mb-12">

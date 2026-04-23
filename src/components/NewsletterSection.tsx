@@ -28,7 +28,7 @@ const NewsletterSection = () => {
         </div>
 
         {/* Copy + form side */}
-        <div className="flex flex-col justify-center bg-luxury-cream px-6 py-16 md:px-12 lg:px-20 md:py-24 order-2">
+        <div className="flex flex-col justify-center bg-luxury-cream px-6 py-12 md:px-12 lg:px-20 md:py-16 order-2">
           <div className="max-w-md mx-auto md:mx-0 w-full text-center md:text-left">
             <span className="inline-block bg-foreground text-background text-[10px] font-semibold uppercase tracking-[0.25em] px-3 py-1.5 mb-5">
               10% Off · First Order
