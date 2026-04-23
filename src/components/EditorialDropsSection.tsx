@@ -57,9 +57,9 @@ const EditorialDropsSection = () => {
   }, []);
 
   return (
-    <section className="pt-16 md:pt-24">
+    <section className="pt-10 md:pt-16">
       {/* Section title */}
-      <div className="container mx-auto px-4 mb-8 md:mb-12 text-center">
+      <div className="container mx-auto px-4 mb-6 md:mb-10 text-center">
         <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground mb-2 md:text-[11px]">
           Curated Capsules
         </p>
@@ -68,8 +68,8 @@ const EditorialDropsSection = () => {
         </h2>
       </div>
 
-      {/* Editorial Split */}
-      <div className="h-[100dvh] px-0 md:px-4">
+      {/* Editorial Split — sized to fit viewport accounting for title + tile strip */}
+      <div className="h-[60svh] md:h-[78svh] px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
           <Link to="/collection/she" className="group relative block overflow-hidden">
             <div className="h-full overflow-hidden bg-muted">

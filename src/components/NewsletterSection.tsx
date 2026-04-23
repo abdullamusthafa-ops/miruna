@@ -14,10 +14,10 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="bg-background py-0 md:py-0">
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh]">
+    <section className="bg-background">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[70svh] md:max-h-[85svh]">
         {/* Image side */}
-        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden bg-muted order-1">
+        <div className="relative h-[50svh] md:h-auto overflow-hidden bg-muted order-1">
           <img
             src={editorialImg}
             alt="Miruna newsletter"

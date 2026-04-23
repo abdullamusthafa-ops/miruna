@@ -23,11 +23,11 @@ const SpringPromoSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-[100dvh] flex items-center py-16 md:py-24">
+    <section ref={sectionRef} className="min-h-[100svh] flex items-center py-10 md:py-16">
       <div className="container mx-auto px-0 md:px-4 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 lg:gap-14 items-center">
           {/* Video Side */}
-          <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
+          <div className="relative w-full max-h-[60svh] md:max-h-[78svh] aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted mx-auto">
             {isVisible && (
               <video
                 ref={videoRef}
