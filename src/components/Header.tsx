@@ -144,12 +144,12 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
 
   return (
     <header className="fixed top-0 z-50 w-full" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => { setIsHovered(false); setActiveMenu(null); }}>
-      {/* Announcement Bar - only visible when scrolled */}
-      {isScrolled && <AnnouncementBar />}
+      {/* Announcement Bar - always visible on first paint */}
+      <AnnouncementBar />
 
       {/* Main Header */}
       <div className={`transition-all duration-300 ${isSolid ? 'bg-background border-b border-border' : 'bg-transparent border-b border-transparent'}`}>
-        <div className={`container mx-auto flex h-16 items-center justify-between px-4 transition-colors duration-300 ${isSolid ? 'text-foreground' : 'text-white'}`}>
+        <div className={`container mx-auto flex h-16 lg:h-[72px] items-center justify-between px-4 transition-colors duration-300 ${isSolid ? 'text-foreground' : 'text-white'}`}>
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
@@ -259,7 +259,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
             <img
               src={isSolid ? logoBlack : logoWhite}
               alt="Miruna"
-              className="h-4 sm:h-4 md:h-5 w-auto"
+              className="h-4 sm:h-4 md:h-5 lg:h-6 w-auto"
             />
           </Link>
 
@@ -328,8 +328,12 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
             {/* Sale */}
             <Link
               to="/collection/sale"
-              className={`px-4 py-2 text-[11px] font-semibold tracking-[0.15em] uppercase mx-2 transition-colors ${isSolid ? 'border border-foreground hover:bg-foreground hover:text-background' : 'border border-white hover:bg-white hover:text-black'}`}
+              className="group px-4 py-2 ml-2 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] uppercase transition-opacity hover:opacity-70"
             >
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-destructive opacity-75 animate-ping" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-destructive" />
+              </span>
               Sale
             </Link>
           </nav>
@@ -359,7 +363,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
       {/* Mega Menu Dropdowns */}
       {activeMenu && (
         <div 
-          className="fixed inset-x-0 top-[97px] z-40 bg-background border-b border-border shadow-lg animate-slide-down"
+          className="fixed inset-x-0 top-[105px] lg:top-[113px] z-40 bg-background border-b border-border shadow-lg animate-slide-down"
           onMouseEnter={() => handleMouseEnter(activeMenu)}
           onMouseLeave={handleMouseLeave}
         >

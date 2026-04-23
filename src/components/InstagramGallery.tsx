@@ -1,4 +1,4 @@
-import { Instagram, Play } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 const instagramPosts = [
@@ -48,33 +48,32 @@ const InstagramGallery = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-muted min-h-[100dvh] flex flex-col justify-center py-16 md:py-24 mt-12 md:mt-16">
+    <section ref={sectionRef} className="bg-muted py-16 md:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-6 text-center md:mb-12">
+        <div className="mb-8 text-center md:mb-12">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground mb-3 md:text-[11px]">
+            #MirunaGirls
+          </p>
+          <h2 className="text-2xl font-display tracking-tight sm:text-3xl md:text-4xl lg:text-5xl mb-3">
+            Seen on <span className="italic font-light">Miruna Girls</span>
+          </h2>
+          <p className="text-xs text-muted-foreground sm:text-sm mb-3">
+            Real moments. Real style. Real confidence.
+          </p>
           <a
             href="https://www.instagram.com/miruna.studio"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-block"
+            className="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
           >
-            <h2 className="mb-1 text-base font-display tracking-wide sm:text-lg md:text-xl sm:mb-2">
-              Seen on Miruna Girls
-            </h2>
-            <p className="text-[11px] text-muted-foreground group-hover:text-foreground transition-colors sm:text-sm mb-1 sm:mb-2">
-              Real moments. Real style. Real confidence.
-            </p>
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span className="text-[11px] tracking-wide sm:text-sm">
-                @miruna.studio
-              </span>
-            </div>
+            <Instagram className="h-4 w-4" />
+            Tag us @miruna.studio
           </a>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-3 gap-1 sm:gap-2 md:grid-cols-6 md:gap-3">
+        <div className="grid grid-cols-3 gap-px md:grid-cols-6">
           {instagramPosts.map((post, index) => (
             <a
               key={index}
@@ -92,24 +91,27 @@ const InstagramGallery = () => {
                   decoding="async"
                 />
               )}
-              
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-foreground/0 transition-all duration-300 group-hover:bg-foreground/30">
-                <Instagram className="h-6 w-6 text-white opacity-0 transition-all duration-300 group-hover:opacity-100 sm:h-8 sm:w-8" />
+
+              {/* Hover Overlay - subtle white-out with Instagram icon */}
+              <div className="absolute inset-0 flex items-center justify-center bg-background/0 transition-all duration-300 group-hover:bg-background/70">
+                <Instagram className="h-6 w-6 text-foreground opacity-0 transition-all duration-300 group-hover:opacity-100 sm:h-7 sm:w-7" />
               </div>
             </a>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="mt-6 text-center md:mt-10">
+        <div className="mt-10 text-center md:mt-14">
           <a
             href="https://www.instagram.com/miruna.studio"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border border-foreground px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.15em] text-foreground transition-all hover:bg-foreground hover:text-background active:scale-95 sm:px-8 sm:py-3 sm:text-xs"
+            className="group relative inline-block overflow-hidden border border-foreground px-10 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground transition-colors active:scale-[0.98]"
           >
-            Follow @miruna.studio
+            <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-background">
+              Follow @miruna.studio
+            </span>
           </a>
         </div>
       </div>

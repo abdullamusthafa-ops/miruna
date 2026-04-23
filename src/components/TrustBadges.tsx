@@ -1,40 +1,31 @@
-import { Truck, RefreshCw, Headphones, CreditCard } from "lucide-react";
+const badges = [
+  { num: "01", title: "4-Hour Delivery", description: "Within Dubai" },
+  { num: "02", title: "7-Day Returns", description: "Across the UAE" },
+  { num: "03", title: "Customer Care", description: "Prompt & Reliable" },
+  { num: "04", title: "Secure Payments", description: "Tabby · COD · Cards" },
+];
 
 const TrustBadges = () => {
-  const badges = [
-    {
-      icon: Truck,
-      title: "4-Hour Delivery",
-      description: "Within Dubai",
-    },
-    {
-      icon: RefreshCw,
-      title: "7-DAY RETURNS POLICY",
-      description: "Across the UAE",
-    },
-    {
-      icon: Headphones,
-      title: "CUSTOMER CARE",
-      description: "Prompt & Reliable",
-    },
-    {
-      icon: CreditCard,
-      title: "Secure payments options",
-      description: "Tabby, COD & All Major Cards",
-    },
-  ];
-
   return (
-    <section className="border-t border-border bg-background py-16 md:py-20 flex items-center">
+    <section className="border-t border-border bg-luxury-cream py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {badges.map((badge, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <badge.icon className="mb-2 h-5 w-5 text-foreground md:h-6 md:w-6" strokeWidth={1.5} />
-              <h3 className="text-[10px] font-semibold uppercase tracking-wider text-foreground sm:text-[11px]">
+            <div
+              key={index}
+              className={`flex flex-col items-center text-center px-3 py-4 md:px-6 md:py-2 ${
+                index < badges.length - 1 ? "md:border-r md:border-border/60" : ""
+              } ${index % 2 === 0 ? "border-r border-border/60 md:border-r" : ""} ${
+                index < 2 ? "border-b border-border/60 md:border-b-0 pb-6 md:pb-2" : "pt-6 md:pt-2"
+              }`}
+            >
+              <span className="font-display text-base text-muted-foreground/80 mb-2 md:text-lg">
+                {badge.num}.
+              </span>
+              <h3 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-foreground sm:text-[11px] md:text-xs">
                 {badge.title}
               </h3>
-              <p className="mt-0.5 text-[9px] text-muted-foreground sm:text-[10px]">
+              <p className="mt-1.5 text-[10px] text-muted-foreground sm:text-[11px] tracking-wide">
                 {badge.description}
               </p>
             </div>
