@@ -55,31 +55,40 @@ const SheCollectionCarousel = () => {
   };
 
   return (
-    <section className="min-h-[100dvh] flex flex-col justify-center py-8 md:py-12">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-10">
-        {/* Header: Title left, Tabs right */}
-        <div className="mb-3 flex flex-col gap-2 md:mb-5 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-lg font-light text-foreground md:text-2xl">A Moment For New</h2>
-            <p className="mt-0.5 text-[10px] text-muted-foreground md:text-xs">
-              Season-defining styles designed for every mood and moment.
-            </p>
-            <p className="mt-1 text-[9px] font-medium uppercase tracking-wider text-muted-foreground md:text-[10px]">
-              Limited Pieces. High demand. Fast movement.
-            </p>
-          </div>
-          <div className="flex items-center gap-0 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0 sm:gap-2 md:gap-2">
+        {/* Header */}
+        <div className="mb-6 md:mb-10 text-center md:text-left">
+          <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground mb-2 md:text-[11px]">
+            A Moment For New
+          </p>
+          <h2 className="text-2xl font-display tracking-tight text-foreground md:text-4xl lg:text-5xl">
+            Season-defining <span className="italic font-light">styles</span>.
+          </h2>
+          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground md:text-[11px]">
+            Limited Pieces · High Demand · Fast Movement
+          </p>
+        </div>
+
+        {/* Tabs - underline style */}
+        <div className="mb-6 md:mb-8 border-b border-border">
+          <div className="flex items-center justify-start md:justify-center gap-6 md:gap-10 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
             {carouselTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => handleTabChange(tab.key)}
-                className={`whitespace-nowrap rounded-full px-3 py-1 text-[9px] font-medium uppercase tracking-wider transition-all duration-200 flex-shrink-0 sm:px-4 sm:py-1.5 sm:text-[10px] active:scale-95 ${
+                className={`relative whitespace-nowrap pb-3 text-[10px] uppercase tracking-[0.2em] transition-colors flex-shrink-0 sm:text-[11px] active:scale-[0.98] ${
                   activeTab === tab.key
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-background text-foreground hover:bg-muted"
+                    ? "text-foreground font-medium"
+                    : "text-muted-foreground hover:text-foreground font-normal"
                 }`}
               >
                 {tab.label}
+                <span
+                  className={`absolute -bottom-px left-0 right-0 h-px bg-foreground transition-transform duration-300 origin-center ${
+                    activeTab === tab.key ? "scale-x-100" : "scale-x-0"
+                  }`}
+                />
               </button>
             ))}
           </div>

@@ -6,7 +6,6 @@ const SpringPromoSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  // Only load and play video when section is in viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -24,9 +23,9 @@ const SpringPromoSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="min-h-[100dvh] flex items-center py-10 md:py-16">
+    <section ref={sectionRef} className="min-h-[100dvh] flex items-center py-16 md:py-24">
       <div className="container mx-auto px-0 md:px-4 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-12 lg:gap-16 items-center">
           {/* Video Side */}
           <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-muted">
             {isVisible && (
@@ -44,22 +43,28 @@ const SpringPromoSection = () => {
           </div>
 
           {/* Text Side */}
-          <div className="flex flex-col justify-center text-center px-6 py-8 md:text-left md:px-0 md:py-0">
-            <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground mb-2 sm:text-xs sm:mb-3">
-              Spring 2026 Exclusive Drop
-            </p>
-            <h2 className="text-lg font-display tracking-tight sm:text-xl md:text-2xl lg:text-3xl mb-3 sm:mb-4 leading-tight">
-              Sculpted silhouettes, elegant abayas, and refined evening styles designed for standout moments.
+          <div className="flex flex-col justify-center text-center px-6 py-10 md:text-left md:px-2 md:py-0 md:max-w-[480px]">
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+              <span className="h-px w-10 bg-luxury-taupe" />
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
+                Spring 2026 Exclusive
+              </p>
+            </div>
+            <h2 className="text-2xl font-display tracking-tight md:text-4xl lg:text-5xl mb-5 leading-[1.1]">
+              Sculpted silhouettes for <span className="italic font-light">standout</span> moments.
             </h2>
-            <p className="text-[11px] text-muted-foreground mb-5 sm:text-sm sm:mb-6">
-              Limited Pieces
+            <p className="text-xs text-muted-foreground mb-7 sm:text-sm sm:mb-8 leading-relaxed">
+              Elegant abayas, refined evening styles, and modern occasion pieces — designed in limited quantities.
             </p>
             <div>
               <Link
                 to="/collection/spring-collection"
-                className="inline-block border border-foreground px-6 py-2.5 text-[10px] font-medium uppercase tracking-[0.15em] text-foreground transition-all hover:bg-foreground hover:text-background active:scale-95 sm:border-b sm:border-t-0 sm:border-l-0 sm:border-r-0 sm:px-0 sm:py-0 sm:pb-1"
+                className="group relative inline-block overflow-hidden border border-foreground px-10 py-3.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground transition-colors active:scale-[0.98]"
               >
-                Explore Collection
+                <span className="absolute inset-0 bg-foreground translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-background">
+                  Explore Collection
+                </span>
               </Link>
             </div>
           </div>

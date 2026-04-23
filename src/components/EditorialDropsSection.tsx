@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
 import editorialHero from "@/assets/editorial-hero.webp";
 import dropFluffStuff from "@/assets/drop-fluff-stuff.webp";
 import dropTooGoodToLose from "@/assets/drop-too-good-to-lose.webp";
@@ -11,21 +12,25 @@ const sheCategories = [
     name: "FLUFF STUFF",
     tag: "Limited Edition",
     image: dropFluffStuff,
+    hoverImage: dropTooGoodToLose,
     link: "/collection/fluff-stuff",
   },
   {
     name: "TOO GOOD TO LOSE",
     image: dropTooGoodToLose,
+    hoverImage: dropFluffStuff,
     link: "/collection/too-good-to-lose",
   },
   {
     name: "I WOKE UP LIKE THIS",
     image: dropIWokeUp,
+    hoverImage: dropMyMomSaidNo,
     link: "/collection/i-woke-up-like-this",
   },
   {
     name: "MY MOM SAID NO",
     image: dropMyMomSaidNo,
+    hoverImage: dropIWokeUp,
     link: "/collection/my-mom-said-no",
   },
 ];
@@ -52,7 +57,17 @@ const EditorialDropsSection = () => {
   }, []);
 
   return (
-    <section className="pt-10 md:pt-16">
+    <section className="pt-16 md:pt-24">
+      {/* Section title */}
+      <div className="container mx-auto px-4 mb-8 md:mb-12 text-center">
+        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-muted-foreground mb-2 md:text-[11px]">
+          Curated Capsules
+        </p>
+        <h2 className="text-2xl font-display tracking-tight md:text-4xl lg:text-5xl">
+          The <span className="italic font-light">Drops</span>
+        </h2>
+      </div>
+
       {/* Editorial Split */}
       <div className="h-[100dvh] px-0 md:px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-1 h-full">
@@ -66,15 +81,15 @@ const EditorialDropsSection = () => {
                 decoding="async"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
-              <p className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/70 sm:text-[10px]">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 transition-transform duration-500 group-hover:-translate-y-1">
+              <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/80 sm:text-[11px]">
                 The Collection
               </p>
-              <h3 className="mt-1 text-xl font-display tracking-wide text-white sm:text-2xl md:text-3xl">
+              <h3 className="mt-2 text-3xl font-display tracking-tight text-white sm:text-4xl md:text-5xl">
                 SHE
               </h3>
-              <span className="mt-3 inline-block border border-white/80 px-4 py-1.5 text-[9px] font-medium uppercase tracking-[0.15em] text-white transition-colors group-hover:bg-white group-hover:text-foreground sm:mt-4 sm:px-5 sm:py-2 sm:text-[10px]">
+              <span className="mt-5 inline-block border border-white/80 bg-transparent px-6 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-colors group-hover:bg-white group-hover:text-foreground sm:px-7 sm:py-3">
                 Explore
               </span>
             </div>
@@ -106,31 +121,50 @@ const EditorialDropsSection = () => {
               to={cat.link}
               className="group relative overflow-hidden"
             >
-              <div className="aspect-[3/4] overflow-hidden bg-muted">
+              <div className="aspect-[3/4] overflow-hidden bg-muted relative">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition-all duration-700 group-hover:opacity-0 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src={cat.hoverImage}
+                  alt={cat.name}
+                  className="absolute inset-0 h-full w-full object-cover object-top opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:scale-105"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
               {cat.tag && (
-                <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-                  <span className="bg-background/90 px-2 py-0.5 text-[7px] font-medium uppercase tracking-wider text-foreground sm:text-[9px]">
+                <div className="absolute top-3 left-3">
+                  <span className="bg-background/90 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.15em] text-foreground sm:text-[10px]">
                     {cat.tag}
                   </span>
                 </div>
               )}
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
-                <span className="text-[9px] font-medium tracking-[0.12em] uppercase text-white sm:text-[10px] md:text-xs leading-tight block">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 transition-transform duration-500 group-hover:-translate-y-1">
+                <span className="relative inline-block text-xs font-medium tracking-[0.15em] uppercase text-white sm:text-sm leading-tight">
                   {cat.name}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-white transition-all duration-500 group-hover:w-full" />
                 </span>
               </div>
             </Link>
           ))}
         </div>
+      </div>
+
+      {/* View all link */}
+      <div className="container mx-auto px-4 mt-10 md:mt-14 text-center">
+        <Link
+          to="/collection/drops"
+          className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-foreground hover:opacity-70 transition-opacity"
+        >
+          View All Drops
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
     </section>
   );

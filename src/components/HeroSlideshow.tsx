@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import heroNewIn from "@/assets/hero-new-in.webp";
 import heroSpring from "@/assets/hero-spring.webp";
 
 const HeroSlideshow = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 80);
+    return () => clearTimeout(t);
+  }, []);
+
+  const copyClasses = `transition-all duration-700 ease-out ${
+    loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+  }`;
+
   return (
     <section className="relative w-full overflow-hidden mb-px">
       {/* Desktop / Tablet landscape: side by side */}
@@ -26,21 +38,30 @@ const HeroSlideshow = () => {
           />
         </div>
         {/* Overlay + CTA centered over the gap */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
         <div className="absolute inset-0 flex items-end justify-center pb-[10%] pointer-events-none">
-          <div className="text-center px-6 pointer-events-auto">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/90">
-              Evening glamour • Everyday ease • Occasion moments
+          <div className={`text-center px-6 pointer-events-auto ${copyClasses}`}>
+            <div className="mx-auto mb-4 h-px w-12 bg-white/60" />
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-white/90">
+              Evening glamour · Everyday ease · Occasion moments
             </p>
-            <h1 className="mb-5 text-3xl font-display font-bold tracking-wide text-white md:text-4xl lg:text-5xl">
-              DRESSES FOR EVERY VERSION OF YOU
+            <h1 className="mb-7 text-4xl font-display tracking-tight text-white md:text-6xl lg:text-7xl">
+              DRESSES FOR EVERY <span className="italic font-light">version</span> OF YOU
             </h1>
-            <Link
-              to="/collection/new-in"
-              className="inline-block border border-white bg-white/10 backdrop-blur-sm px-8 py-3 text-xs font-medium tracking-[0.15em] uppercase text-white transition-all hover:bg-white hover:text-foreground active:scale-95"
-            >
-              SHOP NEW IN
-            </Link>
+            <div className="flex items-center justify-center gap-3">
+              <Link
+                to="/collection/new-in"
+                className="inline-block bg-white text-foreground px-12 py-4 text-xs font-semibold tracking-[0.2em] uppercase transition-all hover:bg-white/90 active:scale-[0.98]"
+              >
+                Shop New In
+              </Link>
+              <Link
+                to="/collection/spring-collection"
+                className="inline-block border border-white/80 bg-transparent px-12 py-4 text-xs font-semibold tracking-[0.2em] uppercase text-white transition-all hover:bg-white hover:text-foreground active:scale-[0.98]"
+              >
+                Shop Spring
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -66,19 +87,31 @@ const HeroSlideshow = () => {
           />
         </div>
         {/* Text at the seam between images */}
-        <div className="absolute left-0 right-0 bottom-[46%] z-10 text-center px-4 pointer-events-none">
-          <p className="mb-1 text-[8px] font-medium uppercase tracking-[0.2em] text-white/90 drop-shadow-md">
-            Evening glamour • Everyday ease • Occasion moments
+        <div className={`absolute left-0 right-0 bottom-[44%] z-10 text-center px-5 pointer-events-none ${copyClasses}`}>
+          <div className="mx-auto mb-2 h-px w-10 bg-white/70" />
+          <p className="mb-2 text-[9px] font-medium uppercase tracking-[0.3em] text-white/90 drop-shadow-md">
+            Evening · Everyday · Occasion
           </p>
-          <h1 className="mb-2 text-xl font-display font-bold tracking-wide text-white drop-shadow-lg sm:text-2xl">
-            DRESSES FOR EVERY VERSION OF YOU
+          <h1 className="mb-4 text-3xl font-display tracking-tight text-white drop-shadow-lg sm:text-4xl">
+            DRESSES FOR EVERY <span className="italic font-light">version</span> OF YOU
           </h1>
-          <Link
-            to="/collection/new-in"
-            className="pointer-events-auto inline-block border border-white bg-white/10 backdrop-blur-sm px-5 py-2 text-[9px] font-medium tracking-[0.15em] uppercase text-white transition-all hover:bg-white hover:text-foreground active:scale-95"
-          >
-            SHOP NEW IN
-          </Link>
+        </div>
+        {/* CTAs anchored to bottom on mobile for confident commerce */}
+        <div className={`absolute bottom-6 left-0 right-0 px-5 z-10 ${copyClasses}`} style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
+          <div className="flex flex-col gap-2">
+            <Link
+              to="/collection/new-in"
+              className="pointer-events-auto block bg-white text-foreground py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-center transition-all active:scale-[0.98]"
+            >
+              Shop New In
+            </Link>
+            <Link
+              to="/collection/spring-collection"
+              className="pointer-events-auto block border border-white/80 bg-transparent py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-white text-center transition-all active:scale-[0.98]"
+            >
+              Shop Spring
+            </Link>
+          </div>
         </div>
       </div>
     </section>
