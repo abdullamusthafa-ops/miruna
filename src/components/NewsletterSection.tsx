@@ -14,10 +14,10 @@ const NewsletterSection = () => {
   };
 
   return (
-    <section className="bg-background">
-      <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[70svh] md:max-h-[85svh]">
+    <section className="bg-background py-0 md:py-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh]">
         {/* Image side */}
-        <div className="relative h-[50svh] md:h-auto overflow-hidden bg-muted order-1">
+        <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden bg-muted order-1">
           <img
             src={editorialImg}
             alt="Miruna newsletter"
@@ -28,7 +28,7 @@ const NewsletterSection = () => {
         </div>
 
         {/* Copy + form side */}
-        <div className="flex flex-col justify-center bg-luxury-cream px-6 py-12 md:px-12 lg:px-20 md:py-16 order-2">
+        <div className="flex flex-col justify-center bg-luxury-cream px-6 py-16 md:px-12 lg:px-20 md:py-24 order-2">
           <div className="max-w-md mx-auto md:mx-0 w-full text-center md:text-left">
             <span className="inline-block bg-foreground text-background text-[10px] font-semibold uppercase tracking-[0.25em] px-3 py-1.5 mb-5">
               10% Off · First Order

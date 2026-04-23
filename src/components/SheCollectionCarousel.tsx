@@ -55,7 +55,7 @@ const SheCollectionCarousel = () => {
   };
 
   return (
-    <section className="min-h-[100svh] flex flex-col justify-center py-10 md:py-14">
+    <section className="min-h-[100dvh] flex flex-col justify-center py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-10">
         {/* Header */}
         <div className="mb-6 md:mb-10 text-center md:text-left">
@@ -180,7 +180,7 @@ function renderProduct(
 ) {
   return (
     <>
-      <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+      <div className="relative aspect-[3/4] md:aspect-[3/4.2] overflow-hidden bg-muted">
         <Link to={`/product/${product.id}`}>
           <img
             src={product.image}
