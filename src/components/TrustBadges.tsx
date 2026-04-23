@@ -7,7 +7,7 @@ const badges = [
 
 const TrustBadges = () => {
   return (
-    <section className="border-t border-border bg-luxury-cream py-16 md:py-24">
+    <section className="border-t border-border bg-luxury-cream py-10 md:py-14">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {badges.map((badge, index) => (
