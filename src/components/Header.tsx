@@ -363,7 +363,7 @@ const Header = ({ solidBackground = false }: HeaderProps) => {
       {/* Mega Menu Dropdowns */}
       {activeMenu && (
         <div 
-          className="fixed inset-x-0 top-[97px] z-40 bg-background border-b border-border shadow-lg animate-slide-down"
+          className="fixed inset-x-0 top-[105px] lg:top-[113px] z-40 bg-background border-b border-border shadow-lg animate-slide-down"
           onMouseEnter={() => handleMouseEnter(activeMenu)}
           onMouseLeave={handleMouseLeave}
         >
