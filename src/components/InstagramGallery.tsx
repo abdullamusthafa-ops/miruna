@@ -80,7 +80,7 @@ const InstagramGallery = () => {
               href="https://www.instagram.com/miruna.studio"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-background aspect-square"
+              className="group relative overflow-hidden bg-background aspect-square md:aspect-[4/5]"
             >
               {isVisible && (
                 <img
