@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import dressesImg from "@/assets/dresses-collection.webp";
+import dressesImg from "@/assets/dresses-collection-new.jpg";
 import occasionImg from "@/assets/occasion-collection-new.jpg";
 
 const tiles = [
