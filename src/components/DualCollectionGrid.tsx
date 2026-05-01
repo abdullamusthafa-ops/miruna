@@ -34,19 +34,22 @@ const DualCollectionGrid = () => {
               to={t.to}
               className="relative overflow-hidden group bg-muted"
             >
-              {/* Image — taller ratio for editorial feel, consistent positioning logic per tile */}
+              {/* Image — taller ratio + subtle desaturation so different photos read as one palette */}
               <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden">
                 <img
                   src={t.img}
                   alt={t.title}
-                  className={`h-full w-full object-cover ${t.position} transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]`}
+                  className={`h-full w-full object-cover ${t.position} transition-all duration-[1200ms] ease-out group-hover:scale-[1.04] [filter:saturate(0.72)_contrast(0.96)_brightness(0.98)]`}
                   loading="lazy"
                   decoding="async"
                 />
               </div>
 
-              {/* Gradient — softer, only at the bottom so the imagery breathes */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent md:from-black/60 md:via-black/5" />
+              {/* Warm beige tonal wash — unifies the pink and white photos into one editorial palette */}
+              <div className="pointer-events-none absolute inset-0 bg-luxury-cream/20 mix-blend-multiply" />
+
+              {/* Bottom gradient for caption legibility */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
 
               {/* Caption */}
               <div className="absolute inset-x-0 bottom-0 flex flex-col items-center px-5 pb-6 text-center md:pb-10 transition-transform duration-700 ease-out group-hover:-translate-y-1">
