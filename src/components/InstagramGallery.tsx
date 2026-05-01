@@ -86,11 +86,14 @@ const InstagramGallery = () => {
                 <img
                   src={post.src}
                   alt={post.alt}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-all duration-700 group-hover:scale-105 [filter:grayscale(1)_contrast(1.05)_brightness(1.02)] group-hover:[filter:grayscale(0.9)_contrast(1.08)_brightness(1.04)]"
                   loading="lazy"
                   decoding="async"
                 />
               )}
+
+              {/* Tone-balancing wash for editorial consistency */}
+              <div className="pointer-events-none absolute inset-0 bg-luxury-cream/10 mix-blend-luminosity" />
 
               {/* Hover Overlay - subtle white-out with Instagram icon */}
               <div className="absolute inset-0 flex items-center justify-center bg-background/0 transition-all duration-300 group-hover:bg-background/70">
