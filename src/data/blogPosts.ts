@@ -6,13 +6,28 @@ import smallAdjImg from "@/assets/blog/blog3/small-adjustments.webp";
 import secondTimeImg from "@/assets/blog/blog3/second-time.webp";
 import becomesYoursImg from "@/assets/blog/blog3/becomes-yours.webp";
 
+import b4Hero from "@/assets/blog/blog4/intro1.webp";
+import b4Intro2 from "@/assets/blog/blog4/intro2.webp";
+import b4_1a from "@/assets/blog/blog4/1.webp";
+import b4_1b from "@/assets/blog/blog4/1.2.webp";
+import b4_2a from "@/assets/blog/blog4/2.webp";
+import b4_2b from "@/assets/blog/blog4/2.2.webp";
+import b4_3a from "@/assets/blog/blog4/3.webp";
+import b4_3b from "@/assets/blog/blog4/3.2.webp";
+import b4_4a from "@/assets/blog/blog4/4.webp";
+import b4_4b from "@/assets/blog/blog4/4.2.webp";
+import b4_5a from "@/assets/blog/blog4/5.webp";
+import b4_5b from "@/assets/blog/blog4/5.2.webp";
+
 export interface BlogSection {
   heading: string;
   paragraphs: string[];
   image?: string;
+  image2?: string;
   imageAlt?: string;
   caption?: string;
   productLink?: string;
+  productLinkLabel?: string;
 }
 
 export interface BlogPost {
