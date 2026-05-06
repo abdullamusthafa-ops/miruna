@@ -163,7 +163,7 @@ const BlogPost = () => {
                           to={section.productLink}
                           className="mt-6 inline-block text-[11px] font-medium uppercase tracking-[0.25em] border-b border-foreground pb-1 hover:opacity-60 transition-opacity"
                         >
-                          Shop the look
+                          {section.productLinkLabel ?? "Shop the look"}
                         </Link>
                       )}
                     </div>
