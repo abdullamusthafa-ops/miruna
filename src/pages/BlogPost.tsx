@@ -98,14 +98,35 @@ const BlogPost = () => {
                   >
                     {section.image && (
                       <figure className="relative">
-                        <div className="relative aspect-[4/5] overflow-hidden bg-muted">
-                          <img
-                            src={section.image}
-                            alt={section.imageAlt ?? section.heading}
-                            loading="lazy"
-                            className="absolute inset-0 h-full w-full object-cover"
-                          />
-                        </div>
+                        {section.image2 ? (
+                          <div className="grid grid-cols-2 gap-px bg-border">
+                            <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                              <img
+                                src={section.image}
+                                alt={section.imageAlt ?? section.heading}
+                                loading="lazy"
+                                className="absolute inset-0 h-full w-full object-cover"
+                              />
+                            </div>
+                            <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                              <img
+                                src={section.image2}
+                                alt={section.imageAlt ?? section.heading}
+                                loading="lazy"
+                                className="absolute inset-0 h-full w-full object-cover"
+                              />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+                            <img
+                              src={section.image}
+                              alt={section.imageAlt ?? section.heading}
+                              loading="lazy"
+                              className="absolute inset-0 h-full w-full object-cover"
+                            />
+                          </div>
+                        )}
                         {section.caption && (
                           <figcaption className="mt-3 text-[11px] uppercase tracking-[0.2em] text-muted-foreground text-center">
                             {section.caption}
