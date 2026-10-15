@@ -35,12 +35,10 @@ const steps = [
 const Partnerships = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsPlaying(entry.isIntersecting);
         if (entry.isIntersecting && videoRef.current) {
           videoRef.current.play().catch(() => {});
         } else if (videoRef.current) {
