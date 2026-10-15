@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { Link } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
 
@@ -176,7 +176,7 @@ const Partnerships = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
           <p className="text-[10px] font-medium uppercase tracking-[0.3em] sm:text-xs mb-4">
-            {isPlaying ? "The Brand, In Motion" : "Paused"}
+            The Brand, In Motion
           </p>
           <h2 className="max-w-2xl text-2xl font-display tracking-tight sm:text-3xl md:text-5xl leading-[1.1]">
             One brand. Many rooms. <span className="italic font-light">Same feeling.</span>
